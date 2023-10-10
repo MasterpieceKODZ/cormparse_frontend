@@ -1,0 +1,30 @@
+{
+	"name": "cormparse-frontend-and-auth",
+	"version": "1.0.0",
+	"description": "This is a service component that is part of the CORMPARSE issue traker project, it serves the frontend and also handles authentication and authorization",
+	"private": true,
+	"scripts": {
+		"dev": "next dev",
+		"build": "next build",
+		"start": "next start",
+		"lint": "next lint"
+	},
+	"keywords": [
+		"node.js",
+		"next.js",
+		"next auth",
+		"frontend"
+	],
+	"dependencies": {
+		"@types/node": "20.6.3",
+		"@types/react": "18.2.22",
+		"@types/react-dom": "18.2.7",
+		"cypress": "^13.3.0",
+		"eslint": "8.49.0",
+		"eslint-config-next": "13.5.2",
+		"next": "13.5.2",
+		"react": "18.2.0",
+		"react-dom": "18.2.0",
+		"typescript": "5.2.2"
+	}
+}
