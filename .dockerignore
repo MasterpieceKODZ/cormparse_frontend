@@ -46,3 +46,5 @@ Makefile
 **/.env*
 
 docker_secrets
+
+**/cypress
