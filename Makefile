@@ -50,3 +50,11 @@ deploy_to_cont_registry:
 	$(MAKE) tag_img
 
 	$(MAKE) push_img
+
+.PHONY: cypress_open
+cypress_open:
+	npx cypress open --project $PWD/cypress -b chrome --e2e
+
+.PHONY: cypress_run
+cypress_run:
+	npx cypress run --project $PWD/cypress -b chrome --e2e

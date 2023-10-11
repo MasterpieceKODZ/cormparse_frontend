@@ -6,7 +6,7 @@ EXPOSE 3000
 
 LABEL framework="next"
 
-# to avoid invalidating the cache for changes not related to dependencies  copy in package.json and package-lock.json and install deps b4 copying the remaining code
+# to avoid invalidating the cache for changes not related to dependencies  copy in package.json and package-lock.json and install dependencies before copying the remaining code
 
 ADD ./package*.json .
 

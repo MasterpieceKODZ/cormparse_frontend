@@ -1,10 +1,8 @@
-// {
-// 	"compilerOptions": {
-// 		"target": "es5",
-// 		"lib": ["es5", "dom"],
-// 		"types": ["cypress", "node"],
-// 		"module": "Node16",
-// 		"moduleResolution": "Node16"
-// 	},
-// 	"include": ["**/cypress/**/*.ts", "cypress.config.ts"]
-// }
+{
+	"compilerOptions": {
+		"target": "es5",
+		"lib": ["es5", "dom"],
+		"types": ["cypress", "node"]
+	},
+	"include": ["**/*.ts"]
+}
