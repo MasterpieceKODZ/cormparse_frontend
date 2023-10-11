@@ -1,0 +1,25 @@
+name: Deploy Image
+run-name: cormparse frontend service ci-cd workflow
+on:
+  push:
+    branches:
+      - 'master'
+jobs:
+  build_publish_docker_image:
+    name: Test, Build And Publish cormparse_frontend_service
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout the repo
+        uses: actions/checkout@v4.1.0
+      # Install npm dependencies, cache them correctly
+      # and run all Cypress tests
+      - name: Cypress run
+        uses: cypress-io/github-action@v6
+        with:
+          browser: chrome
+          config: pageLoadTimeout=100000,baseUrl=http://localhost:3000
+          build: npm run build
+          start: npm run start
+          wait-on: 'http://localhost:3000'
+          command: npm run test:run
+          
