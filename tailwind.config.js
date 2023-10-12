@@ -5,7 +5,7 @@ module.exports = {
 		extend: {
 			colors: {
 				primary: {
-					DEFAULT: "#050865",
+					DEFAULT: "#19052F",
 					"blue-lyt": "#518CFF",
 					"blue-v-lyt": "#D7ECFF",
 				},
@@ -24,10 +24,12 @@ module.exports = {
 				"russo-one": ["var(--font-russo-one)"],
 				"edu-tas-beg": ["var(--font-edu-tas-beginner)"],
 			},
+			screens: {
+				smst: "320px",
+				xxsm: "410px",
+				xsm: "550px",
+			},
 		},
-	},
-	corePlugins: {
-		preflight: false,
 	},
 	plugins: [],
 	prefix: "tw-",
