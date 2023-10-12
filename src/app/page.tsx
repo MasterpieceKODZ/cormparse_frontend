@@ -1,4 +1,3 @@
-import BtnGetStarted from "@/components/home.start.btn";
 import {
 	twAppName,
 	twBtnGetStarted,

@@ -1,7 +1,7 @@
 # DOCKER COMMANDS
 
-IMG_NAME:=cormparse_frontend_n_auth
-REPO_n_TAG:=masterpiecekodz/cormparse_frontend_n_auth:1.0.0
+IMG_NAME:=cormparse_frontend
+REPO_n_TAG:=masterpiecekodz/cormparse_frontend:1.0.0
 
 .PHONY: check_conts
 check_conts:

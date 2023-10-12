@@ -48,6 +48,3 @@ Makefile
 docker_secrets
 
 **/cypress
-
-./tailwind.config.js
-./postcss.config.js
