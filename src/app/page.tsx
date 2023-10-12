@@ -7,7 +7,9 @@ const LandingPage = () => {
 			<br />
 			<br />
 			<br />
-			<p id="p-show-qut"></p>
+			<p
+				id="p-show-qut"
+				className="tw-font-thin tw-font-edu-tas-beg"></p>
 		</div>
 	);
 };

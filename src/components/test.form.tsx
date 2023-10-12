@@ -11,12 +11,17 @@ const TestForm = () => {
 				type="text"
 				name="quote"
 				id="inp-qut"
+				className="tw-w-60 tw-text-center"
 				placeholder="Write a quote..."
 			/>
 			<br />
 			<br />
 			<br />
-			<button type="submit">Submit</button>
+			<button
+				type="submit"
+				className="tw-bg-primary">
+				Submit
+			</button>
 		</form>
 	);
 };
