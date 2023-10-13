@@ -17,6 +17,8 @@ rmv_all_imgs:
 
 .PHONY: build_img
 build_img:
+	npm run build
+	
 	sudo docker build  --cpu-quota 28000  -t ${IMG_NAME} .
 
 .PHONY: tag_img
