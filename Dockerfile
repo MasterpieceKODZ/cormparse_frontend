@@ -18,9 +18,6 @@ npm set cache /app/.npm \
 # copy source files into image working directory
 COPY --link . .
 
-# compile next app
-RUN ["npm","run","build"]
-
 HEALTHCHECK --interval=30s --timeout=30s --start-period=5s --retries=3 CMD [ "node","healthcheck.js" ]
 
 #create unprivileged user
