@@ -22,7 +22,9 @@ jobs:
           start: npm run start
           wait-on: "http://localhost:3000"
           command: npm run test:run
-      - run: npm run build
+      # compile next production build
+      - name: Compile next production build
+        run: npm run build
       - name: Docker meta
         id: meta
         uses: docker/metadata-action@v4
@@ -52,5 +54,6 @@ jobs:
           vuln-type: "os,library"
           severity: "CRITICAL"
           ignore-unfixed: true
+      # I am pushhing manually bcos I want to be sure there is no vulnerability before pushing image.
       - run: docker push masterpiecekodz/cormparse_frontend:1.0.0
       - run: docker push masterpiecekodz/cormparse_frontend:latest
