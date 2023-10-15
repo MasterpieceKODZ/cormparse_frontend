@@ -1,6 +1,6 @@
 // tailwind classnames for landing page
 
-export const twIntroPBasicScreenSize =
+export const twIntroTest =
 	"tw-text-white tw-font-exo tw-text-[10px] tw-opacity-75 xxsm:tw-text-[12px] xsm:tw-text-[15px] sm:tw-text-[17px] lg:tw-text-[19px] 2xl:tw-text-[20px]";
 
 export const twAppName =
