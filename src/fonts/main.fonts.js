@@ -1,18 +1,24 @@
-import {
-	Londrina_Outline,
-	Exo,
-	Russo_One,
-	Edu_TAS_Beginner,
-} from "next/font/google";
+import localFont from "next/font/local";
 
-export const londrina_outline = Londrina_Outline({
+export const londrina_outline = localFont({
+	src: "./Londrina_Outline//LondrinaOutline-Regular.ttf",
 	display: "swap",
 	subsets: ["latin"],
 	weight: "400",
 	variable: "--font-londrina-outline",
 });
 
-export const exo = Exo({
+export const exo = localFont({
+	src: [
+		{
+			path: "./Exo/Exo-VariableFont_wght.ttf",
+			style: "normal",
+		},
+		{
+			path: "./Exo/Exo-Italic-VariableFont_wght.ttf",
+			style: "italic",
+		},
+	],
 	weight: "variable",
 	style: ["italic", "normal"],
 	display: "swap",
@@ -20,14 +26,16 @@ export const exo = Exo({
 	variable: "--font-exo",
 });
 
-export const russo_one = Russo_One({
+export const russo_one = localFont({
+	src: "./Russo_One//RussoOne-Regular.ttf",
 	weight: "400",
 	display: "swap",
 	subsets: ["latin"],
 	variable: "--font-russo-one",
 });
 
-export const edu_tas_beg = Edu_TAS_Beginner({
+export const edu_tas_beg = localFont({
+	src: "./Edu_Tas_Beginner/EduTASBeginner-VariableFont_wght.ttf",
 	weight: "variable",
 	style: ["normal"],
 	display: "swap",
