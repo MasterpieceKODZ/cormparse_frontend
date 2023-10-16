@@ -1,0 +1,11 @@
+.pw-err {
+    color: #f60b0b;
+}
+
+.pw-ok {
+    color: #039d03;
+}
+
+.hide_spinner {
+    visibility: hidden;
+}

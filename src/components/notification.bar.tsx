@@ -1,0 +1,22 @@
+"use client";
+import "../styles/notification.bar.css";
+import CloseIcon from "./close.icon";
+
+const NotificationBar = () => {
+	return (
+		<div
+			id="notification_bar"
+			className="hide tw-w-[100%] tw-p-[8px] tw-flex tw-justify-start tw-items-center tw-absolute tw-left-0 tw-top-[100%]">
+			<p
+				id="notification_msg"
+				className=" tw-text-white tw-font-exo tw-basis-[100%] tw-shrink tw-grow tw-mr-[15px]">
+				This is a notification to remind you of an event you are supposed to
+				attend
+			</p>
+
+			<CloseIcon />
+		</div>
+	);
+};
+
+export default NotificationBar;

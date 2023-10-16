@@ -21,7 +21,9 @@ export default function RootLayout({
 		<html
 			lang="en"
 			className={`${londrina_outline.variable} ${exo.variable} ${russo_one.variable} ${edu_tas_beg.variable}`}>
-			<body className=" tw-flex tw-flex-col tw-min-h-[100vh]">{children}</body>
+			<body className=" tw-flex tw-flex-col tw-h-[100vh] tw-overflow-y-auto tw-relative">
+				{children}
+			</body>
 		</html>
 	);
 }
