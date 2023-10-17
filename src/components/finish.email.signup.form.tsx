@@ -1,5 +1,5 @@
 "use client";
-import "../styles/finish.emai.signup.css";
+import "../styles/finish.email.signup.css";
 import "../styles/password.css";
 import {
 	twFormTxtInput,

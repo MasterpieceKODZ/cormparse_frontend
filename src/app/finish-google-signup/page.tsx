@@ -1,7 +1,7 @@
-import FinishEmailSignUpForm from "@/components/finish.email.signup.form";
+import FinishGoogleSignUpForm from "@/components/finish.google.signup.form";
 import NotificationBar from "@/components/notification.bar";
 
-const FinishEmailSignUp = () => {
+const FinishGoogleSignUp = () => {
 	return (
 		<>
 			<header className="tw-sticky tw-bg-white tw-top-0">
@@ -25,11 +25,11 @@ const FinishEmailSignUp = () => {
 						Finish Sign Up
 					</h1>
 
-					<FinishEmailSignUpForm />
+					<FinishGoogleSignUpForm />
 				</div>
 			</main>
 		</>
 	);
 };
 
-export default FinishEmailSignUp;
+export default FinishGoogleSignUp;
