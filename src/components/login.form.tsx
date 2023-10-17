@@ -1,5 +1,5 @@
 "use client";
-import "../styles/login.css";
+import "../styles/password.css";
 import {
 	twFormTxtInput,
 	twInputLabel,
@@ -34,7 +34,7 @@ const LoginForm = () => {
 			</div>
 			<div className=" tw-mx-auto tw-w-max">
 				<label
-					htmlFor="inp_lgn_pw"
+					htmlFor="inp_pw"
 					className={twInputLabel}>
 					Password
 				</label>

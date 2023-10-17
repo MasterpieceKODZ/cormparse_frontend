@@ -1,16 +1,6 @@
 import { ChangeEvent } from "react";
 
 export function validatePasswordSyntax(e: ChangeEvent<HTMLInputElement>) {
-	// password input type changes to password when user starts typing even when show password is on, hence keep password type as text when show password is on
-	const showPW = document.getElementById("pw_tgl") as HTMLInputElement;
-
-	const pwInput = document.getElementById("inp_pw");
-	if (showPW.checked) {
-		pwInput?.setAttribute("type", "text");
-	} else {
-		pwInput?.setAttribute("type", "password");
-	}
-
 	const pw = e.currentTarget.value;
 
 	const pwReq = document.getElementById("pw_req");
@@ -31,12 +21,26 @@ export function validatePasswordSyntax(e: ChangeEvent<HTMLInputElement>) {
 
 		// check password with requirements
 		// match 8> characters, 4> letters at the beginning, numbers, and special characters
-		if (/^[a-zA-Z]{4,}\d*\W*[\w\W]{7,}/i.exec(pw)) {
+		if (/^[a-zA-Z]{4,}\d*\W*/i.exec(pw) && /[\w\W]{8,}/.exec(pw)) {
 			pwReq?.classList.remove("tw-text-mygrey-lyt", "pw-err");
 			pwReq?.classList.add("pw-ok");
 		} else {
 			pwReq?.classList.remove("tw-text-mygrey-lyt", "pw-ok");
 			pwReq?.classList.add("pw-err");
 		}
+	}
+}
+
+export function checkPwMatch(e: ChangeEvent<HTMLInputElement>) {
+	const confPwVal = e.currentTarget.value;
+
+	const pwInp = document.getElementById("inp_pw") as HTMLInputElement;
+	const pw = pwInp.value;
+
+	const chkPw = document.getElementById("pw_check");
+	if (confPwVal == pw) {
+		chkPw?.classList.add("hide");
+	} else {
+		chkPw?.classList.remove("hide");
 	}
 }
