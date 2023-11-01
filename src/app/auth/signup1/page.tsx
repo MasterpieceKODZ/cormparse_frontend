@@ -32,7 +32,7 @@ const RegisterEmail = () => {
 					</button>
 
 					<Link
-						href="/login"
+						href="/auth/login"
 						className="tw-w-[250px] sm:tw-w-[365px] tw-font-russo-one tw-text-[15px] tw-text-center tw-rounded-full tw-text-secondary tw-mt-12 tw-mx-auto tw-block tw-bg-transparent">
 						Login
 					</Link>
