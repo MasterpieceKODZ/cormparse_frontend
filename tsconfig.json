@@ -27,7 +27,7 @@
 		"**/*.ts",
 		"**/*.tsx",
 		".next/types/**/*.ts",
-		"src/app/finish-email-signup"
+		"src/app/auth/finish-email-signup"
 	],
 	"exclude": ["node_modules"]
 }

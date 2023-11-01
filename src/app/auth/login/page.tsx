@@ -1,23 +1,12 @@
 import LoginForm from "@/components/login.form";
-import NotificationBar from "@/components/notification.bar";
+import NavBar from "@/components/navbar";
 import Image from "next/image";
 import Link from "next/link";
 
 const Login = () => {
 	return (
 		<>
-			<header className="tw-sticky tw-bg-white tw-top-0">
-				{/* navbar */}
-				<div className=" tw-text-center xsm:tw-text-start ">
-					{/*eslint-disable-next-line @next/next/no-img-element*/}
-					<img
-						src="/logo.png"
-						alt="cormparse logo"
-						className=" tw-h-8 smst:tw-h-[37px] xxsm:tw-h-[45px] md:tw-h-[50px] xl:tw-h-[60px] tw-my-2 xsm:tw-ms-[45px] xsm:tw-mt-[15px] tw-w-auto tw-inline-block"></img>
-				</div>
-				{/* notification bar */}
-				<NotificationBar />
-			</header>
+			<NavBar />
 			<main className=" tw-basis-full tw-grow tw-flex tw-justify-center">
 				<div className=" tw-w-[95%] tw-min-h-[90%] tw-inline-block tw-py-3 tw-max-w-[570px]">
 					<h1
@@ -43,7 +32,7 @@ const Login = () => {
 					</button>
 
 					<Link
-						href="/signup1"
+						href="/auth/signup1"
 						className="tw-w-[250px] sm:tw-w-[365px] tw-font-russo-one tw-text-[15px] tw-text-center tw-rounded-full tw-text-secondary tw-mt-12 tw-mx-auto tw-block tw-bg-transparent">
 						Create Account
 					</Link>

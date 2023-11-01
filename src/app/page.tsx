@@ -13,7 +13,7 @@ const LandingPage = () => {
 				<h1 className={twAppName}>CORMPARSE</h1>
 				<p className={`${twIntroTest}`}>Simple And Effective Issue Tracker</p>
 				<Link
-					href="/login"
+					href="/auth/login"
 					className={`${twBtnGetStarted}`}>
 					GET STARTED
 				</Link>
