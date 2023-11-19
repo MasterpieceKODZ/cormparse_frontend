@@ -1,4 +1,4 @@
-name: Deploy Image
+name: Deploy Cormparse Frontend
 run-name: cormparse frontend service ci-cd workflow
 on:
   push:
@@ -6,7 +6,7 @@ on:
       - "master"
 jobs:
   build_publish_docker_image:
-    name: Test, Build And Publish cormparse_frontend_service docker image
+    name: Test, Build And Publish cormparse frontend service docker image
     runs-on: ubuntu-latest
     steps:
       - name: Checkout the repo
@@ -22,7 +22,9 @@ jobs:
           start: npm run start
           wait-on: "http://localhost:3000"
           command: npm run test:run
-      - run: npm run build
+      # compile next production build
+      - name: Compile next production build
+        run: npm run build
       - name: Docker meta
         id: meta
         uses: docker/metadata-action@v4
@@ -52,5 +54,6 @@ jobs:
           vuln-type: "os,library"
           severity: "CRITICAL"
           ignore-unfixed: true
+      # I am pushhing manually bcos I want to be sure there is no vulnerability before pushing image.
       - run: docker push masterpiecekodz/cormparse_frontend:1.0.0
       - run: docker push masterpiecekodz/cormparse_frontend:latest

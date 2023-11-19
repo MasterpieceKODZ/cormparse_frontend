@@ -5,7 +5,7 @@ module.exports = {
 		extend: {
 			colors: {
 				primary: {
-					DEFAULT: "#19052F",
+					DEFAULT: "#02055A",
 					"blue-lyt": "#518CFF",
 					"blue-v-lyt": "#D7ECFF",
 				},
@@ -14,7 +14,7 @@ module.exports = {
 				},
 				mygrey: {
 					default: "#403F3F",
-					lyt: "#6D6D6D",
+					lyt: "#575757",
 					"v-lyt": "#CACACA",
 				},
 			},

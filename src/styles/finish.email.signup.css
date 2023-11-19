@@ -1,0 +1,19 @@
+#username_check.hide {
+    visibility: hidden;
+}
+
+#username_check.un_error {
+    color: #f60505 !important
+}
+
+#username_check.un_ok {
+    color: #038603 !important
+}
+
+#username_check.hide {
+    visibility: hidden;
+}
+
+#pw_check.hide {
+    visibility: hidden;
+}

@@ -1,6 +1,7 @@
 # DOCKER COMMANDS
 
 IMG_NAME:=cormparse_frontend
+REPO_NAME:=masterpiecekodz/cormparse_frontend
 REPO_n_TAG:=masterpiecekodz/cormparse_frontend:1.0.0
 
 .PHONY: check_conts
@@ -24,6 +25,7 @@ build_img:
 .PHONY: tag_img
 tag_img:
 	sudo docker tag ${IMG_NAME} ${REPO_n_TAG}
+	sudo docker tag ${IMG_NAME} ${REPO_NAME}
 
 .PHONY: run_in_dev_mode
 run_in_dev_mode: 
@@ -38,6 +40,7 @@ run_in_cont:
 
 .PHONY: push_img
 push_img:
+	sudo docker push ${REPO_NAME}
 	sudo docker push ${REPO_n_TAG}
 
 .PHONY: deploy_to_cont_registry
