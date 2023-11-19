@@ -1,13 +1,22 @@
 import { MouseEvent } from "react";
 
-export function togglePasswordVisibility(
+export async function togglePasswordVisibility(
 	e: MouseEvent<HTMLInputElement>,
-	setPwType: any,
 ) {
-	//const pwInput = document.getElementById("inp_pw");
-	if (e.currentTarget.checked) {
-		setPwType("text");
-	} else {
-		setPwType("password");
+	const pwInp = document.getElementById("inp_pw") as HTMLInputElement;
+	const pwInpPrev = document.getElementById("pw_prev");
+
+	pwInpPrev!.textContent = pwInp.value;
+	pwInpPrev?.classList.toggle("hide");
+
+	const confirmPwInp = document.getElementById(
+		"inp_confirm_pw",
+	) as HTMLInputElement;
+
+	if (confirmPwInp) {
+		const confirmPwPrev = document.getElementById("confirm_pw_prev");
+
+		confirmPwPrev!.textContent = confirmPwInp.value;
+		confirmPwPrev!.classList.toggle("hide");
 	}
 }

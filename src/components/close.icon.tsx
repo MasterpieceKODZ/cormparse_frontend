@@ -1,7 +1,4 @@
-import {
-	closeNotification,
-	toggleNotificationBar,
-} from "@/ui_controllers/notification.bar";
+import { closeNotification } from "@/ui_controllers/notification.bar";
 
 const CloseIcon = () => {
 	return (

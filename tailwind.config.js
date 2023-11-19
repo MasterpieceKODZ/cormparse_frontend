@@ -14,7 +14,7 @@ module.exports = {
 				},
 				mygrey: {
 					default: "#403F3F",
-					lyt: "#6D6D6D",
+					lyt: "#575757",
 					"v-lyt": "#CACACA",
 				},
 			},

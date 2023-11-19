@@ -1,5 +1,5 @@
 import NavBar from "@/components/navbar";
-import Sign1upForm from "@/components/signup1.form";
+import EmailRegForm from "@/components/pre.reg.email.form";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -16,7 +16,7 @@ const RegisterEmail = () => {
 						Register Email
 					</h1>
 
-					<Sign1upForm />
+					<EmailRegForm />
 					<button className="tw-py-[6px] tw-w-[250px] sm:tw-w-[365px] tw-font-russo-one tw-text-[15px] tw-text-center tw-rounded-full tw-text-mygrey-default tw-border-[1px] tw-mt-5 tw-mx-auto tw-block tw-bg-transparent tw-shadow-[2px_2px_2px_0_rgba(0,0,0,0.5)]">
 						<span className="tw-px-[5px]">
 							<Image

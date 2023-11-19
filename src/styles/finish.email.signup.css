@@ -2,11 +2,11 @@
     visibility: hidden;
 }
 
-#username_check.un_closed {
+#username_check.un_error {
     color: #f60505 !important
 }
 
-#username_check.un_open {
+#username_check.un_ok {
     color: #038603 !important
 }
 

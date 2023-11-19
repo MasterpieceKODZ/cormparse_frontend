@@ -1,4 +1,4 @@
-name: Deploy Image
+name: Deploy Cormparse Frontend
 run-name: cormparse frontend service ci-cd workflow
 on:
   push:
@@ -6,7 +6,7 @@ on:
       - "master"
 jobs:
   build_publish_docker_image:
-    name: Test, Build And Publish cormparse_frontend_service docker image
+    name: Test, Build And Publish cormparse frontend service docker image
     runs-on: ubuntu-latest
     steps:
       - name: Checkout the repo

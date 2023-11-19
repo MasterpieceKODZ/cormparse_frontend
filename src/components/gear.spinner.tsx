@@ -1,4 +1,4 @@
-const BtnSpinner = ({ color1, color2, color3, size }: any) => {
+const GearSpinner = ({ color1, color2, color3, size }: any) => {
 	return (
 		// <?xml version="1.0" encoding="utf-8"?>
 		<svg
@@ -14,7 +14,7 @@ const BtnSpinner = ({ color1, color2, color3, size }: any) => {
 				top: "2px",
 			}}
 			id="loading_spinner"
-			className="hide_spinner"
+			className="show_spinner hide_spinner"
 			width="35px"
 			height="35px"
 			viewBox="0 0 100 100"
@@ -37,4 +37,4 @@ const BtnSpinner = ({ color1, color2, color3, size }: any) => {
 	);
 };
 
-export default BtnSpinner;
+export default GearSpinner;

@@ -1,6 +1,6 @@
 {
 	"compilerOptions": {
-		"target": "es5",
+		"target": "ES2017",
 		"lib": ["dom", "dom.iterable", "esnext"],
 		"allowJs": true,
 		"skipLibCheck": true,
@@ -27,7 +27,10 @@
 		"**/*.ts",
 		"**/*.tsx",
 		".next/types/**/*.ts",
-		"src/app/auth/finish-email-signup"
+		"src/app/auth/finish-email-signup",
+		"src/app/api/auth/[...nextauth]/route.ts",
+		"src/app/api/verify-email/route.ts",
+		"src/utils/redis.client.js"
 	],
 	"exclude": ["node_modules"]
 }
