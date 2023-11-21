@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import fs from "fs";
 
 export async function POST(req: Request) {
 	const body = await req.json();
@@ -6,19 +7,26 @@ export async function POST(req: Request) {
 	console.log("body @ get-email-address next api endpoint is");
 	console.log(body);
 
+	let authSupportUrl;
+
+	if (process.env.NODE_ENV == "production" && !process.env.AUTH_SUPPORT_URL) {
+		// auth support microservice url was provided as a secret not as env
+		authSupportUrl = fs.readFileSync("/config/auth_support_url");
+	} else {
+		// auth support url was provided as an env
+		authSupportUrl = process.env.AUTH_SUPPORT_URL;
+	}
+
 	try {
 		// fetch email from auth-support service
-		const emailRes = await fetch(
-			`${process.env.AUTH_SUPPORT_URL}/get-email-from-cache`,
-			{
-				method: "POST",
-				body: JSON.stringify(body),
-				headers: {
-					"Content-Type": "application/json",
-				},
-				cache: "no-store",
+		const emailRes = await fetch(`${authSupportUrl}/get-email-from-cache`, {
+			method: "POST",
+			body: JSON.stringify(body),
+			headers: {
+				"Content-Type": "application/json",
 			},
-		);
+			cache: "no-store",
+		});
 
 		const resTxt = await emailRes.text();
 		console.log(
