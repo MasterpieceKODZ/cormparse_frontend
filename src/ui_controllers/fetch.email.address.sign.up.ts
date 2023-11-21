@@ -11,6 +11,7 @@ export async function fetchEmailAddressWithKey(
 
 		// if url (key) query param was not provided, navigate back to login
 		router.push("/auth/login");
+
 	} else {
 		try {
 			// fetch email address from redis cache using the provided url key query param

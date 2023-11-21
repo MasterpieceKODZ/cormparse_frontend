@@ -1,5 +1,7 @@
 "use client";
+
 import AuthNavBar from "@/components/navbar";
+
 import SignOutBtn from "@/components/signOutBtn";
 import { useEffect, useState } from "react";
 
@@ -34,7 +36,9 @@ const Projects = () => {
 
 	return (
 		<>
+
 			<AuthNavBar />
+
 			<main>
 				<div>
 					<h1>Projects</h1>

@@ -1,4 +1,6 @@
+
 import AuthNavBar from "@/components/navbar";
+
 import EmailRegForm from "@/components/pre.reg.email.form";
 import Image from "next/image";
 import Link from "next/link";
@@ -6,7 +8,9 @@ import Link from "next/link";
 const RegisterEmail = () => {
 	return (
 		<>
+
 			<AuthNavBar />
+
 			<main className=" tw-basis-full tw-grow tw-flex tw-justify-center">
 				<div className=" tw-w-[95%] tw-min-h-[90%] tw-inline-block tw-py-3 tw-max-w-[570px]">
 					<h1

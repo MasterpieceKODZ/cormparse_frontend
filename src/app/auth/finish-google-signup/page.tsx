@@ -1,10 +1,13 @@
 import FinishGoogleSignUpForm from "@/components/finish.google.signup.form";
+
 import AuthNavBar from "@/components/navbar";
+
 
 const FinishGoogleSignUp = () => {
 	return (
 		<>
 			<AuthNavBar />
+
 			<main className=" tw-basis-full tw-grow tw-flex tw-justify-center">
 				<div className=" tw-w-[95%] tw-min-h-[90%] tw-inline-block tw-py-3 tw-max-w-[570px]">
 					<h1

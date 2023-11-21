@@ -10,7 +10,9 @@ import PasswordInpBlock from "./password.inp.block";
 import { FormEvent } from "react";
 import { submitSignInForm } from "@/ui_controllers/submit.signin.form";
 import { useRouter } from "next/navigation";
+
 import { openForgotPwdModal } from "@/ui_controllers/forgot.pw";
+
 
 const LoginForm = () => {
 	const router = useRouter();
@@ -40,6 +42,7 @@ const LoginForm = () => {
 					required
 				/>
 			</div>
+
 			<PasswordInpBlock showConfirmPassword={false} isNew={false}/>
 			<div className=" tw-max-w-[450px] tw-w-[80vw] tw-mx-auto tw-h-max tw-flex tw-justify-end tw-items-center">
 				<button
@@ -49,6 +52,7 @@ const LoginForm = () => {
 					Forgot Password
 				</button>
 			</div>
+
 
 			<button
 				className={`${btnPrimaryRounded}`}

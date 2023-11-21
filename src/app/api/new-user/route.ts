@@ -1,5 +1,7 @@
 import { NextResponse } from "next/server";
+
 import fs from "fs"
+
 
 export async function POST(req: Request) {
 	// extract provided user data
@@ -8,8 +10,6 @@ export async function POST(req: Request) {
 	console.log(formData);
 
 	try {
-
-
 
 	let authSupportUrl;
 
@@ -24,6 +24,7 @@ export async function POST(req: Request) {
 		// send user data to auth-support service to create a new user data in DB
 		const createNewUserRes = await fetch(
 			`${authSupportUrl}/create/username-n-pw/new-user`,
+
 			{
 				method: "POST",
 				headers: {

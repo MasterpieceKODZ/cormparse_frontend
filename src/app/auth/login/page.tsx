@@ -1,12 +1,15 @@
+
 import ForgotPasswordModal from "@/components/forgot.pw.modal";
 import LoginForm from "@/components/login.form";
 import AuthNavBar from "@/components/navbar";
+
 import Image from "next/image";
 import Link from "next/link";
 
 const Login = () => {
 	return (
 		<>
+
 			<AuthNavBar />
 			<main className=" tw-basis-full tw-grow tw-flex tw-justify-center">
 				<div className=" tw-w-[95%] tw-min-h-[90%] tw-inline-block tw-py-3 tw-max-w-[570px]">
@@ -19,7 +22,9 @@ const Login = () => {
 
 					<LoginForm />
 
+
 					<button className="tw-py-[6px] tw-w-[250px] sm:tw-w-[365px] tw-font-russo-one tw-text-[15px] tw-text-center tw-rounded-full tw-text-mygrey-default tw-border-[1px] tw-mt-[25px] tw-mx-auto tw-block tw-bg-transparent tw-shadow-[2px_2px_2px_0_rgba(0,0,0,0.5)]">
+
 						<span className="tw-px-[5px]">
 							<Image
 								src="/google.png"
@@ -39,7 +44,9 @@ const Login = () => {
 						Create Account
 					</Link>
 				</div>
+
 				<ForgotPasswordModal />
+
 			</main>
 		</>
 	);

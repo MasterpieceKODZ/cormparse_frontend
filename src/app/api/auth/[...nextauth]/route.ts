@@ -26,6 +26,7 @@ const handler = NextAuth({
 						const user = await userRes.json();
 
 						// hash the password provided in the sign-in form password input field, with the exact same parameters used to hash the user password during account creation
+
 						const hashPasswordFrmForm = crypto
 							.pbkdf2Sync(
 								credentials.password,

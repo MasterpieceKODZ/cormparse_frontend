@@ -1,10 +1,12 @@
 import { NextResponse } from "next/server";
 import fs from "fs";
 
+
 export async function POST(req: Request) {
 	const body = await req.json();
 
 	try {
+
 		let authSupportUrl;
 
 		if (process.env.NODE_ENV == "production" && !process.env.AUTH_SUPPORT_URL) {
