@@ -11,6 +11,7 @@ import InfinityLoadingSpinner from "@/components/page.loading.ui";
 import EmailKeyExpired from "@/components/email.key.exp";
 import { resetPassword } from "@/ui_controllers/password_input/password.reset";
 import { useRouter, useSearchParams } from "next/navigation";
+import { getSession } from "next-auth/react";
 
 const ResetPassword = () => {
 	const [email, setEmail] = useState("");
@@ -19,6 +20,12 @@ const ResetPassword = () => {
 
 	// fetch email address from redis cache
 	if (!email) fetchEmailAddressWithKey(setEmail, emailKey, router);
+
+	// if user is signed in redirect to projects
+	getSession().then((session: any) => {
+		if (session) router.replace("/projects");
+	});
+
 	return (
 		<>
 			<AuthNavBar />
