@@ -1,14 +1,22 @@
-
 import AuthNavBar from "@/components/navbar";
 
 import EmailRegForm from "@/components/pre.reg.email.form";
 import Image from "next/image";
 import Link from "next/link";
+import { NEXT_AUTH_OPTION } from "../../utils/auth.option";
+import { getServerSession } from "next-auth/next";
+import { redirect } from "next/navigation";
 
-const RegisterEmail = () => {
+const RegisterEmail = async () => {
+	// redirect to projects if user is signed in
+	const nextAuthOption = NEXT_AUTH_OPTION as any;
+	const sessionObj = await getServerSession(nextAuthOption);
+
+	if (sessionObj) {
+		redirect("/projects");
+	}
 	return (
 		<>
-
 			<AuthNavBar />
 
 			<main className=" tw-basis-full tw-grow tw-flex tw-justify-center">

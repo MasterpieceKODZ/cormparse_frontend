@@ -32,7 +32,9 @@
 
 		"src/app/api/cache-email/route.ts",
 
-		"src/utils/redis.client.js"
+		"src/utils/redis.client.js",
+		"src/utils/auth/auth.options.js",
+		"src/app/utils/auth.option.js"
 	],
 	"exclude": ["node_modules"]
 }

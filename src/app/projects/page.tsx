@@ -4,9 +4,11 @@ import AuthNavBar from "@/components/navbar";
 
 import SignOutBtn from "@/components/signOutBtn";
 import { useEffect, useState } from "react";
+import { getSession } from "next-auth/react";
 
 const Projects = () => {
 	const [user, setUser] = useState({});
+	const [sessionObj, setSessionObj] = useState({});
 
 	useEffect(() => {
 		fetch("/api/get-token", {
@@ -32,17 +34,27 @@ const Projects = () => {
 					setUser({ user: "not found" });
 				}
 			});
+
+		getSession().then((session: any) => {
+			setSessionObj(session);
+			console.log("session @ projects...");
+
+			console.log(sessionObj);
+		});
+		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, []);
 
 	return (
 		<>
-
 			<AuthNavBar />
 
 			<main>
 				<div>
 					<h1>Projects</h1>
 				</div>
+				<br />
+				<h3>Session</h3>
+				<p>{JSON.stringify(sessionObj)}</p>
 				<br />
 				<h4>User</h4>
 				<p>{`${JSON.stringify(user)}`}</p>
