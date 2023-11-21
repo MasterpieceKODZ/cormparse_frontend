@@ -18,6 +18,7 @@ jobs:
         with:
           browser: chrome
           config: pageLoadTimeout=100000,baseUrl=http://localhost:3000
+          env: NEXTAUTH_SECRET=D867H0EEnqys8KsPt/WiMxnt+JcLsadV7r5SSv4drf4yGI9LIXtxD7py1EoSJ3L90pO8o9P4vMPhMSaeR/sCdQBJ8Q5uYwnO9jU7jTU709/s27J2WrQvNFrdswJHg2gpwj+w7TaKrBaRO06v6MxTfl/y2eol+o3HQASt3WrqnGA=,NEXTAUTH_URL=http://localhost:3000,AUTH_SUPPORT_URL=http://localhost:3055
           build: npm run build
           start: npm run start
           wait-on: "http://localhost:3000"
