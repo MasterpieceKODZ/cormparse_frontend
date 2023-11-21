@@ -1,21 +1,16 @@
-import { useRouter, useSearchParams } from "next/navigation";
+import { AppRouterInstance } from "next/dist/shared/lib/app-router-context.shared-runtime";
 import { Dispatch, SetStateAction } from "react";
 
-export async function useFetchEmailAddressWithKey(
+export async function fetchEmailAddressWithKey(
 	setEmail: Dispatch<SetStateAction<string>>,
+	emailKey: string | null,
+	router: AppRouterInstance,
 ) {
-	console.log(process.env.NEXTAUTH_URL);
-
-	const emailKey = useSearchParams().get("key");
-	const router = useRouter();
-
-	console.log("email key is - ", emailKey);
-
 	if (!emailKey) {
 		console.log("key not found");
 
-		// if url (key) query param was not provided, navigate back to pre-register-email
-		router.push("/auth/pre-register-email");
+		// if url (key) query param was not provided, navigate back to login
+		router.push("/auth/login");
 	} else {
 		try {
 			// fetch email address from redis cache using the provided url key query param

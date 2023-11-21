@@ -1,8 +1,8 @@
 import NotificationBar from "./notification.bar";
 
-const NavBar = () => {
+const AuthNavBar = () => {
 	return (
-		<header className="tw-sticky tw-bg-white tw-top-0">
+		<header className="tw-sticky tw-bg-white tw-top-0 tw-z-20">
 			{/* navbar */}
 			<div className=" tw-text-center xsm:tw-text-start ">
 				{/*eslint-disable-next-line @next/next/no-img-element*/}
@@ -17,4 +17,4 @@ const NavBar = () => {
 	);
 };
 
-export default NavBar;
+export default AuthNavBar;

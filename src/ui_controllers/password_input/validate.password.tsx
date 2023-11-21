@@ -56,8 +56,7 @@ export async function isPasswordSyntaxValid(
 export function checkPwMatch(e: ChangeEvent<HTMLInputElement>) {
 	const confPwVal = e.currentTarget.value;
 
-	const pwInp = document.getElementById("inp_pw") as HTMLInputElement;
-	const pw = pwInp.value;
+	const pw = (document.getElementById("inp_pw") as HTMLInputElement).value;
 
 	const chkPw = document.getElementById("pw_check");
 	if (confPwVal == pw) {

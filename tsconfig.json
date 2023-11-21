@@ -29,7 +29,7 @@
 		".next/types/**/*.ts",
 		"src/app/auth/finish-email-signup",
 		"src/app/api/auth/[...nextauth]/route.ts",
-		"src/app/api/verify-email/route.ts",
+		"src/app/api/cache-email/route.ts",
 		"src/utils/redis.client.js"
 	],
 	"exclude": ["node_modules"]

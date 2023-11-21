@@ -10,9 +10,9 @@ const EmailKeyExpired = ({ description }: { description: string }) => {
 					{description}
 				</p>
 				<Link
-					href="/auth/pre-register-email"
+					href="/auth/login"
 					className=" tw-w-max tw-bg-secondary tw-text-white tw-font-russo-one tw-text-center tw-px-6 tw-py-2 tw-text-[15px] tw-block tw-mx-auto tw-mt-[40px] tw-rounded-lg tw-no-underline">
-					Pre-Register Email
+					Close
 				</Link>
 			</div>
 		</div>

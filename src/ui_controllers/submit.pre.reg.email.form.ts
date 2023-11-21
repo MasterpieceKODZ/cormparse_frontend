@@ -17,9 +17,10 @@ export async function preRegisterEmail(e: FormEvent<HTMLFormElement>) {
 
 	try {
 		// send verification email to the provided email address
-		sendEmailRes = await fetch("/api/verify-email", {
+		sendEmailRes = await fetch("/api/cache-email", {
 			body: JSON.stringify({
 				email,
+				type: "verification",
 			}),
 			headers: {
 				"Content-Type": "application/json",
@@ -31,17 +32,16 @@ export async function preRegisterEmail(e: FormEvent<HTMLFormElement>) {
 		if (sendEmailRes.ok) {
 			showNotificationBar(
 				`a verification email has been sent to ${email}, check your indox or spam folder for the email, the verification link will expire in 30 mins!`,
-				"info",
+				"success",
 			);
 		} else {
 			const resTxt = await sendEmailRes.text();
 
-			if (resTxt == "email used") {
+			if (resTxt == "faulty email") {
 				showNotificationBar(
 					`an account with this email already exist!`,
 					"error",
 				);
-				console.log("error while sending pre-register email to api route..");
 
 				hideRadioAnim();
 				return;
@@ -53,9 +53,6 @@ export async function preRegisterEmail(e: FormEvent<HTMLFormElement>) {
 			`error: an error occurred while sending email to pre-register API, check your network and try again!`,
 			"error",
 		);
-		console.log("error while sending pre-register email to api route..");
-
-		console.error(e);
 	}
 
 	hideRadioAnim();

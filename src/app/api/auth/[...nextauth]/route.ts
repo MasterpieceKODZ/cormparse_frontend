@@ -26,7 +26,7 @@ const handler = NextAuth({
 						const user = await userRes.json();
 
 						// hash the password provided in the sign-in form password input field, with the exact same parameters used to hash the user password during account creation
-						const passwordHashNow = crypto
+						const hashPasswordFrmForm = crypto
 							.pbkdf2Sync(
 								credentials.password,
 								user.salt,
@@ -36,8 +36,8 @@ const handler = NextAuth({
 							)
 							.toString("hex");
 
-						// compare the password hash from the sign-in password to the password hash from the users data
-						if (passwordHashNow === user.passwordHash) {
+						// compare the hash of password from the sign-in form to the password hash from the users data
+						if (hashPasswordFrmForm === user.passwordHash) {
 							return user;
 						} else {
 							// if passwords do not match return {id: "invalid"} instead of null, because if the authorize function returns null the nextauth signIn function returns an 401 response indicating an error in the authorize function and the signIn callback function is never called,

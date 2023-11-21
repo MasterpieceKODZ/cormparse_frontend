@@ -1,4 +1,5 @@
 import "./globals.css";
+import "../styles/general.css";
 import type { Metadata } from "next";
 import {
 	londrina_outline,

@@ -21,6 +21,7 @@ export async function POST(req: Request) {
 		method: "POST",
 		body: JSON.stringify({
 			email,
+			type: body.type,
 		}),
 		headers: {
 			"Content-Type": "application/json",
@@ -50,9 +51,9 @@ export async function POST(req: Request) {
 			},
 		});
 	} else {
-		// sending verification email failed with a 400 response code, mostly because an account with that email address already exists
+		// sending email failed with a 400 response code, mostly because an account with that email address already exists during email verification or there is no user with this email address during password reset
 		if (sendEmailRes.status == 400) {
-			return new NextResponse("email used", {
+			return new NextResponse("faulty email", {
 				status: 400,
 				headers: {
 					"Content-Type": "text/plain",
@@ -60,7 +61,7 @@ export async function POST(req: Request) {
 			});
 		}
 
-		// there was an error in the auth-support service while it was trying to send verification email
+		// there was an error in the auth-support service while it was trying to send email
 		console.log(
 			"email not sent, received a 5** response from auth support service",
 		);

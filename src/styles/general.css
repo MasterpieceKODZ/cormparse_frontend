@@ -1,0 +1,11 @@
+.show_spinner {
+    visibility: visible;
+}
+
+.hide_spinner {
+    visibility: hidden;
+}
+
+#fgt_pw_mdl.hide {
+    display: none;
+}

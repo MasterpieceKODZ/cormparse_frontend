@@ -85,7 +85,7 @@ const FinishEmailSignUpForm = ({ email }: { email: string }) => {
 				readOnly
 			/>
 
-			<PasswordInpBlock showConfirmPassword={true} />
+			<PasswordInpBlock showConfirmPassword={true} isNew={false}/>
 
 			<button
 				className={`${btnPrimaryRounded}`}
