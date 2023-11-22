@@ -10,7 +10,6 @@ import {
 	isPasswordSyntaxValid,
 } from "@/ui_controllers/password_input/validate.password";
 
-
 // isNew prop indicates that the password input block is being used to set a new password
 const PasswordInpBlock = ({
 	showConfirmPassword,
@@ -18,7 +17,6 @@ const PasswordInpBlock = ({
 }: {
 	showConfirmPassword: boolean;
 	isNew: boolean;
-
 }) => {
 	return (
 		<div className=" tw-mx-auto tw-w-max">
@@ -51,9 +49,7 @@ const PasswordInpBlock = ({
 					<label
 						htmlFor="inp_pw"
 						className={twInputLabel}>
-
 						Confirm {isNew ? "New" : ""} Password
-
 					</label>
 					<input
 						type="password"
@@ -72,7 +68,7 @@ const PasswordInpBlock = ({
 						aria-relevant="all"
 						aria-live="polite"
 						className="tw-ps-2 tw-font-exo tw-text-[10px] md:tw-text-[13px] tw-text-secondary hide">
-						{"passwords do not match."}
+						passwords do not match.
 					</p>
 				</>
 			) : (

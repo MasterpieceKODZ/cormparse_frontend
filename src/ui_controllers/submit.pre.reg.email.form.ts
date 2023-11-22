@@ -14,6 +14,7 @@ export async function preRegisterEmail(e: FormEvent<HTMLFormElement>) {
 	// limit email input length to 50 chars
 	if (email.length > 50) {
 		showNotificationBar("Your email address is too long.", "error");
+		hideRadioAnim();
 		return;
 	}
 
