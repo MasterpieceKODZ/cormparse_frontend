@@ -7,11 +7,15 @@ export async function preRegisterEmail(e: FormEvent<HTMLFormElement>) {
 
 	showRadioAnim();
 
-	const emailInputEl: HTMLInputElement = document.getElementById(
-		"inp_reg_email",
-	) as HTMLInputElement;
+	const email = (
+		document.getElementById("inp_reg_email") as HTMLInputElement
+	).value.trim();
 
-	const email = emailInputEl.value.trim();
+	// limit email input length to 50 chars
+	if (email.length > 50) {
+		showNotificationBar("Your email address is too long.", "error");
+		return;
+	}
 
 	let sendEmailRes;
 
@@ -21,10 +25,10 @@ export async function preRegisterEmail(e: FormEvent<HTMLFormElement>) {
 			body: JSON.stringify({
 				email,
 				type: "verification",
-
 			}),
 			headers: {
 				"Content-Type": "application/json",
+				"X-Api-Key": "kjsopdshfk46873ndsjk0388kdmdsn8y32y85xnjsd873jd7yt4f",
 			},
 			method: "POST",
 			cache: "no-store",
@@ -35,18 +39,15 @@ export async function preRegisterEmail(e: FormEvent<HTMLFormElement>) {
 				`a verification email has been sent to ${email}, check your indox or spam folder for the email, the verification link will expire in 30 mins!`,
 
 				"success",
-
 			);
 		} else {
 			const resTxt = await sendEmailRes.text();
 
 			if (resTxt == "faulty email") {
-
 				showNotificationBar(
 					`an account with this email already exist!`,
 					"error",
 				);
-
 
 				hideRadioAnim();
 				return;
@@ -58,7 +59,6 @@ export async function preRegisterEmail(e: FormEvent<HTMLFormElement>) {
 			`error: an error occurred while sending email to pre-register API, check your network and try again!`,
 			"error",
 		);
-
 	}
 
 	hideRadioAnim();

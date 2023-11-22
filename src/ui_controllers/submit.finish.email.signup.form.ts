@@ -54,6 +54,7 @@ export async function submitEmailSignupForm(
 			method: "POST",
 			headers: {
 				"Content-Type": "application/json",
+				"X-Api-Key": "kjsopdshfk46873ndsjk0388kdmdsn8y32y85xnjsd873jd7yt4f",
 			},
 			body: JSON.stringify({
 				email: emailInp.value,

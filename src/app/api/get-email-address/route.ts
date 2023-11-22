@@ -2,6 +2,22 @@ import { NextResponse } from "next/server";
 import fs from "fs";
 
 export async function POST(req: Request) {
+	// reject request if "x-api-key" header is not valid
+
+	const origin =
+		process.env.NODE_ENV != "production"
+			? "localhost:3000"
+			: "cormparse.ddns.net";
+	const appSecret = req.headers.get("x-api-key");
+
+	if (appSecret !== process.env.NEXT_API_KEY) {
+		return new NextResponse("Unauthorized", {
+			status: 401,
+			headers: {
+				"Access-Control-Allow-Origin": origin,
+			},
+		});
+	}
 	const body = await req.json();
 
 	console.log("body @ get-email-address next api endpoint is");
@@ -38,6 +54,7 @@ export async function POST(req: Request) {
 			return new NextResponse(resTxt, {
 				status: 200,
 				headers: {
+					"Access-Control-Allow-Origin": origin,
 					"Content-Type": "text/plain",
 				},
 			});
@@ -46,6 +63,7 @@ export async function POST(req: Request) {
 				return new NextResponse("not found", {
 					status: 400,
 					headers: {
+						"Access-Control-Allow-Origin": origin,
 						"Content-Type": "text/plain",
 					},
 				});
@@ -54,6 +72,7 @@ export async function POST(req: Request) {
 				return new NextResponse("failed", {
 					status: 502,
 					headers: {
+						"Access-Control-Allow-Origin": origin,
 						"Content-Type": "text/plain",
 					},
 				});
@@ -65,6 +84,7 @@ export async function POST(req: Request) {
 		return new NextResponse("failed", {
 			status: 500,
 			headers: {
+				"Access-Control-Allow-Origin": origin,
 				"Content-Type": "text/plain",
 			},
 		});

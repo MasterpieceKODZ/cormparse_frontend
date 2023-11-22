@@ -38,6 +38,7 @@ export async function resetPassword(email: string, router: AppRouterInstance) {
 			}),
 			headers: {
 				"Content-Type": "application/json",
+				"X-Api-Key": "kjsopdshfk46873ndsjk0388kdmdsn8y32y85xnjsd873jd7yt4f",
 			},
 			cache: "no-store",
 		});
