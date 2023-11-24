@@ -29,6 +29,7 @@ const FinishEmailSignUpForm = ({ email }: { email: string }) => {
 					id="inp_firstname"
 					autoComplete="given-name"
 					name="firstname"
+					maxLength={50}
 					className={twFormTxtInput}
 					required
 				/>
@@ -44,6 +45,7 @@ const FinishEmailSignUpForm = ({ email }: { email: string }) => {
 					id="inp_lastname"
 					autoComplete="family-name"
 					name="lastname"
+					maxLength={50}
 					className={twFormTxtInput}
 					required
 				/>
@@ -57,6 +59,7 @@ const FinishEmailSignUpForm = ({ email }: { email: string }) => {
 				<input
 					type="text"
 					id="inp_username"
+					maxLength={100}
 					name="username"
 					className={twFormTxtInput}
 					required
@@ -72,6 +75,7 @@ const FinishEmailSignUpForm = ({ email }: { email: string }) => {
 					type="text"
 					id="inp_role"
 					name="role"
+					maxLength={50}
 					className={twFormTxtInput}
 					required
 				/>
@@ -85,7 +89,10 @@ const FinishEmailSignUpForm = ({ email }: { email: string }) => {
 				readOnly
 			/>
 
-			<PasswordInpBlock showConfirmPassword={true} isNew={false}/>
+			<PasswordInpBlock
+				showConfirmPassword={true}
+				isNew={false}
+			/>
 
 			<button
 				className={`${btnPrimaryRounded}`}

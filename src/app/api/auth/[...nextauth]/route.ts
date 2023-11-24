@@ -10,7 +10,7 @@ const handler = NextAuth({
 				try {
 					// fetch the user with the provided email address
 					const userRes = await fetch(
-						`${process.env.AUTH_SUPPORT_URL}/get-user-by-email`,
+						`${process.env.AUTH_SUPPORT_URI}/get-user-by-email`,
 						{
 							method: "POST",
 							headers: {
@@ -39,7 +39,12 @@ const handler = NextAuth({
 
 						// compare the hash of password from the sign-in form to the password hash from the users data
 						if (hashPasswordFrmForm === user.passwordHash) {
-							return user;
+							return {
+								id: `${user.id}`,
+								email: `${user.email}`,
+								name: `${user.username}`,
+								image: user.photoUrl,
+							};
 						} else {
 							// if passwords do not match return {id: "invalid"} instead of null, because if the authorize function returns null the nextauth signIn function returns an 401 response indicating an error in the authorize function and the signIn callback function is never called,
 							console.log("wrong password...");

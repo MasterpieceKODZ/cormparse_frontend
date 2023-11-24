@@ -24,12 +24,6 @@ export async function isPasswordSyntaxValid(
 		pwReq?.classList.add("pw-err");
 
 		return false;
-	} else if (/[\w\W]{33,}/.exec(pw)) {
-		// limit password to 32 characters
-		pwReq!.textContent = "password may not be longer than 32 characters";
-		pwReq?.classList.remove("tw-text-mygrey-lyt", "pw-ok");
-		pwReq?.classList.add("pw-err");
-		return false;
 	} else {
 		// reset the password requirements preview to neutral
 

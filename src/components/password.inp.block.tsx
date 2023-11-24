@@ -28,6 +28,7 @@ const PasswordInpBlock = ({
 			<input
 				type="password"
 				name="password"
+				maxLength={32}
 				id="inp_pw"
 				onChange={isPasswordSyntaxValid}
 				className={`${twFormTxtInput}`}
@@ -54,6 +55,7 @@ const PasswordInpBlock = ({
 					<input
 						type="password"
 						name="password"
+						maxLength={32}
 						id="inp_confirm_pw"
 						onChange={checkPwMatch}
 						className={`${twFormTxtInput}`}

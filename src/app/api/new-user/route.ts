@@ -29,12 +29,12 @@ export async function POST(req: Request) {
 	try {
 		let authSupportUrl;
 
-		if (process.env.NODE_ENV == "production" && !process.env.AUTH_SUPPORT_URL) {
+		if (process.env.NODE_ENV == "production" && !process.env.AUTH_SUPPORT_URI) {
 			// auth support microservice url was provided as a secret not as env
-			authSupportUrl = fs.readFileSync("/config/auth_support_url");
+			authSupportUrl = fs.readFileSync("/config/auth_support_uri");
 		} else {
 			// auth support url was provided as an env
-			authSupportUrl = process.env.AUTH_SUPPORT_URL;
+			authSupportUrl = process.env.AUTH_SUPPORT_URI;
 		}
 
 		// send user data to auth-support service to create a new user data in DB

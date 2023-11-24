@@ -52,7 +52,10 @@ export async function submitSignInForm(): Promise<boolean> {
 	// sign in authorize callback function threw an error
 
 	toggleSpinner();
-	showNotificationBar("Authentication failed. check your network.", "error");
+	showNotificationBar(
+		"Authentication failed. check your network or try again later.",
+		"error",
+	);
 
 	return false;
 }

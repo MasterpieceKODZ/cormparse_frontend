@@ -13,6 +13,9 @@ const Login = async () => {
 	const nextAuthOption = NEXT_AUTH_OPTION as any;
 	const sessionObj = await getServerSession(nextAuthOption);
 
+	console.log(sessionObj);
+	
+
 	if (sessionObj) {
 		redirect("/projects");
 	}

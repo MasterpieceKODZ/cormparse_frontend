@@ -11,13 +11,6 @@ export async function preRegisterEmail(e: FormEvent<HTMLFormElement>) {
 		document.getElementById("inp_reg_email") as HTMLInputElement
 	).value.trim();
 
-	// limit email input length to 50 chars
-	if (email.length > 50) {
-		showNotificationBar("Your email address is too long.", "error");
-		hideRadioAnim();
-		return;
-	}
-
 	let sendEmailRes;
 
 	try {
@@ -53,7 +46,10 @@ export async function preRegisterEmail(e: FormEvent<HTMLFormElement>) {
 				hideRadioAnim();
 				return;
 			}
-			showNotificationBar(`error: email verification failed!`, "error");
+			showNotificationBar(
+				`error: email verification failed! Try again later.`,
+				"error",
+			);
 		}
 	} catch (e) {
 		showNotificationBar(
