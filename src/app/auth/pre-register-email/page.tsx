@@ -1,16 +1,15 @@
 import AuthNavBar from "@/components/navbar";
 
 import EmailRegForm from "@/components/pre.reg.email.form";
-import Image from "next/image";
 import Link from "next/link";
-import { NEXT_AUTH_OPTION } from "../../utils/auth.option";
+import { NEXT_AUTH_OPTION } from "../../../utils/auth.option.js";
 import { getServerSession } from "next-auth/next";
 import { redirect } from "next/navigation";
+import BtnSignInWithGoogle from "@/components/btn.signin.with.google";
 
 const RegisterEmail = async () => {
 	// redirect to projects if user is signed in
-	const nextAuthOption = NEXT_AUTH_OPTION as any;
-	const sessionObj = await getServerSession(nextAuthOption);
+	const sessionObj = await getServerSession(NEXT_AUTH_OPTION as any);
 
 	if (sessionObj) {
 		redirect("/projects");
@@ -29,19 +28,8 @@ const RegisterEmail = async () => {
 					</h1>
 
 					<EmailRegForm />
-					<button className="tw-py-[6px] tw-w-[250px] sm:tw-w-[365px] tw-font-russo-one tw-text-[15px] tw-text-center tw-rounded-full tw-text-mygrey-default tw-border-[1px] tw-mt-5 tw-mx-auto tw-block tw-bg-transparent tw-shadow-[2px_2px_2px_0_rgba(0,0,0,0.5)]">
-						<span className="tw-px-[5px]">
-							<Image
-								src="/google.png"
-								alt="google"
-								quality={50}
-								width={40}
-								height={40}
-								className=" tw-w-[25px] tw-h-[25px] tw-mr-[10px] tw-inline"
-							/>
-						</span>
-						Sign Up with Google
-					</button>
+
+					<BtnSignInWithGoogle type="Sign Up" />
 
 					<Link
 						href="/auth/login"

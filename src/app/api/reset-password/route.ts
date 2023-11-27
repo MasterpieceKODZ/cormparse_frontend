@@ -49,6 +49,14 @@ export async function POST(req: Request) {
 					"Content-Type": "text/plain",
 				},
 			});
+		} else if (pwResetRes.status == 400) {
+			return new NextResponse("failed", {
+				status: 400,
+				headers: {
+					"Access-Control-Allow-Origin": origin,
+					"Content-Type": "text/plain",
+				},
+			});
 		} else {
 			return new NextResponse("failed", {
 				status: 500,

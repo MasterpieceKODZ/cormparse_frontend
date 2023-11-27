@@ -69,7 +69,7 @@ const FinishEmailSignUpForm = ({ email }: { email: string }) => {
 				<label
 					htmlFor="inp_username"
 					className={twInputLabel}>
-					Role
+					Role (Optional)
 				</label>
 				<input
 					type="text"
@@ -77,7 +77,6 @@ const FinishEmailSignUpForm = ({ email }: { email: string }) => {
 					name="role"
 					maxLength={50}
 					className={twFormTxtInput}
-					required
 				/>
 			</div>
 			<input

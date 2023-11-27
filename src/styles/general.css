@@ -9,3 +9,7 @@
 #fgt_pw_mdl.hide {
     display: none;
 }
+
+#pulse_anim.hide_pulse_anim {
+    visibility: hidden;
+}

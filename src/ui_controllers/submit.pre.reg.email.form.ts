@@ -1,10 +1,11 @@
 import { FormEvent } from "react";
-import { showNotificationBar } from "./notification.bar";
+import { closeNotification, showNotificationBar } from "./notification.bar";
 import { hideRadioAnim, showRadioAnim } from "./toggle.radio.anim";
 
 export async function preRegisterEmail(e: FormEvent<HTMLFormElement>) {
 	e.preventDefault();
 
+	closeNotification()
 	showRadioAnim();
 
 	const email = (

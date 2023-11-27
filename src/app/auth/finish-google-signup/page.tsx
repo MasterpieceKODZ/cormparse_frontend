@@ -1,9 +1,24 @@
 import FinishGoogleSignUpForm from "@/components/finish.google.signup.form";
 
 import AuthNavBar from "@/components/navbar";
+import { NEXT_AUTH_OPTION } from "@/utils/auth.option";
+import { getUserBySession } from "@/utils/get.user.by.session";
+import { getServerSession } from "next-auth/next";
+import { redirect } from "next/navigation";
 
+const FinishGoogleSignUp = async () => {
+	// check if user already has an account
+	const session = await getServerSession(NEXT_AUTH_OPTION as any);
 
-const FinishGoogleSignUp = () => {
+	if (session) {
+		const isUser = await getUserBySession({ ...session, expires: "" });
+
+		// user exists in DB
+		if (isUser) redirect(`${process.env.NEXTAUTH_URL ?? ""}/projects`);
+	} else {
+		redirect(`${process.env.NEXTAUTH_URL ?? ""}/auth/login`);
+	}
+
 	return (
 		<>
 			<AuthNavBar />
@@ -17,7 +32,7 @@ const FinishGoogleSignUp = () => {
 						Finish Sign Up
 					</h1>
 
-					<FinishGoogleSignUpForm />
+					<FinishGoogleSignUpForm user={(session as any)?.user} />
 				</div>
 			</main>
 		</>

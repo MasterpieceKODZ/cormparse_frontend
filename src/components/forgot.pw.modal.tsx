@@ -1,6 +1,7 @@
 "use client";
 import { sendForgotPwdLink } from "@/ui_controllers/forgot.pw";
 import { toggleForgotPWmodal } from "@/ui_controllers/forgot.pw.modal";
+import PulseAnim from "./pulse.animation";
 
 const ForgotPasswordModal = () => {
 	return (
@@ -24,6 +25,7 @@ const ForgotPasswordModal = () => {
 						SEND EMAIL
 					</button>
 				</div>
+				<PulseAnim/>
 			</div>
 		</div>
 	);

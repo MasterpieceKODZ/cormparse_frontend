@@ -2,13 +2,12 @@ import { NextResponse } from "next/server";
 import fs from "fs";
 
 export async function POST(req: Request) {
-	// reject request if "x-api-key" header is not valid
-
 	const origin =
 		process.env.NODE_ENV != "production"
 			? "localhost:3000"
 			: "cormparse.ddns.net";
 
+	// reject request if "x-api-key" header is not valid
 	const appSecret = req.headers.get("x-api-key");
 
 	if (appSecret !== process.env.NEXT_API_KEY) {

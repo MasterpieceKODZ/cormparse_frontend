@@ -1,16 +1,18 @@
 import { AppRouterInstance } from "next/dist/shared/lib/app-router-context.shared-runtime";
-import { showNotificationBar } from "../notification.bar";
+import { closeNotification, showNotificationBar } from "../notification.bar";
 import { isPasswordSyntaxValid } from "./validate.password";
 import { toggleSpinner } from "../toggle.gear.spinner";
 
 export async function resetPassword(email: string, router: AppRouterInstance) {
 	toggleSpinner();
+	closeNotification();
 	const password = (document.getElementById("inp_pw") as HTMLInputElement)
 		.value;
 	const confirmPassword = (
 		document.getElementById("inp_confirm_pw") as HTMLInputElement
 	).value;
 
+	// check password syntax
 	const checkPw = await isPasswordSyntaxValid();
 
 	if (!checkPw) {
@@ -46,6 +48,12 @@ export async function resetPassword(email: string, router: AppRouterInstance) {
 		if (pwResetRes.ok) {
 			toggleSpinner();
 			router.push("/auth/login");
+		} else if (pwResetRes.status == 400) {
+			toggleSpinner();
+			showNotificationBar(
+				"cannot reset google account password, try sign in with google.",
+				"error",
+			);
 		} else {
 			toggleSpinner();
 			showNotificationBar("password reset failed, try again later", "error");

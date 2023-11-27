@@ -34,7 +34,7 @@
 
 		"src/utils/redis.client.js",
 		"src/utils/auth/auth.options.js",
-		"src/app/utils/auth.option.js"
+		"src/utils/auth.option.js"
 	],
 	"exclude": ["node_modules"]
 }

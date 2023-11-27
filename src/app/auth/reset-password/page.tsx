@@ -1,5 +1,6 @@
 "use client";
 import "../../../styles/password.css";
+import "../../../styles/general.css";
 import GearSpinner from "@/components/gear.spinner";
 import AuthNavBar from "@/components/navbar";
 import PasswordInpBlock from "@/components/password.inp.block";
@@ -18,13 +19,17 @@ const ResetPassword = () => {
 	const router = useRouter();
 	const emailKey = useSearchParams().get("key");
 
-	// fetch email address from redis cache
-	if (!email) fetchEmailAddressWithKey(setEmail, emailKey, router);
-
 	// if user is signed in redirect to projects
 	getSession().then((session: any) => {
 		if (session) router.replace("/projects");
 	});
+
+	if (!emailKey) {
+		router.push("/auth/login");
+	}
+
+	// fetch email address from redis cache
+	if (!email) fetchEmailAddressWithKey(setEmail, emailKey, router);
 
 	return (
 		<>
@@ -71,22 +76,6 @@ const ResetPassword = () => {
 					// fetch email still running
 					<InfinityLoadingSpinner />
 				)}
-				{/* <h1
-					tabIndex={1}
-					className=" tw-text-center tw-text-[20px] sm:tw-text-[25px] tw-mt-3 tw-font-exo tw-text-mygrey-default"
-					aria-label="cormparse login page">
-					Reset Password
-				</h1>
-				<div className=" tw-w-[95%] tw-max-w-[570px] tw-h-[95%] xsm:tw-h-[70%] tw-py-[20px] tw-px-[10px]  tw-shadow-sm tw-flex tw-flex-col tw-justify-center tw-items-center">
-					<PasswordInpBlock showConfirmPassword={true} />
-
-					<button
-						className={`${btnPrimaryRounded}`}
-						type="button">
-						Proceed
-						<GearSpinner />
-					</button>
-				</div> */}
 			</main>
 		</>
 	);

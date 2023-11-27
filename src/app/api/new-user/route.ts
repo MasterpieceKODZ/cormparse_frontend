@@ -74,15 +74,6 @@ export async function POST(req: Request) {
 						"Content-Type": "text/plain",
 					},
 				});
-			} else if (resText == "email not found in cache") {
-				// verification email link has expired or email address was never pre-registerd
-				return new NextResponse("email not found", {
-					status: 400,
-					headers: {
-						"Access-Control-Allow-Origin": origin,
-						"Content-Type": "text/plain",
-					},
-				});
 			}
 
 			// an error occurred while creating auth-support service while creating new user

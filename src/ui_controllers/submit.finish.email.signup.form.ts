@@ -1,5 +1,5 @@
 import { FormEvent } from "react";
-import { showNotificationBar } from "./notification.bar";
+import { closeNotification, showNotificationBar } from "./notification.bar";
 import { AppRouterInstance } from "next/dist/shared/lib/app-router-context.shared-runtime";
 import { toggleSpinner } from "./toggle.gear.spinner";
 import { isPasswordSyntaxValid } from "./password_input/validate.password";
@@ -9,6 +9,7 @@ export async function submitEmailSignupForm(
 	router: AppRouterInstance,
 ) {
 	e.preventDefault();
+	closeNotification()
 	toggleSpinner();
 
 	// fetch user data from UI
@@ -57,12 +58,12 @@ export async function submitEmailSignupForm(
 				"X-Api-Key": "kjsopdshfk46873ndsjk0388kdmdsn8y32y85xnjsd873jd7yt4f",
 			},
 			body: JSON.stringify({
-				email: emailInp.value,
-				firstname: firstnameInp.value,
-				lastname: lastnameInp.value,
-				username: usernameInp.value,
-				role: roleInp.value,
-				password: passwordInp.value,
+				email: emailInp.value.trim(),
+				firstname: firstnameInp.value.trim(),
+				lastname: lastnameInp.value.trim(),
+				username: usernameInp.value.trim(),
+				role: roleInp.value.trim(),
+				password: passwordInp.value.trim(),
 			}),
 			cache: "no-store",
 		});
@@ -76,10 +77,6 @@ export async function submitEmailSignupForm(
 
 			if (resTxt == "username taken") {
 				showNotificationBar("username has been taken!", "error");
-				toggleSpinner();
-				return;
-			} else if (resTxt == "email not found") {
-				showNotificationBar("This verification link has expired!", "error");
 				toggleSpinner();
 				return;
 			}
