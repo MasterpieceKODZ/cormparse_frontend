@@ -1,0 +1,41 @@
+.nav_drp_dwn_btn_my_work {
+    max-height: 0px;
+    transition-property: all;
+    transition-timing-function: ease-out;
+    transition-duration: 500ms;
+}
+
+.nav_drp_dwn_btn_my_work.show {
+    max-height: 1000px;
+
+}
+
+.nav_drp_dwn_btn_projects {
+    max-height: 0px;
+    transition-property: all;
+    transition-timing-function: ease-out;
+    transition-duration: 500ms;
+}
+
+.nav_drp_dwn_btn_projects.show {
+    max-height: 600px;
+}
+
+.nav_drp_dwn_btn_theme {
+    max-height: 0px;
+    transition-property: all;
+    transition-timing-function: ease-out;
+    transition-duration: 500ms;
+}
+
+.nav_drp_dwn_btn_theme.show {
+    max-height: 600px;
+}
+
+.sidenav_theme_select.active {
+    color: rgb(57, 57, 247);
+}
+
+.sidenav_theme_select.active path {
+    stroke: rgb(57, 57, 247);
+}

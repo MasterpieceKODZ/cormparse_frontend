@@ -1,7 +1,9 @@
 import { toggleForgotPWmodal } from "./forgot.pw.modal";
-import { showNotificationBar } from "./notification.bar";
+import { closeNotification, showNotificationBar } from "./notification.bar";
+import { togglePulseSpinner } from "./toggle.pulse.spinner";
 
 export async function openForgotPwdModal() {
+	
 	const emailInp = document.getElementById("inp_lgn_email") as HTMLInputElement;
 
 	if (emailInp.value) {
@@ -12,7 +14,9 @@ export async function openForgotPwdModal() {
 }
 
 export async function sendForgotPwdLink() {
-	// when the modal is open the email input is not removed from the DOM therefore it can still be obtained from the document object
+	closeNotification();
+	togglePulseSpinner();
+	// when the modal is open the email input is not removed from the DOM therefore the email address can still be obtained from the UI input field
 	const email = (document.getElementById("inp_lgn_email") as HTMLInputElement)
 		.value;
 
@@ -26,6 +30,7 @@ export async function sendForgotPwdLink() {
 			}),
 			headers: {
 				"Content-Type": "application/json",
+				"X-Api-Key": "kjsopdshfk46873ndsjk0388kdmdsn8y32y85xnjsd873jd7yt4f",
 			},
 			cache: "no-store",
 		});
@@ -57,4 +62,6 @@ export async function sendForgotPwdLink() {
 			"error",
 		);
 	}
+
+	togglePulseSpinner();
 }

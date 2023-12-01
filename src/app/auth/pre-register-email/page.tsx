@@ -1,47 +1,35 @@
 import AuthNavBar from "@/components/navbar";
 
 import EmailRegForm from "@/components/pre.reg.email.form";
-import Image from "next/image";
 import Link from "next/link";
-import { NEXT_AUTH_OPTION } from "../../utils/auth.option";
+import { NEXT_AUTH_OPTION } from "../../../utils/auth.option.js";
 import { getServerSession } from "next-auth/next";
 import { redirect } from "next/navigation";
+import BtnSignInWithGoogle from "@/components/btn.signin.with.google";
 
 const RegisterEmail = async () => {
 	// redirect to projects if user is signed in
-	const nextAuthOption = NEXT_AUTH_OPTION as any;
-	const sessionObj = await getServerSession(nextAuthOption);
+	const sessionObj = await getServerSession(NEXT_AUTH_OPTION as any);
 
 	if (sessionObj) {
-		redirect("/projects");
+		redirect("/workspace/projects");
 	}
 	return (
 		<>
-			<AuthNavBar />
+			{/* <AuthNavBar /> */}
 
-			<main className=" tw-basis-full tw-grow tw-flex tw-justify-center">
+			<main className=" tw-basis-full tw-grow tw-flex tw-justify-center tw-bg-white dark:tw-bg-gray-900">
 				<div className=" tw-w-[95%] tw-min-h-[90%] tw-inline-block tw-py-3 tw-max-w-[570px]">
 					<h1
 						tabIndex={1}
-						className=" tw-text-center tw-text-[20px] sm:tw-text-[25px] tw-mt-3 tw-font-exo tw-text-mygrey-default"
-						aria-label="cormparse login page">
+						className=" tw-text-center tw-text-[20px] sm:tw-text-[25px] tw-mt-3 tw-font-exo tw-text-mygrey-default dark:tw-text-gray-400"
+						aria-label="register email">
 						Register Email
 					</h1>
 
 					<EmailRegForm />
-					<button className="tw-py-[6px] tw-w-[250px] sm:tw-w-[365px] tw-font-russo-one tw-text-[15px] tw-text-center tw-rounded-full tw-text-mygrey-default tw-border-[1px] tw-mt-5 tw-mx-auto tw-block tw-bg-transparent tw-shadow-[2px_2px_2px_0_rgba(0,0,0,0.5)]">
-						<span className="tw-px-[5px]">
-							<Image
-								src="/google.png"
-								alt="google"
-								quality={50}
-								width={40}
-								height={40}
-								className=" tw-w-[25px] tw-h-[25px] tw-mr-[10px] tw-inline"
-							/>
-						</span>
-						Sign Up with Google
-					</button>
+
+					<BtnSignInWithGoogle type="Sign Up" />
 
 					<Link
 						href="/auth/login"

@@ -20,32 +20,38 @@ export async function isPasswordSyntaxValid(
 	// warn user of space in password
 	if (/\s/.exec(pw)) {
 		pwReq!.textContent = "password may not contain spaces!";
-		pwReq?.classList.remove("tw-text-mygrey-lyt", "pw-ok");
+		pwReq?.classList.remove(
+			"tw-text-mygrey-lyt",
+			"pw-ok",
+			"dark:tw-text-gray-400",
+		);
 		pwReq?.classList.add("pw-err");
 
-		return false;
-	} else if (/[\w\W]{33,}/.exec(pw)) {
-		// limit password to 32 characters
-		pwReq!.textContent = "password may not be longer than 32 characters";
-		pwReq?.classList.remove("tw-text-mygrey-lyt", "pw-ok");
-		pwReq?.classList.add("pw-err");
 		return false;
 	} else {
 		// reset the password requirements preview to neutral
 
 		pwReq!.textContent = "min 8|max 32|a-z|A-Z|0-9|[!@$%&*+-.<>]";
 		pwReq?.classList.remove("pw-err", "pw-ok");
-		pwReq?.classList.add("tw-text-mygrey-lyt");
+		pwReq?.classList.add("tw-text-mygrey-lyt", "dark:tw-text-gray-400");
 
 		// check password requirements
 		// match 8+ characters, 4+ letters at the beginning, 1+ numbers, and 1+ special characters
 		if (/^[a-zA-Z]{4,}\d*\W*/i.exec(pw) && /[\w\W]{8,}/.exec(pw)) {
-			pwReq?.classList.remove("tw-text-mygrey-lyt", "pw-err");
+			pwReq?.classList.remove(
+				"tw-text-mygrey-lyt",
+				"pw-err",
+				"dark:tw-text-gray-400",
+			);
 			pwReq?.classList.add("pw-ok");
 			return true;
 		} else {
 			// set the password requirements preview to error
-			pwReq?.classList.remove("tw-text-mygrey-lyt", "pw-ok");
+			pwReq?.classList.remove(
+				"tw-text-mygrey-lyt",
+				"pw-ok",
+				"dark:tw-text-gray-400",
+			);
 			pwReq?.classList.add("pw-err");
 			return false;
 		}
@@ -56,9 +62,7 @@ export async function isPasswordSyntaxValid(
 export function checkPwMatch(e: ChangeEvent<HTMLInputElement>) {
 	const confPwVal = e.currentTarget.value;
 
-
 	const pw = (document.getElementById("inp_pw") as HTMLInputElement).value;
-
 
 	const chkPw = document.getElementById("pw_check");
 	if (confPwVal == pw) {

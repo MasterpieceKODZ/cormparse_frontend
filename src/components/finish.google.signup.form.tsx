@@ -8,11 +8,19 @@ import {
 
 import GearSpinner from "./gear.spinner";
 import { btnPrimaryRounded } from "@/tailwind_classname_utils/buttons";
-import { toggleSpinner } from "@/ui_controllers/toggle.gear.spinner";
+import { submitGoogleSignUpForm } from "@/ui_controllers/submit.finish.google.siginup.form";
+import { useRouter } from "next/navigation";
 
-const FinishGoogleSignUpForm = () => {
+const FinishGoogleSignUpForm = ({ user }: any) => {
+	const router = useRouter();
+
 	return (
-		<form className=" tw-block tw-mx-auto tw-w-[95%] tw-py-[30px] tw-px-[auto]">
+		<form
+			className=" tw-block tw-mx-auto tw-w-[95%] tw-py-[30px] tw-px-[auto]"
+			onSubmit={(e) => {
+				e.preventDefault();
+				submitGoogleSignUpForm(user, router);
+			}}>
 			<div className=" tw-mx-auto tw-w-max">
 				<label
 					htmlFor="inp_username"
@@ -22,37 +30,29 @@ const FinishGoogleSignUpForm = () => {
 				<input
 					type="text"
 					id="inp_username"
+					maxLength={100}
 					name="username"
 					className={twFormTxtInput}
 					required
 				/>
-				<p
-					id="username_check"
-					aria-atomic="true"
-					aria-relevant="all"
-					aria-live="polite"
-					className="tw-ps-2 tw-font-exo tw-text-[10px] md:tw-text-[13px] un_open">
-					{"username is available."}
-				</p>
 			</div>
 			<div className=" tw-mx-auto tw-w-max">
 				<label
 					htmlFor="inp_username"
 					className={twInputLabel}>
-					Role
+					Role (Optional)
 				</label>
 				<input
 					type="text"
-					id="inp_username"
+					id="inp_role"
 					name="role"
+					maxLength={50}
 					className={twFormTxtInput}
-					required
 				/>
 			</div>
 
 			<button
 				className={`${btnPrimaryRounded}`}
-				onClick={toggleSpinner}
 				type="submit">
 				Finish
 				<GearSpinner />

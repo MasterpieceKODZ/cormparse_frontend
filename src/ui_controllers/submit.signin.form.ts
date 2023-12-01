@@ -1,9 +1,10 @@
-import { showNotificationBar } from "./notification.bar";
+import { closeNotification, showNotificationBar } from "./notification.bar";
 import { toggleSpinner } from "./toggle.gear.spinner";
 import { signIn } from "next-auth/react";
 import { isPasswordSyntaxValid } from "./password_input/validate.password";
 
 export async function submitSignInForm(): Promise<boolean> {
+	closeNotification();
 	toggleSpinner();
 
 	const pwReqCheck = await isPasswordSyntaxValid();
@@ -31,7 +32,7 @@ export async function submitSignInForm(): Promise<boolean> {
 
 	// initiate nextauth sign in
 	const signInResult = await signIn("credentials", {
-		callbackUrl: "/projects",
+		callbackUrl: `/workspace/projects`,
 		redirect: false,
 		email: emailInp.value.trim(),
 		password: pwdInp.value.trim(),
@@ -52,7 +53,10 @@ export async function submitSignInForm(): Promise<boolean> {
 	// sign in authorize callback function threw an error
 
 	toggleSpinner();
-	showNotificationBar("Authentication failed. check your network.", "error");
+	showNotificationBar(
+		"Authentication failed. check your network or try again later.",
+		"error",
+	);
 
 	return false;
 }

@@ -11,15 +11,15 @@ export async function fetchEmailAddressWithKey(
 
 		// if url (key) query param was not provided, navigate back to login
 		router.push("/auth/login");
-
 	} else {
 		try {
 			// fetch email address from redis cache using the provided url key query param
-			const emailRes = await fetch(`/api/get-email-address`, {
+			const emailRes = await fetch("/api/get-email-address", {
 				method: "POST",
 				body: JSON.stringify({ key: emailKey }),
 				headers: {
 					"Content-Type": "application/json",
+					"X-Api-Key": "kjsopdshfk46873ndsjk0388kdmdsn8y32y85xnjsd873jd7yt4f",
 				},
 				cache: "no-store",
 			});

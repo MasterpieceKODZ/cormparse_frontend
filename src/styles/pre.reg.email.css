@@ -5,3 +5,7 @@
 .hide_prnxt {
     display: none;
 }
+
+#email_len_chk.hide {
+    display: none;
+}

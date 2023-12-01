@@ -9,7 +9,7 @@ export const NEXT_AUTH_OPTION = {
 				try {
 					// fetch the user with the provided email address
 					const userRes = await fetch(
-						`${process.env.AUTH_SUPPORT_URL}/get-user-by-email`,
+						`${process.env.AUTH_SUPPORT_URI}/get-user-by-email`,
 						{
 							method: "POST",
 							headers: {

@@ -23,6 +23,7 @@ const EmailRegForm = () => {
 					type="email"
 					id="inp_reg_email"
 					autoComplete="email"
+					maxLength={100}
 					name="email"
 					className={twFormTxtInput}
 					required
