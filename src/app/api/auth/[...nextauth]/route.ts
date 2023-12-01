@@ -86,7 +86,48 @@ const handler = NextAuth({
 			if (user.id == "invalid") {
 				return false;
 			} else {
-				return true;
+				// if the email has been used to sign-up with credentials previously reject the Oauth sign-in
+
+				if (account?.provider == "google") {
+					try {
+						const userFromDBResponse = await fetch(
+							`${process.env.AUTH_SUPPORT_URI}/get-user-by-email`,
+							{
+								method: "POST",
+								headers: {
+									"Content-Type": "application/json",
+								},
+								body: JSON.stringify({
+									email: user.email,
+								}),
+								cache: "no-store",
+							},
+						);
+
+						if (userFromDBResponse.ok) {
+							const userFromDB = await userFromDBResponse.json();
+
+							console.log("user from OAuth evaluation...", userFromDB);
+
+							if (userFromDB.passwordHash) {
+								// there is already a credentials sign-up account with the email address
+								return false;
+							} else {
+								return true;
+							}
+						} else if (userFromDBResponse.status == 404) {
+							// no user with the email address
+							return true;
+						} else {
+							return false;
+						}
+					} catch (err) {
+						console.log("error while evaluating OAuth sign up.");
+						console.error(err);
+					}
+				}
+
+				return false;
 			}
 		},
 		async redirect({ url, baseUrl }) {

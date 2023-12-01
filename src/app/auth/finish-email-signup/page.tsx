@@ -21,14 +21,16 @@ const FinishEmailSignUp = () => {
 
 	// if user is signed in redirect to projects
 	getSession().then((session: any) => {
-		if (session) router.replace("/projects");
+		if (session) {
+			router.replace("/workspace/projects");
+		}
 	});
 
 	return (
 		<>
-			<AuthNavBar />
+			{/* <AuthNavBar /> */}
 
-			<main className=" tw-basis-full tw-grow tw-flex tw-justify-center">
+			<main className=" tw-basis-full tw-grow tw-flex tw-justify-center tw-bg-white dark:tw-bg-gray-900">
 				{email ? (
 					// fetch email returned a value (either success or failure)
 					<div className=" tw-w-[95%] tw-min-h-[90%] tw-inline-block tw-py-3 tw-max-w-[570px]">
@@ -44,7 +46,7 @@ const FinishEmailSignUp = () => {
 							<>
 								<h1
 									tabIndex={1}
-									className=" tw-text-center tw-text-[20px] sm:tw-text-[25px] tw-mt-3 tw-font-exo tw-text-mygrey-default"
+									className=" tw-text-center tw-text-[20px] sm:tw-text-[25px] tw-mt-3 tw-font-exo tw-text-mygrey-default dark:tw-text-gray-400"
 									aria-label="cormparse finish email and password sign up page">
 									Finish Sign Up
 								</h1>

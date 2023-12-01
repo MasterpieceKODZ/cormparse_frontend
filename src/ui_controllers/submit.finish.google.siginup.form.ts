@@ -46,7 +46,7 @@ export async function submitGoogleSignUpForm(
 		if (newUserSubmitResult.ok) {
 			// navigate to login page if user is created successfully
 			toggleSpinner();
-			router.push("/projects");
+			router.push("/workspace/projects");
 		} else {
 			const resTxt = await newUserSubmitResult.text();
 

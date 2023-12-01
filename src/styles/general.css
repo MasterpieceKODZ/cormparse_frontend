@@ -13,3 +13,11 @@
 #pulse_anim.hide_pulse_anim {
     visibility: hidden;
 }
+
+.theme_select.active {
+    color: rgb(57, 57, 247);
+}
+
+.theme_select.active path {
+    stroke: rgb(57, 57, 247);
+}

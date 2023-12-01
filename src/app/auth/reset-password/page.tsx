@@ -21,7 +21,7 @@ const ResetPassword = () => {
 
 	// if user is signed in redirect to projects
 	getSession().then((session: any) => {
-		if (session) router.replace("/projects");
+		if (session) router.replace("/workspace/projects");
 	});
 
 	if (!emailKey) {
@@ -33,7 +33,7 @@ const ResetPassword = () => {
 
 	return (
 		<>
-			<AuthNavBar />
+			{/* <AuthNavBar /> */}
 
 			<main className=" tw-basis-full tw-grow tw-flex tw-flex-col tw-justify-center tw-items-center tw-mt-[25px]">
 				{email ? (

@@ -13,7 +13,6 @@ import { useRouter } from "next/navigation";
 
 import { openForgotPwdModal } from "@/ui_controllers/forgot.pw";
 
-
 const LoginForm = () => {
 	const router = useRouter();
 	return (
@@ -24,7 +23,7 @@ const LoginForm = () => {
 
 				submitSignInForm().then((res: boolean) => {
 					// navigate to projects page if sign in was successfull
-					if (res) router.push("/projects");
+					if (res) router.push("/workspace/projects");
 				});
 			}}>
 			<div className=" tw-mx-auto tw-w-max">
@@ -43,16 +42,18 @@ const LoginForm = () => {
 				/>
 			</div>
 
-			<PasswordInpBlock showConfirmPassword={false} isNew={false}/>
+			<PasswordInpBlock
+				showConfirmPassword={false}
+				isNew={false}
+			/>
 			<div className=" tw-max-w-[450px] tw-w-[80vw] tw-mx-auto tw-h-max tw-flex tw-justify-end tw-items-center">
 				<button
 					type="button"
-					className=" tw-w-max tw-font-russo-one tw-text-[15px] tw-text-center tw-rounded-full tw-text-mygrey-lyt tw-mt-2 tw-block tw-bg-transparent hover:tw-text-secondary"
+					className=" tw-w-max tw-font-russo-one tw-text-[15px] tw-text-center tw-rounded-full tw-text-mygrey-lyt dark:tw-text-gray-400 tw-mt-2 tw-block tw-bg-transparent hover:tw-text-secondary dark:hover:tw-text-secondary"
 					onClick={openForgotPwdModal}>
 					Forgot Password
 				</button>
 			</div>
-
 
 			<button
 				className={`${btnPrimaryRounded}`}

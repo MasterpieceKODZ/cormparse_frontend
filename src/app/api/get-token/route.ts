@@ -20,7 +20,6 @@ export async function GET(req: any) {
 		});
 	}
 	const token = await getToken({ req, secret: process.env.NEXTAUTH_SECRET });
-	console.log(token);
 
 	if (token) {
 		return new NextResponse(JSON.stringify(token), {

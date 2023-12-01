@@ -7,6 +7,7 @@ import {
 	russo_one,
 	edu_tas_beg,
 } from "@/fonts/main.fonts";
+import LoadTheme from "@/components/load.theme";
 
 export const metadata: Metadata = {
 	title: "Cormparse",
@@ -21,8 +22,9 @@ export default function RootLayout({
 	return (
 		<html
 			lang="en"
-			className={`${londrina_outline.variable} ${exo.variable} ${russo_one.variable} ${edu_tas_beg.variable}`}>
+			className={`${londrina_outline.variable} ${exo.variable} ${russo_one.variable} ${edu_tas_beg.variable} tw-text-gray-800 dark:tw-text-white`}>
 			<body className=" tw-flex tw-flex-col tw-h-[100vh] tw-overflow-y-auto tw-relative">
+				<LoadTheme />
 				{children}
 			</body>
 		</html>

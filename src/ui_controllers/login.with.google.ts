@@ -6,7 +6,10 @@ export async function signInWithGoogle() {
 	signIn("google", {
 		callbackUrl: `/auth/finish-google-signup`,
 	}).catch((e) => {
-		showNotificationBar("google sign in failed.", "error");
+		showNotificationBar(
+			"google sign in failed. this could be because an account with that email address has been created with credentials. try sign in with username and password.",
+			"error",
+		);
 		console.log("error on google sign in");
 		console.error(e);
 	});

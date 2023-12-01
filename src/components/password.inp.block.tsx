@@ -25,6 +25,14 @@ const PasswordInpBlock = ({
 				className={twInputLabel}>
 				{isNew ? "New" : ""} Password
 			</label>
+			<p
+				id="pw_req"
+				aria-atomic="true"
+				aria-relevant="all"
+				aria-live="polite"
+				className="tw-ps-2 tw-font-exo tw-text-[10px] md:tw-text-[13px] tw-text-mygrey-lyt dark:tw-text-gray-400">
+				{"min 8/max 32/a-z/A-Z/0-9/[!@$%&*+-.<>]"}
+			</p>
 			<input
 				type="password"
 				name="password"
@@ -36,15 +44,8 @@ const PasswordInpBlock = ({
 			/>
 			<p
 				id="pw_prev"
-				className="tw-ps-2 tw-py-2 tw-font-exo tw-text-[12px] md:tw-text-[14px] tw-border-[1px] tw-rounded-[2px] hide"></p>
-			<p
-				id="pw_req"
-				aria-atomic="true"
-				aria-relevant="all"
-				aria-live="polite"
-				className="tw-ps-2 tw-font-exo tw-text-[10px] md:tw-text-[13px] tw-text-mygrey-lyt">
-				{"min 8|max 32|a-z|A-Z|0-9|[!@$%&*+-.<>]"}
-			</p>
+				className="tw-ps-2 tw-py-2 tw-min-h-[45px] tw-font-exo tw-text-[12px] md:tw-text-[14px] tw-border-[1px] tw-rounded-[2px] hide tw-text-gray-800 dark:tw-text-gray-300"></p>
+
 			{showConfirmPassword ? (
 				<>
 					<label
@@ -63,7 +64,7 @@ const PasswordInpBlock = ({
 					/>
 					<p
 						id="confirm_pw_prev"
-						className="tw-ps-2 tw-py-2 tw-font-exo tw-text-[12px] md:tw-text-[14px] tw-border-[1px] tw-rounded-[2px] hide"></p>
+						className="tw-ps-2 tw-py-2 tw-min-h-[45px] tw-font-exo tw-text-[12px] md:tw-text-[14px] tw-border-[1px] tw-rounded-[2px] hide tw-text-gray-800 dark:tw-text-gray-300"></p>
 					<p
 						id="pw_check"
 						aria-atomic="true"

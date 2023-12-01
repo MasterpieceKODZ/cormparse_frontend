@@ -12,18 +12,18 @@ const RegisterEmail = async () => {
 	const sessionObj = await getServerSession(NEXT_AUTH_OPTION as any);
 
 	if (sessionObj) {
-		redirect("/projects");
+		redirect("/workspace/projects");
 	}
 	return (
 		<>
-			<AuthNavBar />
+			{/* <AuthNavBar /> */}
 
-			<main className=" tw-basis-full tw-grow tw-flex tw-justify-center">
+			<main className=" tw-basis-full tw-grow tw-flex tw-justify-center tw-bg-white dark:tw-bg-gray-900">
 				<div className=" tw-w-[95%] tw-min-h-[90%] tw-inline-block tw-py-3 tw-max-w-[570px]">
 					<h1
 						tabIndex={1}
-						className=" tw-text-center tw-text-[20px] sm:tw-text-[25px] tw-mt-3 tw-font-exo tw-text-mygrey-default"
-						aria-label="cormparse login page">
+						className=" tw-text-center tw-text-[20px] sm:tw-text-[25px] tw-mt-3 tw-font-exo tw-text-mygrey-default dark:tw-text-gray-400"
+						aria-label="register email">
 						Register Email
 					</h1>
 

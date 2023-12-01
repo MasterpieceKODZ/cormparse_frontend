@@ -6,7 +6,7 @@ const EmailKeyExpired = ({ description }: { description: string }) => {
 	return (
 		<div className=" tw-w-full tw-h-full tw-flex tw-justify-center tw-items-center tw-px-4">
 			<div>
-				<p className=" tw-font-exo tw-text-[20px] tw-text-mygrey-lyt tw-text-center">
+				<p className=" tw-font-exo tw-text-[20px] tw-text-mygrey-lyt dark:tw-text-gray-400 tw-text-center">
 					{description}
 				</p>
 				<Link
