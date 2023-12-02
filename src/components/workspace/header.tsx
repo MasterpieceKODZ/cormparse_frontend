@@ -7,7 +7,7 @@ import HambugerButton from "./workspace_nav_bar/humburger.btn";
 
 const WorkSpaceHeader = () => {
 	return (
-		<header className="tw-sticky tw-bg-white dark:tw-bg-gray-900 tw-top-0 tw-z-20">
+		<header className="tw-sticky tw-bg-white dark:tw-bg-gray-900 tw-top-0 tw-z-20 tw-border-b-[1px] tw-border-b-gray-300 dark:tw-border-b-gray-700">
 			<div className="tw-relative tw-flex tw-justify-center tw-items-center">
 				{/*eslint-disable-next-line @next/next/no-img-element*/}
 				<img

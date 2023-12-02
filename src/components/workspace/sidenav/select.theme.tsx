@@ -11,7 +11,7 @@ const SideNavSelectTheme = () => {
 				id="nav_drp_dwn_btn_theme"
 				onClick={openCloseDropDown}
 				className=" tw-w-max tw-bg-transparent tw-font-russo-one tw-text-gray-700 dark:tw-text-gray-400  tw-flex tw-items-center">
-				<span className=" tw-mr-3">My Work</span>
+				<span className=" tw-mr-3">Theme</span>
 				<span className="nav_drp_dwn_btn_theme_icon">
 					<DownArrowIcon />
 				</span>
