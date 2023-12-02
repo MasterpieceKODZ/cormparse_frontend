@@ -28,8 +28,6 @@ const FinishEmailSignUp = () => {
 
 	return (
 		<>
-			{/* <AuthNavBar /> */}
-
 			<main className=" tw-basis-full tw-grow tw-flex tw-justify-center tw-bg-white dark:tw-bg-gray-900">
 				{email ? (
 					// fetch email returned a value (either success or failure)
