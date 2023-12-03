@@ -1,13 +1,14 @@
 #left_pane_btn_wrapper.active {
 
-    border-bottom: 2px solid rgb(60, 60, 255);
-    border-top: 2px solid rgb(60, 60, 255);
-    border-left: 2px solid rgb(60, 60, 255);
+    border-bottom: 2px solid rgb(14, 63, 241);
+    border-top: 2px solid rgb(14, 63, 241);
+    border-left: 2px solid rgb(14, 63, 241);
 
 
 }
 
 #left_pane_btn_wrapper.active button {
 
-    border-left: 2px solid rgb(60, 60, 255);
+    border-left: 3px solid rgb(14, 63, 241);
+    color: rgb(14, 63, 241);
 }
