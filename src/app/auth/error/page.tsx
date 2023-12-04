@@ -17,7 +17,7 @@ const AuthError = () => {
 		<>
 			{/* <AuthNavBar /> */}
 
-			<main className=" tw-basis-full tw-grow tw-flex tw-justify-center tw-bg-white dark:tw-bg-gray-900">
+			<main className=" tw-basis-full tw-shrink tw-grow tw-flex tw-justify-center tw-bg-white dark:tw-bg-gray-900">
 				<div className=" tw-w-[95%] tw-min-h-[90%] tw-inline-block tw-py-3 tw-max-w-[570px]">
 					<div className=" tw-w-full tw-h-full tw-flex tw-justify-center tw-items-center tw-px-4">
 						<div>
