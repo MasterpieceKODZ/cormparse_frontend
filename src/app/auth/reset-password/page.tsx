@@ -1,15 +1,15 @@
 "use client";
 import "../../../styles/password.css";
 import "../../../styles/general.css";
-import GearSpinner from "@/components/gear.spinner";
+import GearSpinner from "@/components/icons/gear.spinner";
 import AuthNavBar from "@/components/navbar";
-import PasswordInpBlock from "@/components/password.inp.block";
+import FormPasswordInpBlock from "@/components/auth/form.password.inp.block";
 
 import { btnPrimaryRounded } from "@/tailwind_classname_utils/buttons";
 import { useState } from "react";
 import { fetchEmailAddressWithKey as fetchEmailAddressWithKey } from "@/ui_controllers/fetch.email.address.sign.up";
 import InfinityLoadingSpinner from "@/components/page.loading.ui";
-import EmailKeyExpired from "@/components/email.key.exp";
+import EmailKeyExpired from "@/components/auth/email.key.exp";
 import { resetPassword } from "@/ui_controllers/password_input/password.reset";
 import { useRouter, useSearchParams } from "next/navigation";
 import { getSession } from "next-auth/react";
@@ -21,7 +21,7 @@ const ResetPassword = () => {
 
 	// if user is signed in redirect to projects
 	getSession().then((session: any) => {
-		if (session) router.replace("/workspace/projects");
+		if (session) router.replace("/workspace/projects-list");
 	});
 
 	if (!emailKey) {
@@ -56,7 +56,7 @@ const ResetPassword = () => {
 								</h1>
 
 								<div className=" tw-w-[95%] tw-max-w-[570px] tw-h-[95%] xsm:tw-h-[70%] tw-py-[20px] tw-px-[10px]  tw-shadow-sm tw-flex tw-flex-col tw-justify-center tw-items-center">
-									<PasswordInpBlock
+									<FormPasswordInpBlock
 										showConfirmPassword={true}
 										isNew={true}
 									/>

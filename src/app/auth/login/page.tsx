@@ -1,10 +1,9 @@
 "use client";
-import ForgotPasswordModal from "@/components/forgot.pw.modal";
-import LoginForm from "@/components/login.form";
-import AuthNavBar from "@/components/navbar";
+import ModalForgotPassword from "@/components/auth/modal.forgot.pw";
+import FormLogin from "@/components/auth/form.login";
 import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
-import BtnSignInWithGoogle from "@/components/btn.signin.with.google";
+import BtnSignInWithGoogle from "@/components/auth/btn.signin.with.google";
 import { getSession, signOut } from "next-auth/react";
 import { useEffect, useState } from "react";
 import { showNotificationBar } from "@/ui_controllers/notification.bar";
@@ -25,7 +24,7 @@ const Login = () => {
 			getUserBySession(ses).then((result) => {
 				// there is an account with the session email
 				if (result) {
-					router.push("/workspace/projects");
+					router.push("/workspace/projects-list");
 				} else {
 					signOut();
 				}
@@ -61,7 +60,7 @@ const Login = () => {
 									Login
 								</h1>
 
-								<LoginForm />
+								<FormLogin />
 
 								<BtnSignInWithGoogle type="Login" />
 
@@ -72,7 +71,7 @@ const Login = () => {
 								</Link>
 							</div>
 
-							<ForgotPasswordModal />
+							<ModalForgotPassword />
 						</>
 					) : (
 						// show spinner while checking user authentication state

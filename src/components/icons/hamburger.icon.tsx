@@ -1,4 +1,4 @@
-const HamburgerIcon = () => {
+const IconHamburger = () => {
 	return (
 		<svg
 			width="40px"
@@ -16,4 +16,4 @@ const HamburgerIcon = () => {
 	);
 };
 
-export default HamburgerIcon;
+export default IconHamburger;

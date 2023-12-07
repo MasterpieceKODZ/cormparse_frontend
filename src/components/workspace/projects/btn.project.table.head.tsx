@@ -1,10 +1,10 @@
 "use client";
 import { toggleArrowIcon } from "@/ui_controllers/workspace/projects/table/toggle.arrow.icon";
-import ArrowLongIcon from "../../icons/arrow.long";
+import IconArrowLong from "../../icons/arrow.long";
 import { sortProjectsTable } from "@/ui_controllers/workspace/projects/table/table.head.btn.click";
 import { projectsListTableSortArrowClicked } from "@/ui_controllers/workspace/projects/table/table.sort.icon.clicked";
 
-const ProjectTableHeadBtn = ({ label }: { label: string }) => {
+const BtnProjectTableHead = ({ label }: { label: string }) => {
 	return (
 		<button
 			id={`prj_tbl_hd_${label.toLocaleLowerCase().replace(/\s/g, "_")}`}
@@ -21,10 +21,10 @@ const ProjectTableHeadBtn = ({ label }: { label: string }) => {
 						"_",
 					)}_arrow tw-inline-block tw-rotate-180 tw-h-min tw-invisible tw-cursor-pointer proj_srt_icn`}
 				onClick={projectsListTableSortArrowClicked}>
-				<ArrowLongIcon />
+				<IconArrowLong />
 			</span>
 		</button>
 	);
 };
 
-export default ProjectTableHeadBtn;
+export default BtnProjectTableHead;

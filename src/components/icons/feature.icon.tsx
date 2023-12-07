@@ -1,4 +1,4 @@
-const FeatureIcon = () => {
+const IconFeature = () => {
 	return (
 		<svg
 			width="20px"
@@ -16,4 +16,4 @@ const FeatureIcon = () => {
 	);
 };
 
-export default FeatureIcon;
+export default IconFeature;

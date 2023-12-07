@@ -1,6 +1,6 @@
-import SearchIcon from "../../icons/search";
+import IconSearch from "../../icons/search";
 
-const ProjectSearchForm = () => {
+const FormProjectSearch = () => {
 	return (
 		<form className=" tw-w-max tw-h-max tw-me-3 tw-inline-flex tw-justify-center tw-items-center">
 			<input
@@ -12,10 +12,10 @@ const ProjectSearchForm = () => {
 			<button
 				aria-label="start project search by name"
 				className=" tw-inline-block">
-				<SearchIcon />
+				<IconSearch />
 			</button>
 		</form>
 	);
 };
 
-export default ProjectSearchForm;
+export default FormProjectSearch;

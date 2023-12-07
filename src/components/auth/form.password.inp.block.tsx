@@ -11,7 +11,7 @@ import {
 } from "@/ui_controllers/password_input/validate.password";
 
 // isNew prop indicates that the password input block is being used to set a new password
-const PasswordInpBlock = ({
+const FormPasswordInpBlock = ({
 	showConfirmPassword,
 	isNew,
 }: {
@@ -94,4 +94,4 @@ const PasswordInpBlock = ({
 	);
 };
 
-export default PasswordInpBlock;
+export default FormPasswordInpBlock;

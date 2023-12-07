@@ -1,4 +1,4 @@
-const IconPlus = () => {
+const IconPlusDarkNLyt = () => {
 	return (
 		<svg
 			className=" tw-w-[25px] tw-h-[25px] tw-inline-block"
@@ -7,7 +7,7 @@ const IconPlus = () => {
 			xmlns="http://www.w3.org/2000/svg">
 			<path
 				d="M6 12H18M12 6V18"
-				className=" tw-stroke-white"
+				className=" tw-stroke-gray-800 dark:tw-stroke-gray-400"
 				strokeWidth="2"
 				strokeLinecap="round"
 				strokeLinejoin="round"
@@ -16,4 +16,4 @@ const IconPlus = () => {
 	);
 };
 
-export default IconPlus;
+export default IconPlusDarkNLyt;

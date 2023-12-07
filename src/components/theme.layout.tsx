@@ -1,6 +1,6 @@
 "use client";
 import { changeUITheme } from "@/ui_controllers/change.theme";
-import { toggleThemeLayout } from "@/ui_controllers/toggle.theme.layout";
+import { toggleThemeLayoutOnClick } from "@/ui_controllers/toggle.theme.layout";
 import { MouseEvent } from "react";
 
 const ThemeLayout = () => {
@@ -10,7 +10,7 @@ const ThemeLayout = () => {
 				id="theme_toggle_btn"
 				aria-label="select theme"
 				className=" tw-block"
-				onClick={toggleThemeLayout}>
+				onClick={toggleThemeLayoutOnClick}>
 				<svg
 					width="24px"
 					height="24px"

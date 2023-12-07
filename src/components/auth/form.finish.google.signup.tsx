@@ -6,12 +6,12 @@ import {
 	twInputLabel,
 } from "@/tailwind_classname_utils/login.page";
 
-import GearSpinner from "./gear.spinner";
+import GearSpinner from "../icons/gear.spinner";
 import { btnPrimaryRounded } from "@/tailwind_classname_utils/buttons";
 import { submitGoogleSignUpForm } from "@/ui_controllers/submit.finish.google.siginup.form";
 import { useRouter } from "next/navigation";
 
-const FinishGoogleSignUpForm = ({ user }: any) => {
+const FormFinishGoogleSignUp = ({ user }: any) => {
 	const router = useRouter();
 
 	return (
@@ -61,4 +61,4 @@ const FinishGoogleSignUpForm = ({ user }: any) => {
 	);
 };
 
-export default FinishGoogleSignUpForm;
+export default FormFinishGoogleSignUp;

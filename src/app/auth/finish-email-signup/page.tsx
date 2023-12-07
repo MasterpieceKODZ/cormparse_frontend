@@ -1,6 +1,6 @@
 "use client";
-import EmailKeyExpired from "@/components/email.key.exp";
-import FinishEmailSignUpForm from "@/components/finish.email.signup.form";
+import EmailKeyExpired from "@/components/auth/email.key.exp";
+import FormFinishEmailSignUp from "@/components/auth/form.finish.email.signup";
 
 import AuthNavBar from "@/components/navbar";
 import InfinityLoadingSpinner from "@/components/page.loading.ui";
@@ -22,7 +22,7 @@ const FinishEmailSignUp = () => {
 	// if user is signed in redirect to projects
 	getSession().then((session: any) => {
 		if (session) {
-			router.replace("/workspace/projects");
+			router.replace("/workspace/projects-list");
 		}
 	});
 
@@ -49,7 +49,7 @@ const FinishEmailSignUp = () => {
 									Finish Sign Up
 								</h1>
 
-								<FinishEmailSignUpForm email={email} />
+								<FormFinishEmailSignUp email={email} />
 							</>
 						)}
 					</div>

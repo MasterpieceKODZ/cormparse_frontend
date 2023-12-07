@@ -1,5 +1,5 @@
 import { MouseEvent } from "react";
-import { toggleThemeLayout } from "./toggle.theme.layout";
+import { toggleThemeLayoutOnClick } from "./toggle.theme.layout";
 
 export function changeUITheme(
 	e: MouseEvent,
@@ -34,5 +34,5 @@ export function changeUITheme(
 
 	e.currentTarget.classList.add("active");
 
-	if (from == "header") toggleThemeLayout();
+	if (from == "header") toggleThemeLayoutOnClick();
 }

@@ -1,4 +1,4 @@
-import FinishGoogleSignUpForm from "@/components/finish.google.signup.form";
+import FormFinishGoogleSignUp from "@/components/auth/form.finish.google.signup";
 
 import AuthNavBar from "@/components/navbar";
 import { NEXT_AUTH_OPTION } from "@/utils/auth.option";
@@ -15,7 +15,7 @@ const FinishGoogleSignUp = async () => {
 
 		// user exists in DB
 		if (isUser)
-			redirect(`${process.env.NEXTAUTH_URL ?? ""}/workspace/projects`);
+			redirect(`${process.env.NEXTAUTH_URL ?? ""}/workspace/projects-list`);
 	} else {
 		redirect(`${process.env.NEXTAUTH_URL ?? ""}/auth/login`);
 	}
@@ -33,7 +33,7 @@ const FinishGoogleSignUp = async () => {
 						Finish Sign Up
 					</h1>
 
-					<FinishGoogleSignUpForm user={(session as any)?.user} />
+					<FormFinishGoogleSignUp user={(session as any)?.user} />
 				</div>
 			</main>
 		</>

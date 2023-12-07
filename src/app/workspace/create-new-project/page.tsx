@@ -1,4 +1,4 @@
-import CreateProjectForm from "@/components/workspace/projects/create.project.form";
+import FormCreateProject from "@/components/workspace/projects/form.create.project";
 
 const CreateNewProject = () => {
 	return (
@@ -14,7 +14,7 @@ const CreateNewProject = () => {
 					className=" tw-text-center tw-text-[12px] sm:tw-text-[15px] tw-font-exo tw-text-gray-700 dark:tw-text-gray-500">
 					Edit project details anytime in project settings
 				</p>
-				<CreateProjectForm />
+				<FormCreateProject />
 			</div>
 		</section>
 	);

@@ -1,7 +1,7 @@
 "use client";
 import IconShowIssueFilterOption from "@/components/icons/issues.arrow.right";
-import ProjectDetailsLeftPaneIssuesFilterBtn from "./left.pane.issue.filter.btn";
-import ProjectDetailLeftPaneNavBtn from "./left.pane.nav.btn";
+import BtnProjectDetailsLeftPaneIssuesFilter from "./btn.left.pane.issue.filter";
+import BtnProjectDetailLeftPaneNav from "./btn.left.pane.nav";
 import { showHideLeftPaneIssueOptions } from "@/ui_controllers/workspace/projects/details/translate.side.pane.opt.cont";
 
 const ProjectDetailsLeftNavPane = ({ name }: { name: string }) => {
@@ -12,11 +12,11 @@ const ProjectDetailsLeftNavPane = ({ name }: { name: string }) => {
 			</h4>
 			<div className=" tw-w-full tw-max-w-full tw-mt-[30px] tw-h-max tw-flex tw-flex-nowrap tw-overflow-hidden">
 				<div className=" tw-inline tw-pl-8 tw-w-full tw-min-w-full tw-max-w-full side_pane_opts tw-transition-transform tw-ease-linear">
-					<ProjectDetailLeftPaneNavBtn label="Issues" />
-					<ProjectDetailLeftPaneNavBtn label="Components" />
-					<ProjectDetailLeftPaneNavBtn label="People" />
-					<ProjectDetailLeftPaneNavBtn label="Teams" />
-					<ProjectDetailLeftPaneNavBtn label="Details" />
+					<BtnProjectDetailLeftPaneNav label="Issues" />
+					<BtnProjectDetailLeftPaneNav label="Components" />
+					<BtnProjectDetailLeftPaneNav label="People" />
+					<BtnProjectDetailLeftPaneNav label="Teams" />
+					<BtnProjectDetailLeftPaneNav label="Details" />
 				</div>
 				<div
 					id="prj_dtl_lft_pane_iss_opt"
@@ -29,11 +29,11 @@ const ProjectDetailsLeftNavPane = ({ name }: { name: string }) => {
 						</span>{" "}
 						<span>Back To Projects</span>
 					</button>
-					<ProjectDetailsLeftPaneIssuesFilterBtn label="All" />
-					<ProjectDetailsLeftPaneIssuesFilterBtn label="My Open Issues" />
-					<ProjectDetailsLeftPaneIssuesFilterBtn label="Reported By Me" />
-					<ProjectDetailsLeftPaneIssuesFilterBtn label="Pending Issues" />
-					<ProjectDetailsLeftPaneIssuesFilterBtn label="Done Issues" />
+					<BtnProjectDetailsLeftPaneIssuesFilter label="All" />
+					<BtnProjectDetailsLeftPaneIssuesFilter label="My Open Issues" />
+					<BtnProjectDetailsLeftPaneIssuesFilter label="Reported By Me" />
+					<BtnProjectDetailsLeftPaneIssuesFilter label="Pending Issues" />
+					<BtnProjectDetailsLeftPaneIssuesFilter label="Done Issues" />
 				</div>
 			</div>
 		</section>

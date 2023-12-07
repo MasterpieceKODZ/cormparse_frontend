@@ -1,9 +1,9 @@
 "use client";
 import { sendForgotPwdLink } from "@/ui_controllers/forgot.pw";
 import { toggleForgotPWmodal } from "@/ui_controllers/forgot.pw.modal";
-import PulseAnim from "./pulse.animation";
+import PulseAnim from "../icons/pulse.animation";
 
-const ForgotPasswordModal = () => {
+const ModalForgotPassword = () => {
 	return (
 		<div
 			id="fgt_pw_mdl"
@@ -31,4 +31,4 @@ const ForgotPasswordModal = () => {
 	);
 };
 
-export default ForgotPasswordModal;
+export default ModalForgotPassword;

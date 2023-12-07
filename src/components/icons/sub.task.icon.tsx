@@ -1,4 +1,4 @@
-const SubTaskIcon = () => {
+const IconSubTask = () => {
 	return (
 		<svg
 			width="20px"
@@ -20,4 +20,4 @@ const SubTaskIcon = () => {
 	);
 };
 
-export default SubTaskIcon;
+export default IconSubTask;

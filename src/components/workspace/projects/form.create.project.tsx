@@ -3,7 +3,7 @@ import {
 	twInputLabel,
 } from "@/tailwind_classname_utils/login.page";
 
-const CreateProjectForm = () => {
+const FormCreateProject = () => {
 	return (
 		<form className=" tw-mt-[50px]">
 			<div className=" tw-mx-auto tw-w-max">
@@ -55,4 +55,4 @@ const CreateProjectForm = () => {
 	);
 };
 
-export default CreateProjectForm;
+export default FormCreateProject;

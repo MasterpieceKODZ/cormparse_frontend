@@ -3,7 +3,7 @@ import IconShowIssueFilterOption from "@/components/icons/issues.arrow.right";
 import { projectsDetailsLeftpaneButtonClick } from "@/ui_controllers/workspace/projects/details/side.pane.btn.click";
 import { showHideLeftPaneIssueOptions } from "@/ui_controllers/workspace/projects/details/translate.side.pane.opt.cont";
 
-const ProjectDetailLeftPaneNavBtn = ({ label }: { label: string }) => {
+const BtnProjectDetailLeftPaneNav = ({ label }: { label: string }) => {
 	return (
 		<div
 			id="left_pane_btn_wrapper"
@@ -29,4 +29,4 @@ const ProjectDetailLeftPaneNavBtn = ({ label }: { label: string }) => {
 	);
 };
 
-export default ProjectDetailLeftPaneNavBtn;
+export default BtnProjectDetailLeftPaneNav;
