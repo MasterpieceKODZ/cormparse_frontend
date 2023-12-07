@@ -6,9 +6,9 @@ import {
 	twInputLabel,
 } from "@/tailwind_classname_utils/login.page";
 import { preRegisterEmail } from "@/ui_controllers/submit.pre.reg.email.form";
-import RadioAnimation from "./radio.animation";
+import RadioAnimation from "../icons/radio.animation";
 
-const EmailRegForm = () => {
+const FormEmailReg = () => {
 	return (
 		<form
 			className=" tw-block tw-mx-auto tw-w-[95%] tw-pt-[30px] tw-px-[auto]"
@@ -43,4 +43,4 @@ const EmailRegForm = () => {
 	);
 };
 
-export default EmailRegForm;
+export default FormEmailReg;

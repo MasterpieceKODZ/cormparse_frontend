@@ -1,6 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 import { projectsTableRowData } from "@/tailwind_classname_utils/workspace";
-import HamburgerDots from "../../icons/hamburger.dots";
+import IconHamburgerDots from "../../icons/hamburger.dots";
 
 const ProjectsTableItem = ({
 	name,
@@ -40,7 +40,7 @@ const ProjectsTableItem = ({
 			<td className={`${projectsTableRowData}`}>{dateUpdate}</td>
 			<td className={`${projectsTableRowData}`}>
 				<button>
-					<HamburgerDots />
+					<IconHamburgerDots />
 				</button>
 			</td>
 		</tr>

@@ -1,20 +1,20 @@
 import ButtonCreateNewProject from "@/components/workspace/projects/btn.create.project";
-import ProjectsPaginationNextBtn from "@/components/workspace/projects/page.next.btn";
-import ProjectPaginationNumBtn from "@/components/workspace/projects/page.num.btn";
-import ProjectsPaginationPrevBtn from "@/components/workspace/projects/page.prev.btn";
-import ProjectSearchForm from "@/components/workspace/projects/project.search.form";
-import ProjectTableHeadBtn from "@/components/workspace/projects/project.table.head.btn";
+import BtnProjectsPaginationNext from "@/components/workspace/projects/btn.page.next";
+import BtnProjectPaginationNum from "@/components/workspace/projects/btn.page.num";
+import BtnProjectsPaginationPrev from "@/components/workspace/projects/btn.page.prev";
+import FormProjectSearch from "@/components/workspace/projects/form.project.search";
+import BtnProjectTableHead from "@/components/workspace/projects/btn.project.table.head";
 import ProjectsTableItem from "@/components/workspace/projects/projects.table.item";
 import { projectsTableRowHead } from "@/tailwind_classname_utils/workspace";
 
 const Projects = () => {
 	return (
-		<section className=" tw-w-full tw-min-h-full tw-py-10 tw-px-[18px]  xsm:tw-px-[30px] md:tw-px-[50px] tw-flex tw-flex-col tw-justify-start tw-items-start ">
+		<section className=" tw-w-full tw-h-full tw-py-10 tw-px-[18px] xsm:tw-px-[30px] md:tw-px-[50px] tw-flex tw-flex-col tw-justify-start tw-items-start ">
 			<h3 className=" tw-font-exo tw-font-semibold tw-text-[25px] tw-text-start tw-text-gray-800 dark:tw-text-gray-400 tw-mt-5">
 				Projects
 			</h3>
 			<div className=" tw-w-full tw-h-max tw-mt-3 tw-flex tw-justify-start tw-items-center">
-				<ProjectSearchForm />
+				<FormProjectSearch />
 				<div className="tw-basis-full tw-shrink tw-inline-flex tw-justify-end">
 					<ButtonCreateNewProject />
 				</div>
@@ -25,19 +25,19 @@ const Projects = () => {
 					<thead>
 						<tr className=" tw-border-b-2 tw-border-gray-500 tw-py-3">
 							<th className={`${projectsTableRowHead}`}>
-								<ProjectTableHeadBtn label="Name" />
+								<BtnProjectTableHead label="Name" />
 							</th>
 							<th className={`${projectsTableRowHead}`}>
-								<ProjectTableHeadBtn label="Key" />
+								<BtnProjectTableHead label="Key" />
 							</th>
 							<th className={`${projectsTableRowHead}`}>
-								<ProjectTableHeadBtn label="Lead" />
+								<BtnProjectTableHead label="Lead" />
 							</th>
 							<th className={`${projectsTableRowHead}`}>
-								<ProjectTableHeadBtn label="Date Created" />
+								<BtnProjectTableHead label="Date Created" />
 							</th>
 							<th className={`${projectsTableRowHead}`}>
-								<ProjectTableHeadBtn label="Date Updated" />
+								<BtnProjectTableHead label="Date Updated" />
 							</th>
 							<th className={`${projectsTableRowHead}`}> </th>
 						</tr>
@@ -68,13 +68,13 @@ const Projects = () => {
 				<div
 					id="pagination_wrapper"
 					className=" tw-w-max tw-h-max tw-flex tw-justify-center tw-items-center">
-					<ProjectsPaginationPrevBtn />
-					<ProjectPaginationNumBtn pageNum="1" />
-					<ProjectPaginationNumBtn pageNum="2" />
-					<ProjectPaginationNumBtn pageNum="3" />
-					<ProjectPaginationNumBtn pageNum="4" />
-					<ProjectPaginationNumBtn pageNum="200" />
-					<ProjectsPaginationNextBtn />
+					<BtnProjectsPaginationPrev />
+					<BtnProjectPaginationNum pageNum="1" />
+					<BtnProjectPaginationNum pageNum="2" />
+					<BtnProjectPaginationNum pageNum="3" />
+					<BtnProjectPaginationNum pageNum="4" />
+					<BtnProjectPaginationNum pageNum="200" />
+					<BtnProjectsPaginationNext />
 				</div>
 			</div>
 		</section>

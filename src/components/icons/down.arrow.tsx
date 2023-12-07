@@ -1,4 +1,4 @@
-const DownArrowIcon = () => {
+const IconDownArrow = () => {
 	return (
 		<svg
 			width="16px"
@@ -13,4 +13,4 @@ const DownArrowIcon = () => {
 	);
 };
 
-export default DownArrowIcon;
+export default IconDownArrow;

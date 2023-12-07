@@ -1,4 +1,4 @@
-export async function toggleThemeLayout() {
+export async function toggleThemeLayoutOnClick() {
 	if (
 		document.getElementById("theme_layout")?.classList.contains("tw-hidden")
 	) {

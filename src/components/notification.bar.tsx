@@ -1,14 +1,12 @@
 "use client";
 import "../styles/notification.bar.css";
-import CloseIcon from "./close.icon";
+import IconClose from "./icons/close.icon";
 
 const NotificationBar = () => {
 	return (
 		<div
 			id="notification_bar"
-
 			className="hide tw-w-[100%] tw-p-[8px] tw-flex tw-justify-start tw-items-center tw-absolute tw-z-50 tw-left-0 tw-top-[100%]">
-
 			<p
 				id="notification_msg"
 				className=" tw-text-white tw-font-exo tw-basis-[100%] tw-shrink tw-grow tw-mr-[15px]">
@@ -16,7 +14,7 @@ const NotificationBar = () => {
 				attend
 			</p>
 
-			<CloseIcon />
+			<IconClose />
 		</div>
 	);
 };

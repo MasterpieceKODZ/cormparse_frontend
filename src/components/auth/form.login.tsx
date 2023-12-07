@@ -1,19 +1,19 @@
 "use client";
-import "../styles/password.css";
+import "../../styles/password.css";
 import {
 	twFormTxtInput,
 	twInputLabel,
 } from "@/tailwind_classname_utils/login.page";
-import GearSpinner from "./gear.spinner";
+import GearSpinner from "../icons/gear.spinner";
 import { btnPrimaryRounded } from "@/tailwind_classname_utils/buttons";
-import PasswordInpBlock from "./password.inp.block";
+import FormPasswordInpBlock from "./form.password.inp.block";
 import { FormEvent } from "react";
 import { submitSignInForm } from "@/ui_controllers/submit.signin.form";
 import { useRouter } from "next/navigation";
 
 import { openForgotPwdModal } from "@/ui_controllers/forgot.pw";
 
-const LoginForm = () => {
+const FormLogin = () => {
 	const router = useRouter();
 	return (
 		<form
@@ -23,7 +23,7 @@ const LoginForm = () => {
 
 				submitSignInForm().then((res: boolean) => {
 					// navigate to projects page if sign in was successfull
-					if (res) router.push("/workspace/projects");
+					if (res) router.push("/workspace/projects-list");
 				});
 			}}>
 			<div className=" tw-mx-auto tw-w-max">
@@ -42,7 +42,7 @@ const LoginForm = () => {
 				/>
 			</div>
 
-			<PasswordInpBlock
+			<FormPasswordInpBlock
 				showConfirmPassword={false}
 				isNew={false}
 			/>
@@ -65,4 +65,4 @@ const LoginForm = () => {
 	);
 };
 
-export default LoginForm;
+export default FormLogin;

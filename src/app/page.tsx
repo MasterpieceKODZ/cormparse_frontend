@@ -13,7 +13,7 @@ const LandingPage = async () => {
 	const sessionObj = await getServerSession(NEXT_AUTH_OPTION as any);
 
 	if (sessionObj) {
-		redirect("/workspace/projects");
+		redirect("/workspace/projects-list");
 	}
 	return (
 		<main className="tw-bg-gradient-to-b tw-from-secondary tw-to-60% tw-to-primary tw-w-screen tw-min-h-screen tw-flex tw-justify-center tw-items-center">

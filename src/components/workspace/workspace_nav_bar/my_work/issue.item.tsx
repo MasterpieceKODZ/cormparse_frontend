@@ -1,8 +1,8 @@
-import BugIcon from "@/components/icons/bug.icon";
-import FeatureIcon from "@/components/icons/feature.icon";
-import ImprovementIcon from "@/components/icons/improvement.icon";
-import SubTaskIcon from "@/components/icons/sub.task.icon";
-import TaskIcon from "@/components/icons/task.icon";
+import IconBug from "@/components/icons/bug.icon";
+import IconFeature from "@/components/icons/feature.icon";
+import IconImprovement from "@/components/icons/improvement.icon";
+import IconSubTask from "@/components/icons/sub.task.icon";
+import IconTask from "@/components/icons/task.icon";
 
 const PopUpIssueItem = ({
 	summary,
@@ -19,15 +19,15 @@ const PopUpIssueItem = ({
 		<div className=" tw-w-full tw-flex tw-items-center tw-justify-start tw-mt-1">
 			<div className=" tw-w-max tw-h-max tw-ms-1 tw-mr-6">
 				{type == "task" ? (
-					<TaskIcon />
+					<IconTask />
 				) : type == "sub_task" ? (
-					<SubTaskIcon />
+					<IconSubTask />
 				) : type == "improvement" ? (
-					<ImprovementIcon />
+					<IconImprovement />
 				) : type == "bug" ? (
-					<BugIcon />
+					<IconBug />
 				) : (
-					<FeatureIcon />
+					<IconFeature />
 				)}
 			</div>
 			<div className=" tw-basis-full tw-shrink tw-mt-3 tw-w-[85%]">

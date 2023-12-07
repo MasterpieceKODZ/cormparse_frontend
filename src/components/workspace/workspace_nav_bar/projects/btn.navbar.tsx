@@ -2,7 +2,7 @@
 import { toggleWorkspaceNavPopup } from "@/ui_controllers/workspace/navbar/toggle.nav.popup";
 import NavbarProjectsPopupRootLayout from "./popup.root.layout";
 
-const NavProjectsBtn = () => {
+const BtnNavProjects = () => {
 	return (
 		<div className="tw-px-4 tw-py-2 tw-w-max tw-h-min tw-relative">
 			<button
@@ -16,4 +16,4 @@ const NavProjectsBtn = () => {
 	);
 };
 
-export default NavProjectsBtn;
+export default BtnNavProjects;

@@ -1,7 +1,7 @@
 "use client";
 import { projectDetailsLeftPaneIssueFilterOnClick } from "@/ui_controllers/workspace/projects/details/side.pane.issue.filter.btn.click";
 
-const ProjectDetailsLeftPaneIssuesFilterBtn = ({
+const BtnProjectDetailsLeftPaneIssuesFilter = ({
 	label,
 }: {
 	label: string;
@@ -15,4 +15,4 @@ const ProjectDetailsLeftPaneIssuesFilterBtn = ({
 	);
 };
 
-export default ProjectDetailsLeftPaneIssuesFilterBtn;
+export default BtnProjectDetailsLeftPaneIssuesFilter;

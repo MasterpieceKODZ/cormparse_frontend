@@ -1,5 +1,5 @@
 "use client";
-import DownArrowIcon from "@/components/icons/down.arrow";
+import IconDownArrow from "@/components/icons/down.arrow";
 import { changeUITheme } from "@/ui_controllers/change.theme";
 import { openCloseDropDown } from "@/ui_controllers/workspace/sidenav/show.hide.drop.down";
 import { MouseEvent } from "react";
@@ -13,7 +13,7 @@ const SideNavSelectTheme = () => {
 				className=" tw-w-max tw-bg-transparent tw-font-russo-one tw-text-gray-700 dark:tw-text-gray-400  tw-flex tw-items-center">
 				<span className=" tw-mr-3">Theme</span>
 				<span className="nav_drp_dwn_btn_theme_icon">
-					<DownArrowIcon />
+					<IconDownArrow />
 				</span>
 			</button>
 			<div className=" tw-flex tw-max-w-full">
@@ -22,7 +22,7 @@ const SideNavSelectTheme = () => {
 					className=" tw-pl-4 tw-overflow-y-hidden nav_drp_dwn_btn_theme">
 					<p
 						id="select_theme_lgt"
-						className="tw-my-2 tw-cursor-pointer tw-text-start tw-text-gray-800 dark:tw-text-white sidenav_theme_select"
+						className="tw-my-2 tw-cursor-pointer tw-text-start tw-text-gray-800 dark:tw-text-white sidenav_theme_select theme_select"
 						onClick={(e: MouseEvent) => changeUITheme(e, "light", "sidenav")}
 						tabIndex={1}>
 						<span>
@@ -44,7 +44,7 @@ const SideNavSelectTheme = () => {
 					</p>
 					<p
 						id="select_theme_drk"
-						className="tw-my-2 tw-cursor-pointer tw-text-start tw-text-gray-800 dark:tw-text-white sidenav_theme_select"
+						className="tw-my-2 tw-cursor-pointer tw-text-start tw-text-gray-800 dark:tw-text-white theme_select sidenav_theme_select"
 						onClick={(e: MouseEvent) => changeUITheme(e, "dark", "sidenav")}
 						tabIndex={1}>
 						<span>

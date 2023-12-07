@@ -1,18 +1,16 @@
-import AuthNavBar from "@/components/navbar";
-
-import EmailRegForm from "@/components/pre.reg.email.form";
+import FormEmailReg from "@/components/auth/form.pre.reg.email.jsx";
 import Link from "next/link";
 import { NEXT_AUTH_OPTION } from "../../../utils/auth.option.js";
 import { getServerSession } from "next-auth/next";
 import { redirect } from "next/navigation";
-import BtnSignInWithGoogle from "@/components/btn.signin.with.google";
+import BtnSignInWithGoogle from "@/components/auth/btn.signin.with.google.jsx";
 
 const RegisterEmail = async () => {
 	// redirect to projects if user is signed in
 	const sessionObj = await getServerSession(NEXT_AUTH_OPTION as any);
 
 	if (sessionObj) {
-		redirect("/workspace/projects");
+		redirect("/workspace/projects-list");
 	}
 	return (
 		<>
@@ -27,7 +25,7 @@ const RegisterEmail = async () => {
 						Register Email
 					</h1>
 
-					<EmailRegForm />
+					<FormEmailReg />
 
 					<BtnSignInWithGoogle type="Sign Up" />
 

@@ -5,13 +5,13 @@ import {
 	twFormTxtInput,
 	twInputLabel,
 } from "@/tailwind_classname_utils/login.page";
-import GearSpinner from "./gear.spinner";
+import GearSpinner from "../icons/gear.spinner";
 import { btnPrimaryRounded } from "@/tailwind_classname_utils/buttons";
-import PasswordInpBlock from "./password.inp.block";
+import FormPasswordInpBlock from "./form.password.inp.block";
 import { submitEmailSignupForm } from "@/ui_controllers/submit.finish.email.signup.form";
 import { useRouter } from "next/navigation";
 
-const FinishEmailSignUpForm = ({ email }: { email: string }) => {
+const FormFinishEmailSignUp = ({ email }: { email: string }) => {
 	const router = useRouter();
 
 	return (
@@ -88,7 +88,7 @@ const FinishEmailSignUpForm = ({ email }: { email: string }) => {
 				readOnly
 			/>
 
-			<PasswordInpBlock
+			<FormPasswordInpBlock
 				showConfirmPassword={true}
 				isNew={false}
 			/>
@@ -103,4 +103,4 @@ const FinishEmailSignUpForm = ({ email }: { email: string }) => {
 	);
 };
 
-export default FinishEmailSignUpForm;
+export default FormFinishEmailSignUp;

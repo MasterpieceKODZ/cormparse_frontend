@@ -1,4 +1,4 @@
-const BugIcon = () => {
+const IconBug = () => {
 	return (
 		<svg
 			width="20px"
@@ -17,4 +17,4 @@ const BugIcon = () => {
 	);
 };
 
-export default BugIcon;
+export default IconBug;

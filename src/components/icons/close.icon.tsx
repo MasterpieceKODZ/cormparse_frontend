@@ -1,6 +1,6 @@
 import { closeNotification } from "@/ui_controllers/notification.bar";
 
-const CloseIcon = () => {
+const IconClose = () => {
 	return (
 		<div
 			className=" tw-cursor-pointer"
@@ -17,4 +17,4 @@ const CloseIcon = () => {
 	);
 };
 
-export default CloseIcon;
+export default IconClose;

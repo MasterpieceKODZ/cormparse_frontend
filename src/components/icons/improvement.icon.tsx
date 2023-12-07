@@ -1,4 +1,4 @@
-const ImprovementIcon = () => {
+const IconImprovement = () => {
 	return (
 		<svg
 			height="20px"
@@ -63,4 +63,4 @@ const ImprovementIcon = () => {
 	);
 };
 
-export default ImprovementIcon;
+export default IconImprovement;
