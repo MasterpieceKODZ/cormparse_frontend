@@ -1,3 +1,7 @@
+@import "~quill/dist/quill.core.css";
+@import "react-quill/dist/quill.snow.css";
+@import url('https://fonts.googleapis.com/css2?family=Edu+TAS+Beginner:wght@400;600&family=Londrina+Outline&family=Noto+Color+Emoji&family=Roboto+Mono:wght@100&display=swap');
+
 .nav_drp_dwn_btn_my_work {
     max-height: 0px;
     transition-property: all;
@@ -39,3 +43,8 @@
 .sidenav_theme_select.active path {
     stroke: rgb(57, 57, 247);
 }
+
+/* #quill_editor_cont p {
+    font-family: 'Edu TAS Beginner', cursive;
+    font-size: 18px;
+} */

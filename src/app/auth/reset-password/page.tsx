@@ -1,8 +1,6 @@
 "use client";
-import "../../../styles/password.css";
 import "../../../styles/general.css";
 import GearSpinner from "@/components/icons/gear.spinner";
-import AuthNavBar from "@/components/navbar";
 import FormPasswordInpBlock from "@/components/auth/form.password.inp.block";
 
 import { btnPrimaryRounded } from "@/tailwind_classname_utils/buttons";

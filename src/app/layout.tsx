@@ -1,5 +1,7 @@
 import "./globals.css";
 import "../styles/general.css";
+import "../styles/password.css";
+import "../styles/pre.reg.email.css";
 import type { Metadata } from "next";
 import {
 	londrina_outline,

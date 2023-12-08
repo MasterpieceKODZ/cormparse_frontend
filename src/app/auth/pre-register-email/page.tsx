@@ -1,9 +1,9 @@
-import FormEmailReg from "@/components/auth/form.pre.reg.email.jsx";
 import Link from "next/link";
 import { NEXT_AUTH_OPTION } from "../../../utils/auth.option.js";
 import { getServerSession } from "next-auth/next";
 import { redirect } from "next/navigation";
-import BtnSignInWithGoogle from "@/components/auth/btn.signin.with.google.jsx";
+import FormEmailReg from "@/components/auth/form.pre.reg.email";
+import BtnSignInWithGoogle from "@/components/auth/btn.signin.with.google";
 
 const RegisterEmail = async () => {
 	// redirect to projects if user is signed in
