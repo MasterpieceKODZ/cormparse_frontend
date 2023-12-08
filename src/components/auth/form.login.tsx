@@ -1,5 +1,4 @@
 "use client";
-import "../../styles/password.css";
 import {
 	twFormTxtInput,
 	twInputLabel,

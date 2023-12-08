@@ -1,5 +1,4 @@
 "use client";
-import "../styles/pre.reg.email.css";
 import { btnPrimaryRounded } from "@/tailwind_classname_utils/buttons";
 import {
 	twFormTxtInput,
