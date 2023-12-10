@@ -1,6 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 import QuillEditor from "@/components/quill.editor";
 import ProjectPropsURLInpBlck from "@/components/workspace/project-details/properties.url.block";
+import ProjectMemberItem from "@/components/workspace/project-details/user.item";
 
 const ProjectProperties = () => {
 	return (
@@ -32,33 +33,19 @@ const ProjectProperties = () => {
 			<p className=" tw-font-exo tw-font-semibold tw-text-start tw-mt-[70px] tw-text-[14px] tw-text-gray-800 dark:tw-text-gray-400">
 				Lead
 			</p>
-			<div className=" tw-mt-[20px]">
-				<div className=" tw-flex tw-flex-nowrap tw-justify-start tw-items-center tw-h-max tw-w-max">
-					<img
-						src="/logo.png"
-						alt="lead img"
-						className=" tw-w-[40px] tw-h-[40px] tw-bg-white tw-rounded-[50%] tw-border-2 tw-border-white"
-					/>
-					<p className=" tw-text-start tw-text-gray-800 dark:tw-text-gray-400 tw-ms-5 tw-font-exo tw-text-[20px]">
-						MasterpieceKODZ
-					</p>
-				</div>
-			</div>
+			<ProjectMemberItem
+				name="MasterpieceKODZ"
+				img="/logo.png"
+				role="Data Analyst"
+			/>
 			<p className=" tw-font-exo tw-font-semibold tw-text-start tw-mt-[70px] tw-text-[14px] tw-text-gray-800 dark:tw-text-gray-400">
 				Default Assignee
 			</p>
-			<div className=" tw-mt-[20px]">
-				<div className=" tw-flex tw-flex-nowrap tw-justify-start tw-items-center tw-h-max tw-w-max">
-					<img
-						src="/logo.png"
-						alt="lead img"
-						className=" tw-w-[40px] tw-h-[40px] tw-bg-white tw-rounded-[50%] tw-border-2 tw-border-white"
-					/>
-					<p className=" tw-text-start tw-text-gray-800 dark:tw-text-gray-400 tw-ms-5 tw-font-exo tw-text-[20px]">
-						MANofVALOR
-					</p>
-				</div>
-			</div>
+			<ProjectMemberItem
+				name="MANofVALOR"
+				img="/logo.png"
+				role="Fullstack Developer"
+			/>
 			<div className=" tw-w-max tw-h-max tw-mt-[100px] tw-flex tw-justify-center tw-items-center ">
 				<button className=" tw-w-max tw-h-max tw-px-5 tw-py-[4px] tw-rounded tw-bg-blue-800 tw-text-white tw-font-russo-one tw-text-center tw-mr-7">
 					Save Changes

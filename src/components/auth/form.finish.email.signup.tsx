@@ -58,6 +58,7 @@ const FormFinishEmailSignUp = ({ email }: { email: string }) => {
 				<input
 					type="text"
 					id="inp_username"
+					minLength={3}
 					maxLength={100}
 					name="username"
 					className={twFormTxtInput}

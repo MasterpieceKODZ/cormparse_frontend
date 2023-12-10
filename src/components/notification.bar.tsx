@@ -1,6 +1,6 @@
 "use client";
 import "../styles/notification.bar.css";
-import IconClose from "./icons/close.icon";
+import IconClose from "./icons/close.notification.icon";
 
 const NotificationBar = () => {
 	return (
