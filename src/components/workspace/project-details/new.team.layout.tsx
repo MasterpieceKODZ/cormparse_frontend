@@ -26,7 +26,9 @@ const CreateNewTeamLayout = () => {
 	return (
 		<div
 			id="new_team_popup"
-			className=" tw-min-w-[310px] tw-max-w-[500px] tw-pt-8 tw-pb-12 tw-px-4 tw-h-[75vh] tw-border-2 tw-z-40 tw-border-gray-500 tw-bg-gray-200 dark:tw-bg-gray-700 tw-rounded tw-absolute tw-top-[12vh] tw-right-[30px] tw-overflow-hidden tw-flex-col tw-justify-start tw-items-start tw-hidden">
+
+			className=" tw-min-w-[310px] tw-max-w-[500px] tw-pt-8 tw-pb-12 tw-px-4 tw-h-[75vh] tw-border-2 tw-z-40 tw-border-gray-500 tw-bg-gray-200 dark:tw-bg-gray-700 tw-rounded tw-absolute tw-top-[12vh] tw-right-[30px] tw-overflow-hidden tw-flex-col tw-justify-start tw-items-start tw-hidden popup">
+
 			<h3 className=" tw-w-full tw-h-max tw-text-center tw-text-[24px] tw-font-exo tw-mb-3 tw-text-gray-800 dark:tw-text-gray-400">
 				Create New Team
 			</h3>
