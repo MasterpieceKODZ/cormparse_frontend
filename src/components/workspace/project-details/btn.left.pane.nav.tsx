@@ -2,8 +2,18 @@
 import IconShowIssueFilterOption from "@/components/icons/issues.arrow.right";
 import { projectsDetailsLeftpaneButtonClick } from "@/ui_controllers/workspace/projects/details/side.pane.btn.click";
 import { showHideLeftPaneIssueOptions } from "@/ui_controllers/workspace/projects/details/translate.side.pane.opt.cont";
+import Link from "next/link";
+import { useRouter } from "next/navigation";
 
-const BtnProjectDetailLeftPaneNav = ({ label }: { label: string }) => {
+const BtnProjectDetailLeftPaneNav = ({
+	label,
+	projectKey,
+}: {
+	label: string;
+	projectKey: string;
+}) => {
+	const router = useRouter();
+
 	return (
 		<div
 			id="left_pane_btn_wrapper"
@@ -16,7 +26,13 @@ const BtnProjectDetailLeftPaneNav = ({ label }: { label: string }) => {
 					}
 					projectsDetailsLeftpaneButtonClick(e);
 				}}>
-				<span>{label}</span>
+				<Link
+					className=" tw-no-underline tw-w-full tw-text-start"
+					href={`/workspace/project-details/${projectKey}/${
+						label != "Issues" ? label.toLowerCase() : ""
+					}`}>
+					{label}
+				</Link>
 				{label == "Issues" ? (
 					<span className=" tw-mr-4">
 						<IconShowIssueFilterOption />

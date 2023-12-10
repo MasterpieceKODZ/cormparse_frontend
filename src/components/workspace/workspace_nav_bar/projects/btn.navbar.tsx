@@ -7,7 +7,7 @@ const BtnNavProjects = () => {
 		<div className="tw-px-4 tw-py-2 tw-w-max tw-h-min tw-relative">
 			<button
 				id="nav_btn_projects"
-				className=" tw-px-4 tw-bg-transparent tw-font-russo-one tw-text-gray-700 dark:tw-text-gray-400 tw-inline-block"
+				className=" tw-px-4 tw-bg-transparent tw-font-russo-one tw-text-gray-800 dark:tw-text-gray-400 tw-inline-block"
 				onClick={toggleWorkspaceNavPopup}>
 				Projects{" "}
 			</button>

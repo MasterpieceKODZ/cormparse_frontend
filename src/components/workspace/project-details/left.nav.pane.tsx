@@ -3,8 +3,11 @@ import IconShowIssueFilterOption from "@/components/icons/issues.arrow.right";
 import BtnProjectDetailsLeftPaneIssuesFilter from "./btn.left.pane.issue.filter";
 import BtnProjectDetailLeftPaneNav from "./btn.left.pane.nav";
 import { showHideLeftPaneIssueOptions } from "@/ui_controllers/workspace/projects/details/translate.side.pane.opt.cont";
+import { useParams } from "next/navigation";
 
 const ProjectDetailsLeftNavPane = ({ name }: { name: string }) => {
+	const params = useParams();
+
 	return (
 		<section className=" tw-w-[300px] tw-h-full tw-border-r-[1.5px] tw-pt-8 tw-border-gray-300 dark:tw-border-r-gray-700">
 			<h4 className=" tw-w-full tw-h-max tw-mt-[45px] tw-ps-4 tw-pe-1 tw-truncate tw-font-exo tw-font-bold tw-text-[22px] tw-text-gray-800 dark:tw-text-gray-400">
@@ -12,11 +15,26 @@ const ProjectDetailsLeftNavPane = ({ name }: { name: string }) => {
 			</h4>
 			<div className=" tw-w-full tw-max-w-full tw-mt-[30px] tw-h-max tw-flex tw-flex-nowrap tw-overflow-hidden">
 				<div className=" tw-inline tw-pl-8 tw-w-full tw-min-w-full tw-max-w-full side_pane_opts tw-transition-transform tw-ease-linear">
-					<BtnProjectDetailLeftPaneNav label="Issues" />
-					<BtnProjectDetailLeftPaneNav label="Components" />
-					<BtnProjectDetailLeftPaneNav label="People" />
-					<BtnProjectDetailLeftPaneNav label="Teams" />
-					<BtnProjectDetailLeftPaneNav label="Details" />
+					<BtnProjectDetailLeftPaneNav
+						label="Issues"
+						projectKey={params.project_key as string}
+					/>
+					<BtnProjectDetailLeftPaneNav
+						label="Components"
+						projectKey={params.project_key as string}
+					/>
+					<BtnProjectDetailLeftPaneNav
+						label="People"
+						projectKey={params.project_key as string}
+					/>
+					<BtnProjectDetailLeftPaneNav
+						label="Teams"
+						projectKey={params.project_key as string}
+					/>
+					<BtnProjectDetailLeftPaneNav
+						label="Setting"
+						projectKey={params.project_key as string}
+					/>
 				</div>
 				<div
 					id="prj_dtl_lft_pane_iss_opt"

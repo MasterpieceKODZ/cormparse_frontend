@@ -38,7 +38,7 @@ const ProfileView = () => {
 					</div>
 					<div className=" tw-w-full tw-min-h-[50vh] tw-basis-full tw-shrink tw-grow-0 tw-border-2 tw-border-gray-300 dark:tw-border-gray-700 tw-rounded-lg tw-ps-7 tw-pe-2 tw-flex tw-flex-col tw-items-start tw-justify-start">
 						<p className=" tw-font-exo tw-font-bold tw-text-[14px] tw-text-start tw-mt-8 tw-text-gray-800 dark:tw-text-gray-400">
-							About
+							Role
 						</p>
 						<p className=" tw-font-exo tw-text-[16px] tw-font-semibold tw-mt-3 tw-text-gray-800 dark:tw-text-gray-400">
 							<span className=" tw-mr-3">
@@ -47,7 +47,7 @@ const ProfileView = () => {
 							Fullstack Developer
 						</p>
 						<p className=" tw-font-exo tw-font-bold tw-text-[14px] tw-text-start tw-mt-8 tw-text-gray-800 dark:tw-text-gray-400">
-							Contact
+							Email
 						</p>
 						<p className=" tw-font-exo tw-text-[16px] tw-font-semibold tw-mt-3 tw-text-gray-800 dark:tw-text-gray-400">
 							<span className=" tw-mr-3">
