@@ -1,6 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 import IconEmail from "@/components/icons/email";
 import IconWork from "@/components/icons/work";
+import EditProfilePicBtn from "@/components/profile_view/edit.pic.btn.jsx";
 import ListItemProfileViewIssue from "@/components/profile_view/issue.list.item";
 import ListItemProfileViewProjects from "@/components/profile_view/project.list.item";
 import Link from "next/link";
@@ -18,11 +19,16 @@ const ProfileView = () => {
 			<div className=" tw-w-full tw-basis-full tw-shrink tw-grow tw-flex tw-flex-wrap tw-items-start tw-justify-start">
 				<div className="tw-min-w-[320px] tw-w-[25%] tw-max-w-[350px] tw-ms-[5%] tw-min-h-[95%] tw-inline-flex tw-flex-col tw-items-center">
 					<div className=" tw-w-max tw-h-max tw-flex tw-flex-col tw-justify-start tw-items-center tw-translate-y-[-60px]">
-						<img
-							src="/logo.png"
-							alt="profile image"
-							className=" tw-w-[130px] tw-h-[130px] tw-object-cover tw-bg-white tw-rounded-[50%] tw-border-white tw-border-2"
-						/>
+						<div className=" tw-w-max tw-h-max tw-flex tw-justify-start tw-items-end tw-flex-nowrap">
+							<img
+								id="pic_prev"
+								src="/logo.png"
+								alt="profile image"
+								className=" tw-w-[130px] tw-h-[130px] tw-object-cover tw-bg-white tw-rounded-[50%] tw-border-white tw-border-2"
+							/>
+							<EditProfilePicBtn />
+						</div>
+
 						<h4 className=" tw-font-exo tw-font-bold tw-text-[30px] tw-mt-3 tw-text-gray-800 dark:tw-text-gray-400">
 							Gideon Faith Omorodion
 						</h4>
@@ -95,7 +101,7 @@ const ProfileView = () => {
 							See all
 						</button>
 					</div>
-					<div className="tw-w-full tw-border-2 tw-border-gray-300 dark:tw-border-gray-700 tw-rounded-lg tw-h-[35vh] tw-px-5 tw-overflow-y-auto">
+					<div className="tw-w-full tw-border-2 tw-border-gray-300 dark:tw-border-gray-700 tw-rounded-lg tw-h-[32vh] tw-px-5 tw-overflow-y-auto">
 						<ListItemProfileViewProjects
 							creator="MasterpieceKODZ"
 							projectName="Project Anaconda Sprint Scrum Team Quick Sleep"
