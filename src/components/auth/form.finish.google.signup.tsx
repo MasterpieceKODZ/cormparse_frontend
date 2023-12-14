@@ -9,6 +9,7 @@ import GearSpinner from "../icons/gear.spinner";
 import { btnPrimaryRounded } from "@/tailwind_classname_utils/buttons";
 import { submitGoogleSignUpForm } from "@/ui_controllers/submit.finish.google.siginup.form";
 import { useRouter } from "next/navigation";
+import { validateUsernameSyntax } from "@/ui_controllers/validate.username.syntax";
 
 const FormFinishGoogleSignUp = ({ user }: any) => {
 	const router = useRouter();
@@ -32,9 +33,15 @@ const FormFinishGoogleSignUp = ({ user }: any) => {
 					minLength={3}
 					maxLength={100}
 					name="username"
+					onChange={validateUsernameSyntax}
 					className={twFormTxtInput}
 					required
 				/>
+				<p
+					id="txt_usr_nm_caution"
+					className=" tw-max-w-[420px] tw-font-exo tw-text-red-500 tw-text-[16px] tw-text-start tw-invisible">
+					user name cannot contain spaces
+				</p>
 			</div>
 			<div className=" tw-mx-auto tw-w-max">
 				<label

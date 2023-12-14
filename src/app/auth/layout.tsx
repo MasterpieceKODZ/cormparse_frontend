@@ -5,11 +5,12 @@ export default function AuthRootLayout({
 }: {
 	children: React.ReactNode;
 }) {
-    return (
-			<>
-				{" "}
-				<AuthNavBar />
+	return (
+		<>
+			<AuthNavBar />
+			<main className=" tw-basis-full tw-min-h-[85vh] tw-grow tw-flex tw-justify-center tw-bg-white dark:tw-bg-gray-900">
 				{children}
-			</>
-		);
+			</main>
+		</>
+	);
 }

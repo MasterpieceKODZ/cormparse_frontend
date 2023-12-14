@@ -22,6 +22,12 @@ export async function submitGoogleSignUpForm(
 		return;
 	}
 
+	if (/\s/gi.test(username)) {
+		showNotificationBar("username cannot contain spaces", "error");
+		toggleSpinner();
+		return;
+	}
+
 	// extract firstname and lastname from session user name property
 	const names = (user.name as string).split(" ");
 

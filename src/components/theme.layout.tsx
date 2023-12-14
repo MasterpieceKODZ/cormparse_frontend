@@ -29,7 +29,7 @@ const ThemeLayout = () => {
 
 			<div
 				id="theme_layout"
-				className="dark:tw-bg-gray-800 tw-bg-gray-100 tw-absolute tw-top-[140%] tw-right-0 tw-w-max tw-py-3 tw-px-5 tw-border-2 tw-border-gray-900 tw-rounded-[10px] tw-hidden popup">
+				className="dark:tw-bg-gray-800 tw-bg-gray-100 tw-absolute tw-z-50 tw-top-[140%] tw-right-0 tw-w-max tw-py-3 tw-px-5 tw-border-2 tw-border-gray-900 tw-rounded-[10px] tw-hidden popup">
 				<p
 					id="select_theme_lgt"
 					className="tw-my-2 tw-cursor-pointer tw-text-start tw-text-gray-800 dark:tw-text-white theme_select"

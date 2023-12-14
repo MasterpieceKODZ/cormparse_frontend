@@ -9,7 +9,7 @@ import Link from "next/link";
 
 const WorkSpaceHeader = () => {
 	return (
-		<header className="tw-sticky tw-bg-white dark:tw-bg-gray-900 tw-top-0 tw-z-20 tw-border-b-[1px] tw-border-b-gray-300 dark:tw-border-b-gray-700">
+		<header className="tw-sticky tw-bg-white dark:tw-bg-gray-900 tw-top-0 tw-z-40 tw-border-b-[1px] tw-border-b-gray-300 dark:tw-border-b-gray-700">
 			<div className="tw-relative tw-flex tw-justify-center tw-items-center">
 				<img
 					src="/name_logo.png"
