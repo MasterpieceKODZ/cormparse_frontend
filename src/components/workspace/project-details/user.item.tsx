@@ -18,21 +18,21 @@ const ProjectMemberItem = ({
 }) => {
 	return (
 		<div
-			className=" tw-mt-[20px] tw-relative tw-cursor-pointer tw-min-w-[80%] tw-w-max tw-max-w-full"
+			className=" tw-relative tw-cursor-pointer tw-my-4  tw-w-full"
 			onMouseEnter={showPopup ? showUserPopup : () => {}}
 			onMouseLeave={showPopup ? hideUserPopup : () => {}}>
-			<div className=" tw-flex tw-flex-nowrap tw-justify-start tw-items-center tw-h-max tw-w-max tw-max-w-[100%]">
+			<div className=" tw-flex tw-flex-nowrap tw-justify-start tw-items-center tw-h-max tw-w-full">
 				<img
 					src={img}
 					alt="lead img"
 					className=" tw-w-[40px] tw-h-[40px] tw-bg-white tw-rounded-[50%] tw-border-2 tw-border-white"
 				/>
-				<p className=" tw-text-start tw-text-gray-800 dark:tw-text-gray-400 tw-ms-5 tw-font-exo tw-text-[20px] tw-max-w-[300px] tw-truncate">
+				<p className=" tw-text-start tw-text-gray-800 dark:tw-text-gray-400 tw-ms-5 tw-font-exo tw-text-[20px] tw-basis-full tw-shrink tw-grow-0 tw-max-w-[300px] tw-truncate">
 					{name}
 				</p>
 			</div>
 			{showPopup ? (
-				<div className=" tw-absolute tw-bottom-[102%] tw-z-40 tw-border-2 tw-border-slate-300 dark:tw-border-slate-700 tw-w-[70%] tw-rounded-lg tw-overflow-hidden tw-hidden user_popup">
+				<div className=" tw-absolute tw-bottom-[102%] tw-z-40 tw-border-2 tw-border-slate-300 dark:tw-border-slate-700 tw-w-[70%] tw-min-w-[350px] tw-rounded-lg tw-overflow-hidden tw-hidden user_popup">
 					<div className=" tw-w-full tw-h-[120px]  tw-relative tw-bg-gradient-to-b tw-from-secondary tw-to-60% tw-to-primary tw-py-5 tw-px-7 tw-flex tw-justify-start tw-items-start tw-flex-nowrap">
 						<img
 							src={img}

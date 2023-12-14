@@ -1,6 +1,5 @@
 import FormFinishGoogleSignUp from "@/components/auth/form.finish.google.signup";
 
-import AuthNavBar from "@/components/navbar";
 import { NEXT_AUTH_OPTION } from "@/utils/auth.option";
 import { getUserBySession } from "@/utils/get.user.by.session";
 import { getServerSession } from "next-auth/next";
@@ -22,20 +21,16 @@ const FinishGoogleSignUp = async () => {
 
 	return (
 		<>
-			{/* <AuthNavBar /> */}
+			<div className=" tw-w-[95%] tw-min-h-[90%] tw-inline-block tw-py-3 tw-max-w-[570px]">
+				<h1
+					tabIndex={1}
+					className=" tw-text-center tw-text-[20px] sm:tw-text-[25px] tw-mt-3 tw-font-exo tw-text-mygrey-default dark:tw-text-gray-400"
+					aria-label="cormparse login page">
+					Finish Sign Up
+				</h1>
 
-			<main className=" tw-basis-full tw-grow tw-flex tw-justify-center tw-bg-white dark:tw-bg-gray-900">
-				<div className=" tw-w-[95%] tw-min-h-[90%] tw-inline-block tw-py-3 tw-max-w-[570px]">
-					<h1
-						tabIndex={1}
-						className=" tw-text-center tw-text-[20px] sm:tw-text-[25px] tw-mt-3 tw-font-exo tw-text-mygrey-default dark:tw-text-gray-400"
-						aria-label="cormparse login page">
-						Finish Sign Up
-					</h1>
-
-					<FormFinishGoogleSignUp user={(session as any)?.user} />
-				</div>
-			</main>
+				<FormFinishGoogleSignUp user={(session as any)?.user} />
+			</div>
 		</>
 	);
 };

@@ -3,7 +3,7 @@ import ThemeLayout from "./theme.layout";
 
 const AuthNavBar = () => {
 	return (
-		<header className="tw-sticky tw-bg-white dark:tw-bg-gray-900 tw-top-0 tw-z-20">
+		<header className="tw-sticky tw-bg-white dark:tw-bg-gray-900 tw-top-0 tw-z-50">
 			{/* navbar */}
 			<div className=" tw-text-center xsm:tw-text-start tw-relative">
 				{/*eslint-disable-next-line @next/next/no-img-element*/}

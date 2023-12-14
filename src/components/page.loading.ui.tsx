@@ -1,6 +1,6 @@
 const InfinityLoadingSpinner = () => {
 	return (
-		<div className=" tw-w-screen tw-h-full tw-flex tw-justify-center tw-items-center tw-bg-white dark:tw-bg-gray-900">
+		<div className=" tw-w-screen tw-h-full tw-min-h-[85vh] tw-flex tw-justify-center tw-items-center tw-bg-white dark:tw-bg-gray-900">
 			<svg
 				xmlns="http://www.w3.org/2000/svg"
 				className="tw-w-[150px] tw-h-[150px] "

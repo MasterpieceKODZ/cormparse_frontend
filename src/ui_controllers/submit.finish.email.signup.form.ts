@@ -9,7 +9,7 @@ export async function submitEmailSignupForm(
 	router: AppRouterInstance,
 ) {
 	e.preventDefault();
-	closeNotification()
+	closeNotification();
 	toggleSpinner();
 
 	// fetch user data from UI
@@ -45,6 +45,21 @@ export async function submitEmailSignupForm(
 		// passwords match
 		showNotificationBar("passwords do not match.", "error");
 
+		toggleSpinner();
+		return;
+	}
+
+	if (/\s/gi.test(usernameInp.value)) {
+		showNotificationBar("username cannot contain spaces", "error");
+		toggleSpinner();
+		return;
+	}
+
+	if (/[^a-zA-Z0-9_@$+]/gi.test(usernameInp.value)) {
+		showNotificationBar(
+			"username can only contain _,@,$ and + as special characters",
+			"error",
+		);
 		toggleSpinner();
 		return;
 	}
