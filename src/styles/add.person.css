@@ -1,0 +1,8 @@
+.drop_dwn_prjct_person_rank {
+    max-height: 0px;
+    transition: all linear 0.5s;
+}
+
+.drop_dwn_prjct_person_rank.open {
+    max-height: 100px;
+}

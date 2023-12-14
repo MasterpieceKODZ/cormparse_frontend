@@ -181,21 +181,21 @@ const CreateNewTeamLayout = () => {
 						</div>
 					</div>
 				</div>
-				<div className=" tw-w-full tw-h-max tw-max-h-[25vh] tw-mt-[20px]">
+				<div className="tw-w-full tw-h-max tw-pe-[19px]">
 					<div className=" tw-relative">
 						<div className=" tw-w-full tw-h-max tw-py-3 tw-flex tw-justify-start tw-items-center">
-							<p className=" tw-basis-full tw-shrink tw-grow-0 tw-text-gray-800 dark:tw-text-gray-400 tw-text-[22px] tw-font-exo">
+							<p className=" tw-basis-full tw-shrink tw-grow-0 tw-text-gray-800 dark:tw-text-gray-400 tw-text-[22px] tw-text-start tw-font-exo">
 								Members
 							</p>
 							<button
 								id="btn_show_team_mem_inp"
-								className=" tw-w-max tw-h-max tw-me-6 tw-ms-3"
+								className=" tw-w-max tw-h-max  tw-ms-1"
 								onClick={showTeamMembersInput}>
 								<IconPlus stroke="tw-stroke-gray-800 dark:tw-stroke-gray-400" />
 							</button>
 							<button
 								id="btn_hide_team_mem_inp"
-								className=" tw-w-max tw-h-max tw-me-6 tw-ms-3 tw-hidden"
+								className=" tw-w-max tw-h-max  tw-ms-1 tw-hidden"
 								onClick={hideTeamMembersInput}>
 								<IconCloseCropper fill="tw-fill-gray-800 dark:tw-fill-gray-400" />
 							</button>
@@ -210,11 +210,11 @@ const CreateNewTeamLayout = () => {
 								id="team_mem_un_inp"
 								placeholder="type username..."
 								onChange={showTeamMembersSuggestion}
-								className={`${twFormTxtInput}`}
+								className={`tw-block tw-font-exo tw-text-mygrey-default dark:tw-text-gray-400 tw-max-w-[450px] tw-w-[100%] tw-h-[45px] tw-border-[1px] tw-rounded tw-border-mygrey-v-lyt dark:tw-border-gray-500 tw-px-2 tw-text-xl dark:tw-bg-gray-800 focus:tw-outline focus:tw-outline-blue-300 focus:tw-outline-1`}
 							/>
 							<div
 								id="team_mem_users_suggest_wrap"
-								className=" tw-w-full tw-max-h-[25vh]  tw-bg-blue-300 dark:tw-bg-blue-900 tw-rounded tw-p-5 tw-absolute tw-top-[105%] tw-hidden">
+								className=" tw-w-full tw-max-h-[25vh]  tw-bg-blue-300 dark:tw-bg-blue-900 tw-rounded-b tw-py-5 tw-ps-5 tw-absolute tw-top-[102%] tw-hidden">
 								<div className=" tw-w-full tw-h-full tw-max-h-[23vh] tw-overflow-y-auto">
 									<div
 										className=" tw-my-3 tw-w-full tw-cursor-pointer"
@@ -342,7 +342,7 @@ const CreateNewTeamLayout = () => {
 				<IconCloseCropper fill="tw-fill-red-700" />
 			</button>
 			<button className=" tw-bg-blue-700 tw-text-[17px] tw-text-white tw-font-russo-one tw-rounded-br tw-rounded-tl tw-px-4 tw-py-2 tw-absolute tw-bottom-0 tw-right-0">
-				submit
+				proceed
 			</button>
 		</div>
 	);
