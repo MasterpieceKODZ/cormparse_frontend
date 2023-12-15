@@ -4,6 +4,7 @@ import IconCloseCropper from "@/components/icons/close.cropper.icon";
 import IconEdit from "@/components/icons/edit";
 import QuillEditor from "@/components/quill.editor";
 import ProjectPropsURLInpBlck from "@/components/workspace/project-details/properties.url.block";
+import BtnDeleteProject from "@/components/workspace/project-details/setting/delete.project";
 import ProjectMemberItem from "@/components/workspace/project-details/user.item";
 import {
 	hideEditProjectLeadPopup,
@@ -18,7 +19,7 @@ import {
 
 const ProjectProperties = () => {
 	return (
-		<section className=" tw-w-full tw-h-full tw-max-h-full tw-overflow-y-auto tw-ps-[20%] tw-pt-[65px] tw-pe-4 tw-pb-[100px]">
+		<section className=" tw-w-full tw-h-full tw-max-h-full tw-relative tw-overflow-y-auto tw-ps-[20%] tw-pt-[65px] tw-pe-4 tw-pb-[100px]">
 			<p className=" tw-font-exo tw-font-semibold tw-text-start tw-mt-[70px] tw-text-[14px] tw-text-gray-800 dark:tw-text-gray-400">
 				Name
 			</p>
@@ -270,6 +271,7 @@ const ProjectProperties = () => {
 					Close
 				</button>
 			</div>
+			<BtnDeleteProject />
 		</section>
 	);
 };

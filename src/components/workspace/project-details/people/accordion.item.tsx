@@ -1,6 +1,5 @@
 "use client";
 import IconDownArrow from "@/components/icons/down.arrow";
-import ProjectMemberItem from "../user.item";
 import { openClosePeopleAccordion } from "@/ui_controllers/workspace/people/open.close.accordion";
 import ProjectPeopleUserItem from "./accordion.list.user.item";
 
@@ -12,7 +11,7 @@ const ProjectPeopleAccordionItem = ({
 	rank: string;
 }) => {
 	return (
-		<div className=" tw-w-[60vw] tw-max-h-[60vh] tw-my-[50px] tw-flex tw-flex-col tw-items-start tw-justify-start tw-border-2 tw-border-gray-300 dark:tw-border-gray-700 tw-rounded">
+		<div className=" tw-w-[60vw] tw-max-w-[800px] tw-max-h-[60vh] tw-my-[50px] tw-flex tw-flex-col tw-items-start tw-justify-start tw-border-2 tw-border-gray-300 dark:tw-border-gray-700 tw-rounded">
 			<div
 				className=" tw-w-full tw-h-max tw-flex tw-justify-start tw-py-4 tw-px-5 tw-items-center tw-flex-nowrap tw-border-b-2  tw-border-gray-300 dark:tw-border-gray-700"
 				onClick={openClosePeopleAccordion}>
@@ -25,7 +24,7 @@ const ProjectPeopleAccordionItem = ({
 			</div>
 			<div className=" tw-w-full tw-overflow-y-auto tw-relative people_memb_list">
 				<div className=" tw-relative tw-w-full tw-h-max tw-z-20 tw-py-8 tw-px-5">
-					<div className=" tw-ms-6 tw-pb-[40px]">
+					<div className=" tw-ms-6 tw-pt-[50px]">
 						<ProjectPeopleUserItem
 							name="Nicholas Benedict"
 							role="Cyber-Security Engineer"

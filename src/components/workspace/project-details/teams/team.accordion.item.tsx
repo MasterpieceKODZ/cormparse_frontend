@@ -19,7 +19,7 @@ import TeamMemberUserItem from "./team.member.user.item";
 
 const ProjectTeamAccordion = ({ index }: { index: string }) => {
 	return (
-		<div className=" tw-w-[60vw] tw-max-h-[60vh] tw-my-[50px] tw-flex tw-flex-col tw-items-start tw-justify-start tw-border-2 tw-border-gray-300 dark:tw-border-gray-700 tw-rounded">
+		<div className=" tw-w-[60vw] tw-max-w-[800px] tw-max-h-[60vh] tw-my-[50px] tw-flex tw-flex-col tw-items-start tw-justify-start tw-border-2 tw-border-gray-300 dark:tw-border-gray-700 tw-rounded">
 			<div
 				className=" tw-w-full tw-h-max tw-flex tw-justify-start tw-py-4 tw-px-5 tw-items-center tw-flex-nowrap tw-border-b-2  tw-border-gray-300 dark:tw-border-gray-700"
 				onClick={openTeamAccordion}>

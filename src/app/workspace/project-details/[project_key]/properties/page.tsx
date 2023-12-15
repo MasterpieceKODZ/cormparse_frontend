@@ -37,6 +37,7 @@ const ProjectProperties = () => {
 				name="MasterpieceKODZ"
 				img="/logo.png"
 				role="Data Analyst"
+				showPopup
 			/>
 			<p className=" tw-font-exo tw-font-semibold tw-text-start tw-mt-[70px] tw-text-[14px] tw-text-gray-800 dark:tw-text-gray-400">
 				Default Assignee
@@ -45,6 +46,7 @@ const ProjectProperties = () => {
 				name="MANofVALOR"
 				img="/logo.png"
 				role="Fullstack Developer"
+				showPopup
 			/>
 			<div className=" tw-w-max tw-h-max tw-mt-[100px] tw-flex tw-justify-center tw-items-center ">
 				<button className=" tw-w-max tw-h-max tw-px-5 tw-py-[4px] tw-rounded tw-bg-blue-800 tw-text-white tw-font-russo-one tw-text-center tw-mr-7">
