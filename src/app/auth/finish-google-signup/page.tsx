@@ -1,4 +1,4 @@
-import FormFinishGoogleSignUp from "@/components/auth/form.finish.google.signup";
+import FormFinishGoogleSignUp from "@/ui_components/auth/form.finish.google.signup";
 
 import { NEXT_AUTH_OPTION } from "@/utils/auth.option";
 import { getUserBySession } from "@/utils/get.user.by.session";

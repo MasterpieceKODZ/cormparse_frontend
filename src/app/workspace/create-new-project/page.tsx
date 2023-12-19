@@ -1,12 +1,12 @@
-import FormCreateProject from "@/components/workspace/projects/form.create.project";
+import FormCreateProject from "@/ui_components/workspace/projects/form.create.project";
 
 const CreateNewProject = () => {
 	return (
 		<section className=" tw-w-full tw-min-h-full">
-			<div className=" tw-w-max tw-h-full tw-block tw-mx-auto">
+			<div className=" tw-w-max tw-h-full tw-block tw-mx-auto tw-pt-[100px]">
 				<h1
 					tabIndex={1}
-					className=" tw-text-center tw-text-[20px] sm:tw-text-[25px] tw-mt-[100px] tw-font-exo tw-text-mygrey-default dark:tw-text-gray-400">
+					className=" tw-text-center tw-text-[20px] sm:tw-text-[25px] tw-font-exo tw-text-mygrey-default dark:tw-text-gray-400">
 					CREATE NEW PROJECT
 				</h1>
 				<p

@@ -1,8 +1,8 @@
-import ProjectDetailsLeftNavPane from "@/components/workspace/project-details/left.nav.pane";
+import ProjectDetailsLeftNavPane from "@/ui_components/workspace/project-details/left.nav.pane";
 import "../../../../styles/project.details.css";
 const ProjectDetailsLayout = ({ children }: { children: React.ReactNode }) => {
 	return (
-		<section className=" tw-w-full tw-max-h-[91.3vh] tw-h-[91.3vh] tw-flex tw-justify-start tw-items-center tw-flex-nowrap">
+		<section className=" tw-w-[100vw]  tw-h-full tw-grid tw-grid-cols-[auto_1fr]">
 			<ProjectDetailsLeftNavPane name="Project Ambassadors Extraction" />
 			{children}
 		</section>

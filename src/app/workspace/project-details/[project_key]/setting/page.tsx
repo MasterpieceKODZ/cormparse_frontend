@@ -1,11 +1,11 @@
 "use client";
 /* eslint-disable @next/next/no-img-element */
-import IconCloseCropper from "@/components/icons/close.cropper.icon";
-import IconEdit from "@/components/icons/edit";
-import QuillEditor from "@/components/quill.editor";
-import ProjectPropsURLInpBlck from "@/components/workspace/project-details/properties.url.block";
-import BtnDeleteProject from "@/components/workspace/project-details/setting/delete.project";
-import ProjectMemberItem from "@/components/workspace/project-details/user.item";
+import IconCloseCropper from "@/ui_components/icons/close.cropper.icon";
+import IconEdit from "@/ui_components/icons/edit";
+import QuillEditor from "@/ui_components/quill.editor";
+import ProjectPropsURLInpBlck from "@/ui_components/workspace/project-details/properties.url.block";
+import BtnDeleteProject from "@/ui_components/workspace/project-details/setting/delete.project";
+import ProjectMemberItem from "@/ui_components/workspace/project-details/user.item";
 import {
 	hideEditProjectLeadPopup,
 	showEditProjectLeadPopup,
@@ -19,7 +19,7 @@ import {
 
 const ProjectProperties = () => {
 	return (
-		<section className=" tw-w-full tw-h-full tw-max-h-full tw-relative tw-overflow-y-auto tw-ps-[20%] tw-pt-[65px] tw-pe-4 tw-pb-[100px]">
+		<section className=" tw-basis-full tw-h-full tw-max-h-full tw-relative tw-overflow-y-auto tw-ps-[20%] tw-pt-[65px] tw-pe-4 tw-pb-[100px]">
 			<p className=" tw-font-exo tw-font-semibold tw-text-start tw-mt-[70px] tw-text-[14px] tw-text-gray-800 dark:tw-text-gray-400">
 				Name
 			</p>
@@ -57,6 +57,7 @@ const ProjectProperties = () => {
 							name="MasterpieceKODZ"
 							img="/logo.png"
 							role="Data Analyst"
+							dir="up"
 							showPopup={true}
 						/>
 					</div>
@@ -94,6 +95,7 @@ const ProjectProperties = () => {
 								name="ManOfValor"
 								role="Cloud Architect"
 								img="/logo.png"
+								dir="up"
 								showPopup={false}
 							/>
 						</div>
@@ -104,6 +106,7 @@ const ProjectProperties = () => {
 								name="ManOfValor"
 								role="Cloud Architect"
 								img="/logo.png"
+								dir="up"
 								showPopup={false}
 							/>
 						</div>
@@ -114,6 +117,7 @@ const ProjectProperties = () => {
 								name="ManOfValor"
 								role="Cloud Architect"
 								img="/logo.png"
+								dir="up"
 								showPopup={false}
 							/>
 						</div>
@@ -124,6 +128,7 @@ const ProjectProperties = () => {
 								name="ManOfValor"
 								role="Cloud Architect"
 								img="/logo.png"
+								dir="up"
 								showPopup={false}
 							/>
 						</div>
@@ -134,6 +139,7 @@ const ProjectProperties = () => {
 								name="ManOfValor"
 								role="Cloud Architect"
 								img="/logo.png"
+								dir="up"
 								showPopup={false}
 							/>
 						</div>
@@ -142,6 +148,7 @@ const ProjectProperties = () => {
 								name="ManOfValor"
 								role="Cloud Architect"
 								img="/logo.png"
+								dir="up"
 								showPopup={false}
 							/>
 						</div>
@@ -152,6 +159,7 @@ const ProjectProperties = () => {
 								name="ManOfValor"
 								role="Cloud Architect"
 								img="/logo.png"
+								dir="up"
 								showPopup={false}
 							/>
 						</div>
@@ -168,6 +176,7 @@ const ProjectProperties = () => {
 						<ProjectMemberItem
 							name="MasterpieceKODZ"
 							img="/logo.png"
+							dir="up"
 							role="Data Analyst"
 							showPopup={true}
 						/>
@@ -206,6 +215,7 @@ const ProjectProperties = () => {
 								name="ManOfValor"
 								role="Cloud Architect"
 								img="/logo.png"
+								dir="up"
 								showPopup={false}
 							/>
 						</div>
@@ -216,6 +226,7 @@ const ProjectProperties = () => {
 								name="ManOfValor"
 								role="Cloud Architect"
 								img="/logo.png"
+								dir="up"
 								showPopup={false}
 							/>
 						</div>
@@ -226,6 +237,7 @@ const ProjectProperties = () => {
 								name="ManOfValor"
 								role="Cloud Architect"
 								img="/logo.png"
+								dir="up"
 								showPopup={false}
 							/>
 						</div>
@@ -236,6 +248,7 @@ const ProjectProperties = () => {
 								name="ManOfValor"
 								role="Cloud Architect"
 								img="/logo.png"
+								dir="up"
 								showPopup={false}
 							/>
 						</div>
@@ -246,6 +259,7 @@ const ProjectProperties = () => {
 								name="ManOfValor"
 								role="Cloud Architect"
 								img="/logo.png"
+								dir="up"
 								showPopup={false}
 							/>
 						</div>
@@ -257,6 +271,7 @@ const ProjectProperties = () => {
 								name="ManOfValorhideEditProjectLeadPopup"
 								role="Cloud Architect"
 								img="/logo.png"
+								dir="up"
 								showPopup={false}
 							/>
 						</div>

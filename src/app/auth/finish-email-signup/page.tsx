@@ -1,8 +1,8 @@
 "use client";
-import EmailKeyExpired from "@/components/auth/email.key.exp";
-import FormFinishEmailSignUp from "@/components/auth/form.finish.email.signup";
+import EmailKeyExpired from "@/ui_components/auth/email.key.exp";
+import FormFinishEmailSignUp from "@/ui_components/auth/form.finish.email.signup";
 
-import InfinityLoadingSpinner from "@/components/page.loading.ui";
+import InfinityLoadingSpinner from "@/ui_components/page.loading.ui";
 import { fetchEmailAddressWithKey } from "@/ui_controllers/fetch.email.address.sign.up";
 import { useRouter, useSearchParams } from "next/navigation";
 import { getSession } from "next-auth/react";
