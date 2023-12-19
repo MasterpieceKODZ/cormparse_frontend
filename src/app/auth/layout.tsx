@@ -1,4 +1,4 @@
-import AuthNavBar from "@/components/navbar";
+import AuthNavBar from "@/ui_components/navbar";
 
 export default function AuthRootLayout({
 	children,

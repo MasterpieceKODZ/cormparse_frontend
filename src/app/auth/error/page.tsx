@@ -1,6 +1,6 @@
 "use client";
 
-import AuthNavBar from "@/components/navbar";
+import AuthNavBar from "@/ui_components/navbar";
 import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
 import { useState } from "react";

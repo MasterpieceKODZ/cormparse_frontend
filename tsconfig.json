@@ -37,7 +37,7 @@
 		"src/utils/auth.option.js",
 		"quill.conf.js",
 		"src/ui_controllers/profile_view/selectImage.js",
-		"src/components/profile_view/edit.pic.btn.jsx"
+		"src/ui_components/profile_view/edit.pic.btn.jsx"
 	],
 	"exclude": ["node_modules"]
 }

@@ -1,13 +1,13 @@
 "use client";
-import ModalForgotPassword from "@/components/auth/modal.forgot.pw";
-import FormLogin from "@/components/auth/form.login";
+import ModalForgotPassword from "@/ui_components/auth/modal.forgot.pw";
+import FormLogin from "@/ui_components/auth/form.login";
 import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
-import BtnSignInWithGoogle from "@/components/auth/btn.signin.with.google";
+import BtnSignInWithGoogle from "@/ui_components/auth/btn.signin.with.google";
 import { getSession, signOut } from "next-auth/react";
 import { useEffect, useState } from "react";
 import { showNotificationBar } from "@/ui_controllers/notification.bar";
-import InfinityLoadingSpinner from "@/components/page.loading.ui";
+import InfinityLoadingSpinner from "@/ui_components/page.loading.ui";
 import { getUserBySession } from "@/utils/get.user.by.session";
 
 const Login = () => {

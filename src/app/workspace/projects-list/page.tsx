@@ -1,10 +1,10 @@
-import ButtonCreateNewProject from "@/components/workspace/projects/btn.create.project";
-import BtnProjectsPaginationNext from "@/components/workspace/projects/btn.page.next";
-import BtnProjectPaginationNum from "@/components/workspace/projects/btn.page.num";
-import BtnProjectsPaginationPrev from "@/components/workspace/projects/btn.page.prev";
-import FormProjectSearch from "@/components/workspace/projects/form.project.search";
-import BtnProjectTableHead from "@/components/workspace/projects/btn.project.table.head";
-import ProjectsTableItem from "@/components/workspace/projects/projects.table.item";
+import ButtonCreateNewProject from "@/ui_components/workspace/projects/btn.create.project";
+import BtnProjectsPaginationNext from "@/ui_components/workspace/projects/btn.page.next";
+import BtnProjectPaginationNum from "@/ui_components/workspace/projects/btn.page.num";
+import BtnProjectsPaginationPrev from "@/ui_components/workspace/projects/btn.page.prev";
+import FormProjectSearch from "@/ui_components/workspace/projects/form.project.search";
+import BtnProjectTableHead from "@/ui_components/workspace/projects/btn.project.table.head";
+import ProjectsTableItem from "@/ui_components/workspace/projects/projects.table.item";
 import { projectsTableRowHead } from "@/tailwind_classname_utils/workspace";
 
 const Projects = () => {
@@ -20,9 +20,9 @@ const Projects = () => {
 				</div>
 			</div>
 
-			<div className=" tw-w-full  tw-basis-full tw-shrink tw-overflow-auto tw-mt-12 tw-pt-10 tw-pb-1">
+			<div className=" tw-w-full tw-basis-full tw-shrink tw-overflow-auto tw-relative tw-mt-12 tw-pb-1">
 				<table className=" tw-w-full tw-min-w-[1100px] tw-table-auto">
-					<thead>
+					<thead className=" tw-h-max  tw-bg-white dark:tw-bg-gray-900 tw-sticky tw-top-0">
 						<tr className=" tw-border-b-2 tw-border-gray-500 tw-py-3">
 							<th className={`${projectsTableRowHead}`}>
 								<BtnProjectTableHead label="Name" />
@@ -45,6 +45,46 @@ const Projects = () => {
 					<tbody>
 						<ProjectsTableItem
 							name="Project Cobra Raven Lone Wolf Camel nkjgjf khkh kjdsflkj dsfjldf fsmflf flsflskf fsjflsf fsmflsf csmflsf sflsmlfsmf slmflsmfs "
+							projectKey="SDDFREF-12"
+							leadName="MasterpieceKODZ ManOfValor"
+							leadImg="/logo.png"
+							dateCreated="15-12-2023"
+							dateUpdate="10-01-2024"
+						/>
+						<ProjectsTableItem
+							name="Project Cobra Raven Lone Wolf Camel"
+							projectKey="SDDFREF-12"
+							leadName="MasterpieceKODZ ManOfValor"
+							leadImg="/logo.png"
+							dateCreated="15-12-2023"
+							dateUpdate="10-01-2024"
+						/>
+						<ProjectsTableItem
+							name="Project Cobra Raven Lone Wolf Camel"
+							projectKey="SDDFREF-12"
+							leadName="MasterpieceKODZ ManOfValor"
+							leadImg="/logo.png"
+							dateCreated="15-12-2023"
+							dateUpdate="10-01-2024"
+						/>
+						<ProjectsTableItem
+							name="Project Cobra Raven Lone Wolf Camel"
+							projectKey="SDDFREF-12"
+							leadName="MasterpieceKODZ ManOfValor"
+							leadImg="/logo.png"
+							dateCreated="15-12-2023"
+							dateUpdate="10-01-2024"
+						/>
+						<ProjectsTableItem
+							name="Project Cobra Raven Lone Wolf Camel"
+							projectKey="SDDFREF-12"
+							leadName="MasterpieceKODZ ManOfValor"
+							leadImg="/logo.png"
+							dateCreated="15-12-2023"
+							dateUpdate="10-01-2024"
+						/>
+						<ProjectsTableItem
+							name="Project Cobra Raven Lone Wolf Camel"
 							projectKey="SDDFREF-12"
 							leadName="MasterpieceKODZ ManOfValor"
 							leadImg="/logo.png"

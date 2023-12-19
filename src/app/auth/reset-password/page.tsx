@@ -1,13 +1,13 @@
 "use client";
 import "../../../styles/general.css";
-import GearSpinner from "@/components/icons/gear.spinner";
-import FormPasswordInpBlock from "@/components/auth/form.password.inp.block";
+import GearSpinner from "@/ui_components/icons/gear.spinner";
+import FormPasswordInpBlock from "@/ui_components/auth/form.password.inp.block";
 
 import { btnPrimaryRounded } from "@/tailwind_classname_utils/buttons";
 import { useState } from "react";
 import { fetchEmailAddressWithKey as fetchEmailAddressWithKey } from "@/ui_controllers/fetch.email.address.sign.up";
-import InfinityLoadingSpinner from "@/components/page.loading.ui";
-import EmailKeyExpired from "@/components/auth/email.key.exp";
+import InfinityLoadingSpinner from "@/ui_components/page.loading.ui";
+import EmailKeyExpired from "@/ui_components/auth/email.key.exp";
 import { resetPassword } from "@/ui_controllers/password_input/password.reset";
 import { useRouter, useSearchParams } from "next/navigation";
 import { getSession } from "next-auth/react";

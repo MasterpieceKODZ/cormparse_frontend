@@ -1,9 +1,9 @@
 /* eslint-disable @next/next/no-img-element */
-import IconEmail from "@/components/icons/email";
-import IconWork from "@/components/icons/work";
-import EditProfilePicBtn from "@/components/profile_view/edit.pic.btn.jsx";
-import ListItemProfileViewIssue from "@/components/profile_view/issue.list.item";
-import ListItemProfileViewProjects from "@/components/profile_view/project.list.item";
+import IconEmail from "@/ui_components/icons/email";
+import IconWork from "@/ui_components/icons/work";
+import EditProfilePicBtn from "@/ui_components/profile_view/edit.pic.btn.jsx";
+import ListItemProfileViewIssue from "@/ui_components/profile_view/issue.list.item";
+import ListItemProfileViewProjects from "@/ui_components/profile_view/project.list.item";
 import Link from "next/link";
 
 const ProfileView = () => {

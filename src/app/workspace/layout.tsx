@@ -1,6 +1,6 @@
 import "../../styles/workspace.css";
-import WorkSpaceHeader from "@/components/workspace/header";
-import WorkspaceSideNav from "../../components/workspace/sidenav/root.section";
+import WorkSpaceHeader from "@/ui_components/workspace/header";
+import WorkspaceSideNav from "../../ui_components/workspace/sidenav/root.section";
 
 export default function AuthRootLayout({
 	children,
@@ -10,7 +10,7 @@ export default function AuthRootLayout({
 	return (
 		<>
 			<WorkSpaceHeader />
-			<main className="tw-basis-full tw-shrink tw-grow tw-min-h-full tw-overflow-x-hidden tw-bg-white dark:tw-bg-gray-900 tw-relative">
+			<main className="tw-basis-full tw-w-[100vw] tw-shrink tw-grow-0 tw-h-[92vh] tw-overflow-x-hidden tw-relative">
 				{children}
 				<WorkspaceSideNav />
 			</main>
