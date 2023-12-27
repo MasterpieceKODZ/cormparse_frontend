@@ -23,8 +23,8 @@ const ProjectPeopleAccordionItem = ({
 				</div>
 			</div>
 			<div className=" tw-w-full tw-overflow-y-auto tw-relative people_memb_list">
-				<div className=" tw-relative tw-w-full tw-h-max tw-z-20 tw-py-8 tw-px-5">
-					<div className=" tw-ms-6 tw-pt-[50px]">
+				<div className=" tw-relative tw-w-full tw-h-max tw-z-20 tw-py-2 tw-px-5">
+					<div className=" tw-ms-6">
 						<ProjectPeopleUserItem
 							fullname="Nicholas Benedict"
 							username="Nicholaz"

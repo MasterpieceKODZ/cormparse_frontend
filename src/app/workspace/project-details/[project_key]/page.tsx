@@ -1,4 +1,5 @@
 import { projectsTableRowHead } from "@/tailwind_classname_utils/workspace";
+import BtnCreateNewIssue from "@/ui_components/workspace/project-details/issues-list/btn.create.new.issue";
 import BtnFilterIssueByAssignee from "@/ui_components/workspace/project-details/issues-list/btn.filter.assignee";
 import BtnFilterIssueByDueDate from "@/ui_components/workspace/project-details/issues-list/btn.filter.due_date";
 import BtnFilterIssueByStatus from "@/ui_components/workspace/project-details/issues-list/btn.filter.status";
@@ -7,12 +8,13 @@ import BtnIssueTableHead from "@/ui_components/workspace/project-details/issues-
 import BtnIssuePaginationNext from "@/ui_components/workspace/project-details/issues-list/btn.page.next";
 import BtnIssuePaginationNum from "@/ui_components/workspace/project-details/issues-list/btn.page.num";
 import BtnIssuesPaginationPrev from "@/ui_components/workspace/project-details/issues-list/btn.page.prev";
+import CreateNewIssue from "@/ui_components/workspace/project-details/issues-list/create.new.issue";
 import IssueTableItem from "@/ui_components/workspace/project-details/issues-list/issue.table.item";
 
 const ProjectDetails = () => {
 	return (
-		<section className=" tw-w-[80vw] tw-max-w-[80vw] tw-h-full tw-max-h-full tw-pt-5 tw-pb-3 ">
-			<h3 className=" tw-font-exo tw-font-semibold tw-text-[25px] tw-text-start tw-text-gray-800 dark:tw-text-gray-400 tw-mt-5 tw-ps-[18px]">
+		<section className=" tw-w-[80vw] tw-max-w-[80vw] tw-h-full tw-max-h-full tw-pt-5 tw-pb-3 tw-relative">
+			<h3 className=" tw-font-exo tw-font-semibold tw-text-[25px] tw-text-start tw-text-gray-800 dark:tw-text-gray-400 tw-mt-5 tw-ps-[18px] tw-relative">
 				Issues
 			</h3>
 			<div className=" tw-w-full tw-max-w-full tw-h-max tw-mt-[20px] tw-ps-[48px] tw-flex tw-justify-start tw-items-center">
@@ -226,7 +228,7 @@ const ProjectDetails = () => {
 			</div>
 			<div
 				id="pagination_cont"
-				className=" tw-w-full tw-h-max tw-flex tw-items-center tw-justify-end tw-pe-6 tw-mt-4">
+				className=" tw-w-full tw-h-max tw-flex tw-items-center tw-justify-end tw-pe-6 tw-mt-5">
 				<div
 					id="pagination_wrapper"
 					className=" tw-w-max tw-h-max tw-flex tw-justify-center tw-items-center">
@@ -239,8 +241,13 @@ const ProjectDetails = () => {
 					<BtnIssuePaginationNext />
 				</div>
 			</div>
+			<div className=" tw-w-max tw-h-max tw-absolute tw-top-[4vh] tw-right-[30px]">
+				<BtnCreateNewIssue />
+				<CreateNewIssue />
+			</div>
 		</section>
 	);
 };
 
 export default ProjectDetails;
+export const dynamic = "force-dynamic";

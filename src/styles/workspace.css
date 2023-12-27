@@ -44,16 +44,16 @@
     stroke: rgb(57, 57, 247);
 }
 
-.team_memb_list {
+/* .team_memb_list {
     max-height: 0px;
     transition-property: all;
     transition-timing-function: ease-out;
     transition-duration: 500ms;
-}
+} */
 
-.team_memb_list.show {
+/* .team_memb_list.show {
     max-height: 50vh;
-}
+} */
 
 .people_memb_list {
     max-height: 0px;

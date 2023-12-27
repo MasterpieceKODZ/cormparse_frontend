@@ -1,6 +1,6 @@
 "use client";
 import IconPlus from "@/ui_components/icons/plus";
-import { showNewTeamPopup } from "@/ui_controllers/workspace/teams/open.close.new.team.popup";
+import { showNewPersonPopup } from "@/ui_controllers/workspace/people/open.close.new.person.popup";
 import { useEffect } from "react";
 
 const BtnAddPersonToProject = () => {
@@ -16,8 +16,8 @@ const BtnAddPersonToProject = () => {
 	});
 	return (
 		<button
-			className=" tw-py-2 tw-px-6 tw-bg-secondary tw-text-white tw-text-[20px] tw-font-russo-one tw-absolute tw-top-[40px] tw-right-[30px] tw-rounded tw-text-center"
-			onClick={showNewTeamPopup}>
+			className=" tw-py-2 tw-px-6 tw-bg-secondary tw-text-white tw-text-[18px] tw-font-russo-one tw-absolute tw-top-[40px] tw-right-[30px] tw-rounded tw-text-center"
+			onClick={showNewPersonPopup}>
 			<span>
 				<IconPlus stroke="tw-stroke-white" />
 			</span>

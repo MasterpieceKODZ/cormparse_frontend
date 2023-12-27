@@ -21,3 +21,9 @@
 .theme_select.active path {
     stroke: rgb(57, 57, 247);
 }
+
+.quill {
+    height: 100% !important;
+    display: grid;
+    grid-template-rows: auto 1fr;
+}

@@ -2,7 +2,7 @@ import IconArrowRight from "@/ui_components/icons/arrow.right";
 
 const BtnIssuePaginationNext = () => {
 	return (
-		<button className=" tw-p-4 tw-bg-transparent">
+		<button className=" tw-py-1 tw-px-2 tw-bg-transparent">
 			<IconArrowRight />
 		</button>
 	);

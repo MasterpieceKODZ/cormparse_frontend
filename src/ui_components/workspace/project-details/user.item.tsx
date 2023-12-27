@@ -25,13 +25,13 @@ const ProjectMemberItem = ({
 			className=" tw-relative tw-cursor-pointer tw-my-4  tw-w-full"
 			onMouseEnter={showPopup ? showUserPopup : () => {}}
 			onMouseLeave={showPopup ? hideUserPopup : () => {}}>
-			<div className=" tw-flex tw-flex-nowrap tw-justify-start tw-items-center tw-h-max tw-w-full">
+			<div className=" tw-grid tw-grid-cols-[auto_1fr] tw-items-center tw-h-max tw-w-full">
 				<img
 					src={img}
 					alt="lead img"
 					className=" tw-w-[40px] tw-h-[40px] tw-bg-white tw-rounded-[50%] tw-border-2 tw-border-white"
 				/>
-				<p className=" tw-text-start tw-text-gray-800 dark:tw-text-gray-400 tw-ms-5 tw-font-exo tw-text-[16px] tw-basis-full tw-shrink tw-grow-0 tw-max-w-[300px] tw-truncate">
+				<p className=" tw-w-full tw-text-start tw-text-gray-800 dark:tw-text-gray-400 tw-ms-5 tw-font-exo tw-text-[16px] tw-truncate">
 					{username}
 				</p>
 			</div>

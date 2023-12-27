@@ -1,0 +1,10 @@
+#nw_iss_assignee_drp_dwn {
+    max-height: 0px;
+    transition-property: max-height;
+    transition-timing-function: linear;
+    transition-duration: .5s;
+}
+
+#nw_iss_assignee_drp_dwn.show {
+    max-height: 1000px;
+}
