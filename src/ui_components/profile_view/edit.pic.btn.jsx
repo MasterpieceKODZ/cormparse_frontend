@@ -50,7 +50,10 @@ const EditProfilePicBtn = () => {
 				<button
 					className=" tw-w-max tw-h-max tw-absolute tw-top-[10px] tw-right-[10px]"
 					onClick={closeCropperLayout}>
-					<IconCloseCropper fill="tw-fill-red-800" />
+					<IconCloseCropper
+						fill="tw-fill-red-800"
+						size="25px"
+					/>
 				</button>
 			</div>
 		</div>

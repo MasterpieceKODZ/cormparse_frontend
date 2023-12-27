@@ -54,7 +54,8 @@ const ProjectProperties = () => {
 				<div className=" tw-w-full tw-h-max tw-flex tw-justify-start tw-items-center">
 					<div className=" tw-basis-full tw-shrink tw-grow-0">
 						<ProjectMemberItem
-							name="MasterpieceKODZ"
+							fullname="MasterpieceKODZ"
+							username="Elija Benson"
 							img="/logo.png"
 							role="Data Analyst"
 							dir="up"
@@ -71,7 +72,7 @@ const ProjectProperties = () => {
 						id="btn_cls_edt_prjct_lead"
 						className=" tw-w-max tw-h-max tw-mx-5 tw-hidden"
 						onClick={hideEditProjectLeadPopup}>
-						<IconCloseCropper fill="tw-fill-gray-800 dark:tw-fill-gray-400" />
+						<IconCloseCropper fill="tw-fill-gray-800 dark:tw-fill-gray-400" size="25px"/>
 					</button>
 				</div>
 
@@ -92,7 +93,8 @@ const ProjectProperties = () => {
 							className=" tw-my-3 tw-w-full tw-cursor-pointer"
 							onClick={hideEditProjectLeadPopup}>
 							<ProjectMemberItem
-								name="ManOfValor"
+								username="ManOfValor"
+								fullname="Daniel"
 								role="Cloud Architect"
 								img="/logo.png"
 								dir="up"
@@ -103,7 +105,8 @@ const ProjectProperties = () => {
 							className=" tw-my-3 tw-w-full tw-cursor-pointer"
 							onClick={hideEditProjectLeadPopup}>
 							<ProjectMemberItem
-								name="ManOfValor"
+								username="ManOfValor"
+								fullname="Daniel"
 								role="Cloud Architect"
 								img="/logo.png"
 								dir="up"
@@ -114,7 +117,8 @@ const ProjectProperties = () => {
 							className=" tw-my-3 tw-w-full tw-cursor-pointer"
 							onClick={hideEditProjectLeadPopup}>
 							<ProjectMemberItem
-								name="ManOfValor"
+								username="ManOfValor"
+								fullname="Daniel"
 								role="Cloud Architect"
 								img="/logo.png"
 								dir="up"
@@ -125,7 +129,8 @@ const ProjectProperties = () => {
 							className=" tw-my-3 tw-w-full tw-cursor-pointer"
 							onClick={hideEditProjectLeadPopup}>
 							<ProjectMemberItem
-								name="ManOfValor"
+								username="ManOfValor"
+								fullname="Daniel"
 								role="Cloud Architect"
 								img="/logo.png"
 								dir="up"
@@ -136,16 +141,8 @@ const ProjectProperties = () => {
 							className=" tw-my-3 tw-w-full tw-cursor-pointer"
 							onClick={hideEditProjectLeadPopup}>
 							<ProjectMemberItem
-								name="ManOfValor"
-								role="Cloud Architect"
-								img="/logo.png"
-								dir="up"
-								showPopup={false}
-							/>
-						</div>
-						<div className=" tw-my-3 tw-w-full tw-cursor-pointer">
-							<ProjectMemberItem
-								name="ManOfValor"
+								username="ManOfValor"
+								fullname="Daniel"
 								role="Cloud Architect"
 								img="/logo.png"
 								dir="up"
@@ -156,7 +153,20 @@ const ProjectProperties = () => {
 							className=" tw-my-3 tw-w-full tw-cursor-pointer"
 							onClick={hideEditProjectLeadPopup}>
 							<ProjectMemberItem
-								name="ManOfValor"
+								username="ManOfValor"
+								fullname="Daniel"
+								role="Cloud Architect"
+								img="/logo.png"
+								dir="up"
+								showPopup={false}
+							/>
+						</div>
+						<div
+							className=" tw-my-3 tw-w-full tw-cursor-pointer"
+							onClick={hideEditProjectLeadPopup}>
+							<ProjectMemberItem
+								username="ManOfValor"
+								fullname="Daniel"
 								role="Cloud Architect"
 								img="/logo.png"
 								dir="up"
@@ -174,7 +184,8 @@ const ProjectProperties = () => {
 				<div className=" tw-w-full tw-h-max tw-flex tw-justify-start tw-items-center">
 					<div className=" tw-basis-full tw-shrink tw-grow-0">
 						<ProjectMemberItem
-							name="MasterpieceKODZ"
+							username="MasterpieceKODZ"
+							fullname="Maximo Lopez"
 							img="/logo.png"
 							dir="up"
 							role="Data Analyst"
@@ -191,7 +202,7 @@ const ProjectProperties = () => {
 						id="btn_cls_edt_prjct_def_assign"
 						className=" tw-w-max tw-h-max tw-mx-5 tw-hidden"
 						onClick={hideEditProjectDefaultAssigneePopup}>
-						<IconCloseCropper fill="tw-fill-gray-800 dark:tw-fill-gray-400" />
+						<IconCloseCropper fill="tw-fill-gray-800 dark:tw-fill-gray-400" size="25px"/>
 					</button>
 				</div>
 
@@ -212,7 +223,8 @@ const ProjectProperties = () => {
 							className=" tw-my-3 tw-w-full tw-cursor-pointer"
 							onClick={hideEditProjectDefaultAssigneePopup}>
 							<ProjectMemberItem
-								name="ManOfValor"
+								username="ManOfValor"
+								fullname="Gideon Faith"
 								role="Cloud Architect"
 								img="/logo.png"
 								dir="up"
@@ -223,7 +235,8 @@ const ProjectProperties = () => {
 							className=" tw-my-3 tw-w-full tw-cursor-pointer"
 							onClick={hideEditProjectDefaultAssigneePopup}>
 							<ProjectMemberItem
-								name="ManOfValor"
+								username="ManOfValor"
+								fullname="Gideon Faith"
 								role="Cloud Architect"
 								img="/logo.png"
 								dir="up"
@@ -234,7 +247,8 @@ const ProjectProperties = () => {
 							className=" tw-my-3 tw-w-full tw-cursor-pointer"
 							onClick={hideEditProjectDefaultAssigneePopup}>
 							<ProjectMemberItem
-								name="ManOfValor"
+								username="ManOfValor"
+								fullname="Gideon Faith"
 								role="Cloud Architect"
 								img="/logo.png"
 								dir="up"
@@ -245,7 +259,8 @@ const ProjectProperties = () => {
 							className=" tw-my-3 tw-w-full tw-cursor-pointer"
 							onClick={hideEditProjectDefaultAssigneePopup}>
 							<ProjectMemberItem
-								name="ManOfValor"
+								username="ManOfValor"
+								fullname="Gideon Faith"
 								role="Cloud Architect"
 								img="/logo.png"
 								dir="up"
@@ -256,7 +271,20 @@ const ProjectProperties = () => {
 							className=" tw-my-3 tw-w-full tw-cursor-pointer"
 							onClick={hideEditProjectDefaultAssigneePopup}>
 							<ProjectMemberItem
-								name="ManOfValor"
+								username="ManOfValor"
+								fullname="Gideon Faith"
+								role="Cloud Architect"
+								img="/logo.png"
+								dir="up"
+								showPopup={false}
+							/>
+						</div>
+						<div
+							className=" tw-my-3 tw-w-full tw-cursor-pointer"
+							onClick={hideEditProjectDefaultAssigneePopup}>
+							<ProjectMemberItem
+								username="ManOfValor"
+								fullname="Gideon Faith"
 								role="Cloud Architect"
 								img="/logo.png"
 								dir="up"
@@ -268,7 +296,8 @@ const ProjectProperties = () => {
 							className=" tw-my-3 tw-w-full tw-cursor-pointer"
 							onClick={hideEditProjectDefaultAssigneePopup}>
 							<ProjectMemberItem
-								name="ManOfValorhideEditProjectLeadPopup"
+								username="ManOfValorhideEditProjectLeadPopup"
+								fullname="Gideon Faith"
 								role="Cloud Architect"
 								img="/logo.png"
 								dir="up"

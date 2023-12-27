@@ -22,7 +22,7 @@ const ProjectPeopleUserItem = ({
 	position: string;
 }) => {
 	return (
-		<div className=" tw-w-full tw-h-max tw-flex tw-justify-start tw-items-center tw-mt-[30px]">
+		<div className=" tw-w-full tw-h-max tw-flex tw-justify-start tw-items-center tw-mt-[15px]">
 			<div className=" tw-basis-full">
 				<ProjectMemberItem
 					username={username}

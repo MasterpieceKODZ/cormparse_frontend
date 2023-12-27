@@ -37,7 +37,8 @@
 		"src/utils/auth.option.js",
 		"quill.conf.js",
 		"src/ui_controllers/profile_view/selectImage.js",
-		"src/ui_components/profile_view/edit.pic.btn.jsx"
+		"src/ui_components/profile_view/edit.pic.btn.jsx",
+		"src/ui_components/workspace/project-details/issues-list/create.new.issue.tsx"
 	],
 	"exclude": ["node_modules"]
 }

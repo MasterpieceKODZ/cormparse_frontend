@@ -24,10 +24,7 @@ const ProjectDetailsLeftNavPane = ({ name }: { name: string }) => {
 						label="People"
 						projectKey={params.project_key as string}
 					/>
-					<BtnProjectDetailLeftPaneNav
-						label="Teams"
-						projectKey={params.project_key as string}
-					/>
+
 					<BtnProjectDetailLeftPaneNav
 						label="Setting"
 						projectKey={params.project_key as string}
