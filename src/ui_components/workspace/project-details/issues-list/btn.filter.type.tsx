@@ -20,7 +20,7 @@ const BtnFilterIssueByType = () => {
 				<span
 					id="iss_typ_filter_btn_arw"
 					className=" tw-ms-4 iss_filter_btn_arw">
-					<IconDownArrow />
+					<IconDownArrow fill="tw-fill-gray-800 dark:tw-fill-gray-400" />
 				</span>
 			</button>
 			<div

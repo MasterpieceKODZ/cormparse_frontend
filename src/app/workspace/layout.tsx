@@ -10,7 +10,7 @@ export default function AuthRootLayout({
 	return (
 		<>
 			<WorkSpaceHeader />
-			<main className="tw-basis-full tw-w-[100vw] tw-shrink tw-grow-0 tw-h-[92vh] tw-overflow-x-hidden tw-relative">
+			<main className="tw-basis-full tw-w-[100vw] tw-shrink tw-grow-0 tw-max-h-[92vh] tw-overflow-x-hidden tw-relative">
 				{children}
 				<WorkspaceSideNav />
 			</main>

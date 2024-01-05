@@ -41,7 +41,7 @@ const ResetPassword = () => {
 						// there was an error while fetching email from cache, show not-found page
 						<EmailKeyExpired description="Oops! Unable to retrieve email from cache, if you came to this page through a password reset email link refresh the page to try again or click the button below to close this page" />
 					) : (
-						// email successfully retrieved, show sign-up form
+						// email address successfully retrieved, show sign-up form
 						<>
 							<h1
 								tabIndex={1}
@@ -61,7 +61,10 @@ const ResetPassword = () => {
 									type="button"
 									onClick={() => resetPassword(email, router)}>
 									Proceed
-									<GearSpinner />
+									<GearSpinner
+										fill="tw-fill-white"
+										size={35}
+									/>
 								</button>
 							</div>
 						</>

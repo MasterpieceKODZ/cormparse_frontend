@@ -6,7 +6,7 @@ import { ReactNode } from "react";
 
 const NewIssuePrioritySelectItem = ({ priority }: { priority: string }) => {
 	return (
-		<p className=" tw-w-max tw-h-max tw-px-3 tw-my-2 tw-flex tw-justify-center tw-items-center tw-text-[15px] tw-text-gray-700 dark:tw-text-gray-400">
+		<p className=" tw-w-max tw-h-max tw-px-2 tw-my-2 tw-flex tw-justify-center tw-items-center tw-text-[15px] tw-text-gray-700 dark:tw-text-gray-400">
 			<span className=" tw-inline tw-w-max tw-h-max tw-me-2">
 				{((priority: string): ReactNode => {
 					switch (priority) {

@@ -16,7 +16,7 @@ const BtnFilterIssueByStatus = () => {
 				<span
 					id="iss_status_filter_btn_arw"
 					className=" tw-ms-4 iss_filter_btn_arw">
-					<IconDownArrow />
+					<IconDownArrow fill="tw-fill-gray-800 dark:tw-fill-gray-400" />
 				</span>
 			</button>
 			<div
@@ -41,11 +41,6 @@ const BtnFilterIssueByStatus = () => {
 					className=" tw-w-full tw-h-max tw-my-[15px] tw-text-start tw-text-green-600 dark:tw-text-green-400 "
 					onClick={() => filterIssueByStatus("done")}>
 					Done
-				</button>
-				<button
-					className=" tw-w-full tw-h-max tw-my-[15px] tw-text-start tw-text-red-700 dark:tw-text-red-500 "
-					onClick={() => filterIssueByStatus("closed")}>
-					Closed
 				</button>
 			</div>
 		</div>

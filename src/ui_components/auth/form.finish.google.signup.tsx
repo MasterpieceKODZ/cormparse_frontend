@@ -62,7 +62,7 @@ const FormFinishGoogleSignUp = ({ user }: any) => {
 				className={`${btnPrimaryRounded}`}
 				type="submit">
 				Finish
-				<GearSpinner />
+				<GearSpinner fill="tw-fill-white" size={35}/>
 			</button>
 		</form>
 	);

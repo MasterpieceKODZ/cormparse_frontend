@@ -17,7 +17,11 @@ const BtnFilterIssueByAssignee = () => {
 				<span
 					id="iss_assignee_filter_btn_arw"
 					className=" tw-ms-4 iss_filter_btn_arw">
-					<IconDownArrow />
+					<IconDownArrow
+						fill="
+						tw-text-fill-800
+						dark:tw-fill-gray-400"
+					/>
 				</span>
 			</button>
 			<div

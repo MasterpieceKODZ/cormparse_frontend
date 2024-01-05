@@ -15,7 +15,7 @@ const BtnFilterIssueByDueDate = () => {
 				<span
 					id="iss_due_date_filter_btn_arw"
 					className=" tw-ms-4 iss_filter_btn_arw">
-					<IconDownArrow />
+					<IconDownArrow fill="tw-fill-gray-800 dark:tw-fill-gray-400" />
 				</span>
 			</button>
 			<div

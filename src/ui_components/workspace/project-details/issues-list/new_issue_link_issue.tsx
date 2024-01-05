@@ -36,7 +36,7 @@ const NewIssueLinkIssue = ({
 					<span
 						id="nw_iss_link_icn_arr_dwn"
 						className=" tw-ms-2 tw-inline-block">
-						<IconDownArrow />
+						<IconDownArrow fill="tw-fill-gray-800 dark:tw-fill-gray-400" />
 					</span>
 				</button>
 				<div
