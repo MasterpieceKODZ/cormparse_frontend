@@ -9,7 +9,7 @@ const ProjectDetailsLeftNavPane = ({ name }: { name: string }) => {
 	const params = useParams();
 
 	return (
-		<section className=" tw-w-[20vw] tw-inline tw-min-w-[200px] tw-max-w-[20vw] tw-h-full tw-border-r-[1.5px] tw-pt-8 tw-border-gray-300 dark:tw-border-r-gray-700">
+		<section className=" tw-w-[20vw] tw-inline tw-min-w-[200px] tw-max-w-[250px] tw-h-full tw-border-r-[1.5px] tw-pt-8 tw-border-gray-300 dark:tw-border-r-gray-700">
 			<h4 className=" tw-w-full tw-h-max tw-mt-[45px] tw-ps-4 tw-pe-1 tw-font-exo tw-font-bold tw-text-[22px] tw-text-gray-800 dark:tw-text-gray-400">
 				{name}{" "}
 			</h4>

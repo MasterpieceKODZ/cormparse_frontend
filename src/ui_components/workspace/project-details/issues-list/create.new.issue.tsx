@@ -66,7 +66,7 @@ const CreateNewIssue = () => {
 						<span
 							id="nw_iss_typ_icn_arr_dwn"
 							className=" tw-ms-2 tw-inline-block">
-							<IconDownArrow />
+							<IconDownArrow fill="tw-fill-gray-800 dark:tw-fill-gray-400" />
 						</span>
 					</button>
 					<div className=" tw-w-max tw-h-max tw-py-1 tw-px-3 tw-text-[15px] tw-flex tw-justify-center tw-items-center tw-text-gray-700 dark:tw-text-gray-400 tw-bg-gray-300 dark:tw-bg-gray-600 tw-rounded">
@@ -125,7 +125,7 @@ const CreateNewIssue = () => {
 						<span
 							id="nw_iss_prio_icn_arr_dwn"
 							className=" tw-ms-2 tw-inline-block">
-							<IconDownArrow />
+							<IconDownArrow fill="tw-fill-gray-800 dark:tw-fill-gray-400" />
 						</span>
 					</button>
 					<div className=" tw-w-max tw-h-max tw-py-1 tw-px-3 tw-text-[15px] tw-flex tw-justify-center tw-items-center tw-text-gray-700 dark:tw-text-gray-400 tw-bg-gray-300 dark:tw-bg-gray-600 tw-rounded">
@@ -195,7 +195,7 @@ const CreateNewIssue = () => {
 					<span
 						id="nw_iss_icn_dwn"
 						className=" tw-mx-3">
-						<IconDownArrow />
+						<IconDownArrow fill="tw-fill-gray-800 dark:tw-fill-gray-400" />
 					</span>
 				</button>
 				<div

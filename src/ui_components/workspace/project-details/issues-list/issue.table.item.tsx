@@ -90,9 +90,7 @@ const IssueTableItem = ({
 						? "tw-text-blue-700"
 						: status == "in-review"
 						? "tw-text-blue-700"
-						: status == "done"
-						? " tw-text-green-700"
-						: "tw-text-red-700"
+						: " tw-text-green-700"
 				}`}>
 				{status}
 			</td>

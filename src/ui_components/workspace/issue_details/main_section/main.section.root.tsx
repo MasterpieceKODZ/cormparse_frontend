@@ -1,9 +1,21 @@
+"use client";
+import IssueDetailActionButtons from "./action.btns";
+import IssueDetailActivityRoot from "./activity.segment";
+import IssueDetailsAttachmentList from "./atachment.list";
+import IssueDetailDescription from "./description.layout";
+import IssueDetailsSubTaskList from "./sub.task.list";
+import IssueDetailSummary from "./summary";
+
 const IssueDetailsMainSectionRoot = () => {
 	return (
-		<div className=" tw-w-[60vw] tw-h-full tw-overflow-y-auto tw-py-5 tw-ps-[30px] tw-pe-3">
-			<h2 className=" tw-font-exo tw-text-[25px] tw-font-semibold tw-text-gray-700 dark:tw-text-gray-400">
-				sound the alarm
-			</h2>
+		<div className=" tw-w-full lg:tw-w-[60vw] tw-h-max tw-min-h-max lg:tw-h-full tw-overflow-y-auto tw-py-5 tw-ps-[30px] tw-pe-3">
+			{/* summary */}
+			<IssueDetailSummary />
+			<IssueDetailActionButtons />
+			<IssueDetailDescription />
+			<IssueDetailsAttachmentList />
+			<IssueDetailsSubTaskList />
+			<IssueDetailActivityRoot />
 		</div>
 	);
 };

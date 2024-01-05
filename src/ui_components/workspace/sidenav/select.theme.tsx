@@ -13,7 +13,7 @@ const SideNavSelectTheme = () => {
 				className=" tw-w-max tw-bg-transparent tw-font-russo-one tw-text-gray-700 dark:tw-text-gray-400  tw-flex tw-items-center">
 				<span className=" tw-mr-3">Theme</span>
 				<span className="nav_drp_dwn_btn_theme_icon">
-					<IconDownArrow />
+					<IconDownArrow fill="tw-fill-gray-800 dark:tw-fill-gray-400" />
 				</span>
 			</button>
 			<div className=" tw-flex tw-max-w-full">

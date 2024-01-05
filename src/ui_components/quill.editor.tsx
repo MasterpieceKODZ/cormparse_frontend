@@ -34,20 +34,14 @@ const QuillEditor = () => {
 	];
 
 	return (
-		<div className=" tw-w-full tw-h-[400px] tw-max-w-[600px] tw-mt-[30px] tw-overflow-hidden">
+		<div className=" tw-w-full tw-h-[400px]  tw-mt-[30px] tw-overflow-hidden">
 			<ReactQuill
 				theme="snow"
 				modules={modules}
-				formats={formats}
-				defaultValue={`<p>Write your project description here</p>
-				<p>😌💚💛❤️‍🔥</p>
-				<p>
-					<br />
-				</p>
-				<p>show me what you got!!🫵🏾</p>`}>
+				formats={formats}>
 				<div
 					id="quill_editor_cont"
-					className=" tw-w-full tw-text-gray-800 dark:tw-text-gray-400 tw-h-full tw-max-h-[300px] tw-overflow-y-auto"></div>
+					className=" tw-w-full tw-text-gray-700 dark:tw-text-gray-400 tw-h-full tw-max-h-[300px] tw-overflow-y-auto"></div>
 			</ReactQuill>
 		</div>
 	);

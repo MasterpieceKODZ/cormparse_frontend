@@ -30,7 +30,7 @@ const AddPersonLayout = () => {
 						<span
 							id="icn_arrw_nw_prsn_rank"
 							className=" tw-me-[30px]">
-							<IconDownArrow />
+							<IconDownArrow fill="tw-fill-gray-800 dark:tw-fill-gray-400" />
 						</span>
 					</button>
 					<div className=" tw-w-full tw-max-w-[350px] tw-h-max tw-ms-3 tw-px-5 tw-overflow-hidden drop_dwn_prjct_person_rank">

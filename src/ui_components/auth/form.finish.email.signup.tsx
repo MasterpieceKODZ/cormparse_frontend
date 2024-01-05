@@ -104,7 +104,7 @@ const FormFinishEmailSignUp = ({ email }: { email: string }) => {
 				className={`${btnPrimaryRounded}`}
 				type="submit">
 				Proceed
-				<GearSpinner />
+				<GearSpinner fill="tw-fill-white" size={35} />
 			</button>
 		</form>
 	);

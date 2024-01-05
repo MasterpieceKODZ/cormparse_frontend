@@ -3,7 +3,7 @@ import IssueDetailsSubSectionRoot from "@/ui_components/workspace/issue_details/
 
 const IssueView = () => {
 	return (
-		<section className=" tw-w-[80vw] tw-h-full tw-overflow-hidden tw-flex tw-justify-start tw-items-start tw-flex-wrap-reverse">
+		<section className=" tw-w-full tw-h-full tw-max-h-[92vh] tw-overflow-y-auto tw-grid tw-grid-rows-[auto_auto] lg:tw-grid-cols-[1fr_auto]">
 			<IssueDetailsMainSectionRoot />
 			<IssueDetailsSubSectionRoot />
 		</section>
@@ -11,3 +11,4 @@ const IssueView = () => {
 };
 
 export default IssueView;
+export const dynamic = "force-dynamic";

@@ -23,7 +23,7 @@ export async function toggleIssueStatusFilter() {
 }
 
 export async function filterIssueByStatus(
-	type: "to-do" | "in-progress" | "in-review" | "done" | "closed",
+	type: "to-do" | "in-progress" | "in-review" | "done",
 ) {
 	document
 		.getElementById("iss_status_filter_btn_arw")

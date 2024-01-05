@@ -19,7 +19,7 @@ const ProjectPeopleAccordionItem = ({
 					{label}
 				</p>
 				<div className="tw-mr-4 people_drop_icon">
-					<IconDownArrow />
+					<IconDownArrow fill="tw-fill-gray-800 dark:tw-fill-gray-400" />
 				</div>
 			</div>
 			<div className=" tw-w-full tw-overflow-y-auto tw-relative people_memb_list">

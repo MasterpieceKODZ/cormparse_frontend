@@ -11,7 +11,7 @@ import BtnIssuesPaginationPrev from "@/ui_components/workspace/project-details/i
 import CreateNewIssue from "@/ui_components/workspace/project-details/issues-list/create.new.issue";
 import IssueTableItem from "@/ui_components/workspace/project-details/issues-list/issue.table.item";
 
-const ProjectDetails = () => {
+const ProjectIssuesList = () => {
 	return (
 		<section className=" tw-w-[80vw] tw-max-w-[80vw] tw-h-full tw-max-h-full tw-pt-5 tw-pb-3 tw-relative">
 			<h3 className=" tw-font-exo tw-font-semibold tw-text-[25px] tw-text-start tw-text-gray-800 dark:tw-text-gray-400 tw-mt-5 tw-ps-[18px] tw-relative">
@@ -117,7 +117,7 @@ const ProjectDetails = () => {
 							<IssueTableItem
 								type="sub-task"
 								summary="this issues is a temporary issue created from my grown from the fertile soil of"
-								status="closed"
+								status="in-progress"
 								issueKey="ndffg"
 								projectKey="ndf"
 								priority="high"
@@ -135,7 +135,7 @@ const ProjectDetails = () => {
 							<IssueTableItem
 								type="sub-task"
 								summary="this issues is a temporary issue created from my grown from the fertile soil of"
-								status="closed"
+								status="done"
 								issueKey="ndffg"
 								projectKey="ndf"
 								priority="high"
@@ -153,7 +153,7 @@ const ProjectDetails = () => {
 							<IssueTableItem
 								type="sub-task"
 								summary="this issues is a temporary issue created from my grown from the fertile soil of"
-								status="closed"
+								status="done"
 								issueKey="ndffg"
 								projectKey="ndf"
 								priority="high"
@@ -171,7 +171,7 @@ const ProjectDetails = () => {
 							<IssueTableItem
 								type="sub-task"
 								summary="this issues is a temporary issue created from my grown from the fertile soil of"
-								status="closed"
+								status="done"
 								issueKey="ndffg"
 								projectKey="ndf"
 								priority="high"
@@ -249,5 +249,5 @@ const ProjectDetails = () => {
 	);
 };
 
-export default ProjectDetails;
+export default ProjectIssuesList;
 export const dynamic = "force-dynamic";
