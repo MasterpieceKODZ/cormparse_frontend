@@ -31,7 +31,7 @@ const BtnProjectDetailLeftPaneNav = ({
 				<Link
 					className=" tw-no-underline tw-w-full tw-text-start"
 					href={`/workspace/project-details/${projectKey}/${
-						label != "Issues" ? label.toLowerCase() : ""
+						label != "Issues" ? label.split(" ").join("-").toLowerCase() : ""
 					}`}>
 					{label}
 				</Link>

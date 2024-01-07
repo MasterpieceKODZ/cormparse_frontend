@@ -40,7 +40,7 @@ const CreateNewIssue = () => {
 	return (
 		<div
 			id="new_iss_popup"
-			className=" tw-w-[30vw] tw-min-w-[400px] tw-max-w-[550px] tw-pt-6 tw-px-8 tw-pb-[200px] tw-h-[75vh] tw-border-2 tw-z-40 tw-border-gray-500 tw-bg-gray-200 dark:tw-bg-stone-900 tw-rounded tw-absolute tw-top-[115%] tw-right-0 tw-overflow-auto popup">
+			className=" tw-w-[30vw] tw-min-w-[400px] tw-max-w-[550px] tw-pt-6 tw-px-8 tw-pb-[200px] tw-h-[75vh] tw-border-2 tw-z-40 tw-border-gray-500 tw-bg-gray-200 dark:tw-bg-stone-900 tw-rounded tw-absolute tw-top-[115%] tw-right-0 tw-overflow-auto tw-hidden popup">
 			<h4 className=" tw-font-exo tw-text-[24px] tw-text-center tw-text-gray-800 dark:tw-text-gray-400">
 				Create New Issue
 			</h4>
