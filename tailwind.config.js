@@ -30,6 +30,7 @@ module.exports = {
 				xxsm: "410px",
 				xsm: "550px",
 				smmd: "700px",
+				lwmd: "830px",
 			},
 		},
 	},
