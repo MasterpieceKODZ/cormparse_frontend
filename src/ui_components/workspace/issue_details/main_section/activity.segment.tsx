@@ -83,7 +83,11 @@ const IssueDetailActivityRoot = () => {
 							username: "CastroNick",
 							imgUrl: "/logo.png",
 						}}
+						likes={21}
+						unlikes={6}
 						position={1}
+						isReply
+						replyTo="182"
 					/>
 					<IssueUpateItem
 						body={`<p><strong>Benedict Vero</strong> changed the status from  <strong class="tw-text-blue-600">in-progress</strong>  to  <strong class="tw-text-green-600">done</strong></p>`}
@@ -106,6 +110,8 @@ const IssueDetailActivityRoot = () => {
 							username: "CastroNick",
 							imgUrl: "/logo.png",
 						}}
+						likes={46}
+						unlikes={9}
 						position={3}
 					/>
 					<IssueUpateItem
@@ -129,6 +135,8 @@ const IssueDetailActivityRoot = () => {
 							username: "CastroNick",
 							imgUrl: "/logo.png",
 						}}
+						likes={98}
+						unlikes={0}
 						position={5}
 					/>
 					<IssueUpateItem

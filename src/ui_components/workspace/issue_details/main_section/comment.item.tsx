@@ -1,27 +1,41 @@
 /* eslint-disable @next/next/no-img-element */
 "use client";
 
+import IconLikeComment from "@/ui_components/icons/like.comment";
+import IconReplyComment from "@/ui_components/icons/reply.comment";
 import { useEffect, useState } from "react";
 
 const IssueCommentItem = ({
 	body,
 	author,
 	date,
+	likes,
+	unlikes,
 	position,
+	isReply,
+	replyTo,
 }: {
 	body: string;
 	author: { fullname: string; username: string; imgUrl: string };
 	date: string;
+	likes: number;
+	unlikes: number;
 	position: number;
+	isReply?: boolean;
+	replyTo?: string;
 }) => {
 	const [showComment, setShowComment] = useState(false);
+	const [replyToUsername, setReplyToUsername] = useState("Faster_Bone");
+	const [replyToId, setReplyToId] = useState("");
 
 	useEffect(() => {
 		setShowComment(true);
 	}, []);
 
 	return (
-		<div className=" tw-w-full tw-h-max tw-grid tw-grid-cols-[auto_1fr] tw-my-8">
+		<div
+			id={`cmmt_${position}`}
+			className=" tw-w-full tw-h-max tw-grid tw-grid-cols-[auto_1fr] tw-my-8">
 			<img
 				src={author.imgUrl}
 				alt="author pic"
@@ -47,12 +61,36 @@ const IssueCommentItem = ({
 				<div>
 					{showComment ? (
 						((bdy: string): string => {
-							document.getElementById(`cmt_bdy_${position}`)!.innerHTML = bdy;
+							document.getElementById(
+								`cmt_bdy_${position}`,
+							)!.innerHTML = `<p style="margin-bottom: 15px; color: blue; cursor: pointer;">${
+								isReply ? `@<strong>${replyToUsername}</strong>` : ""
+							}</p> ${bdy}`;
 							return "";
 						})(body)
 					) : (
 						<></>
 					)}
+				</div>
+				<div className=" tw-w-max tw-h-max tw-mt-7 tw-flex tw-justify-center tw-items-center">
+					<button className=" tw-w-max tw-h-max tw-mx-5">
+						<IconReplyComment fill="tw-fill-gray-800 dark:tw-fill-gray-400" />
+					</button>
+					<button className=" tw-w-max tw-h-max tw-mx-5 tw-flex tw-justify-center tw-items-center">
+						<IconLikeComment fill="tw-fill-gray-800 dark:tw-fill-gray-400" />
+						<span className=" tw-w-max tw-h-max tw-mx-2 tw-text-gray-700 dark:tw-text-gray-300 tw-text-[15px] tw-font-russo-one">
+							{likes > 0 ? likes : ""}
+						</span>
+					</button>
+					<button className=" tw-w-max tw-h-max tw-mx-5  tw-flex tw-justify-center tw-items-center">
+						<span className="tw-rotate-180">
+							<IconLikeComment fill="tw-fill-gray-800 dark:tw-fill-gray-400" />
+						</span>
+
+						<span className=" tw-w-max tw-h-max tw-mx-2 tw-text-gray-700 dark:tw-text-gray-300 tw-text-[15px] tw-font-russo-one">
+							{unlikes > 0 ? likes : ""}
+						</span>
+					</button>
 				</div>
 			</div>
 		</div>
