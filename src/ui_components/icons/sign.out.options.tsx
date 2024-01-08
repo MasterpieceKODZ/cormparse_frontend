@@ -12,7 +12,7 @@ const IconSignOutOptions = () => {
 			<path
 				id="secondary"
 				d="M20.24,19.19l-6,1.5a1,1,0,0,1-1.24-1V4.28a1,1,0,0,1,1.24-1l6,1.5a1,1,0,0,1,.76,1V18.22A1,1,0,0,1,20.24,19.19Z"
-				style={{ fill: "rgb(37, 99, 235)", strokeWidth: "2" }}></path>
+				style={{ fill: "red", strokeWidth: "2" }}></path>
 			<polyline
 				id="primary"
 				points="6 15 3 12 6 9"
