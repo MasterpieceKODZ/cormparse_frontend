@@ -31,7 +31,7 @@ export async function POST(req: Request) {
 
 		if (process.env.NODE_ENV == "production" && !process.env.AUTH_SUPPORT_URI) {
 			// auth support microservice url was provided as a secret not as env
-			authSupportUrl = fs.readFileSync("/config/auth_support_uri");
+			authSupportUrl = fs.readFileSync("/auth_support_uri", "utf8");
 		} else {
 			// auth support url was provided as an env
 			authSupportUrl = process.env.AUTH_SUPPORT_URI;

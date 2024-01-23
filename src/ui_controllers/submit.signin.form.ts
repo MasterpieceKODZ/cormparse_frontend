@@ -32,7 +32,7 @@ export async function submitSignInForm(): Promise<boolean> {
 
 	// initiate nextauth sign in
 	const signInResult = await signIn("credentials", {
-		callbackUrl: `/workspace/projects-list`,
+		callbackUrl: `${location.origin}/workspace/projects-list`,
 		redirect: false,
 		email: emailInp.value.trim(),
 		password: pwdInp.value.trim(),

@@ -1,6 +1,7 @@
 import { AppRouterInstance } from "next/dist/shared/lib/app-router-context.shared-runtime";
 import { closeNotification, showNotificationBar } from "./notification.bar";
 import { toggleSpinner } from "./toggle.gear.spinner";
+import { signOut } from "next-auth/react";
 
 export async function submitGoogleSignUpForm(
 	user: any,
@@ -66,6 +67,8 @@ export async function submitGoogleSignUpForm(
 				"account creation failed. check your network and try again.",
 				"error",
 			);
+
+			signOut({ callbackUrl: `${location.origin}/auth/login` });
 
 			toggleSpinner();
 		}

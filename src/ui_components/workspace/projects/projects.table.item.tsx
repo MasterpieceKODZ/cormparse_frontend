@@ -7,14 +7,18 @@ import ProjectMemberItem from "../project-details/user.item";
 const ProjectsTableItem = ({
 	name,
 	projectKey,
-	leadName,
+	leadUsername,
+	leadFullname,
+	leadRole,
 	leadImg,
 	dateCreated,
 	dateUpdate,
 }: {
 	name: string;
 	projectKey: string;
-	leadName: string;
+	leadUsername: string;
+	leadFullname: string;
+	leadRole: string;
 	leadImg: string;
 	dateCreated: string;
 	dateUpdate: string;
@@ -25,7 +29,7 @@ const ProjectsTableItem = ({
 				className={`${projectsTableRowData} tw-max-w-[300px] 2xl:tw-max-w-[500px] tw-cursor-pointer`}>
 				<Link
 					href={`/workspace/project-details/${projectKey}`}
-					className=" tw-text-blue-800 tw-no-underline tw-text-[15px]">
+					className=" tw-text-blue-700 dark:tw-text-blue-300 tw-no-underline tw-text-[15px]">
 					{name}
 				</Link>
 			</td>
@@ -33,10 +37,10 @@ const ProjectsTableItem = ({
 			<td>
 				<div>
 					<ProjectMemberItem
-						username="ManOfValor"
-						fullname="Wale Oluwajoba"
-						role="Cloud Architect"
-						img="/logo.png"
+						username={leadUsername}
+						fullname={leadFullname}
+						role={leadRole}
+						img={leadImg}
 						showPopup
 						dir="down"
 					/>
