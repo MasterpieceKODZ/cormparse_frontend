@@ -278,7 +278,7 @@ const Projects = ({ params }: { params: { page: string[] } }) => {
 				className=" tw-w-full tw-h-max tw-min-h-[62px] tw-flex tw-items-center tw-justify-end tw-pe-6 tw-mt-4">
 				{projects !== "failed" &&
 				projects !== "loading" &&
-				projectsCount > 0 ? (
+				projectsCount > 10 ? (
 					<>
 						<div
 							id="pagination_wrapper"
