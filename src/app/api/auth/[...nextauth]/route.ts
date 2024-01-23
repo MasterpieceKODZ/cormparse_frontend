@@ -38,7 +38,7 @@ const handler = NextAuth({
 							)
 							.toString("hex");
 
-						// compare the hash of password from the sign-in form to the password hash from the users data
+						// compare the hash of password from the sign-in form to the password hash from the user data from DB
 						if (hashPasswordFrmForm === user.passwordHash) {
 							return {
 								id: `${user.id}`,
@@ -127,7 +127,7 @@ const handler = NextAuth({
 					}
 				}
 
-				return false;
+				return true;
 			}
 		},
 		async redirect({ url, baseUrl }) {

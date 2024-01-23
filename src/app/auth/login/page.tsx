@@ -26,7 +26,7 @@ const Login = () => {
 				if (result) {
 					router.push("/workspace/projects-list");
 				} else {
-					signOut();
+					signOut({ callbackUrl: `${location.origin}/auth/login` });
 				}
 			});
 		} else {

@@ -21,7 +21,9 @@ const ProfileViewMoreOptions = () => {
 				className=" tw-w-max tw-h-max tw-absolute tw-top-0 tw-z-50 tw-right-[105%] tw-border tw-border-gray-500 tw-rounded tw-py-4 tw-bg-slate-200 dark:tw-bg-slate-700 tw-hidden popup">
 				<button
 					className=" tw-w-full tw-h-max tw-block tw-px-4 tw-pt-1 tw-pb-2 tw-border-b tw-border-b-gray-500 tw-font-russo-one  tw-text-[16px] tw-text-gray-700 dark:tw-text-gray-300"
-					onClick={() => signOut()}>
+					onClick={() =>
+						signOut({ callbackUrl: `${location.origin}/auth/login` })
+					}>
 					Sign-Out
 				</button>
 				<button

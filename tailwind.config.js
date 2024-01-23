@@ -32,6 +32,20 @@ module.exports = {
 				smmd: "700px",
 				lwmd: "830px",
 			},
+			keyframes: {
+				shimmer: {
+					"0%,100%": { "background-color": "rgb(243, 244, 246)" },
+					"50%": {
+						"background-color": "rgb(229, 231, 235)",
+					},
+				},
+				darkshimmer: {
+					"0%,100%": { "background-color": "rgb(75, 85, 99)" },
+					"50%": {
+						"background-color": "rgb(31, 41, 55)",
+					},
+				},
+			},
 		},
 	},
 	plugins: [],

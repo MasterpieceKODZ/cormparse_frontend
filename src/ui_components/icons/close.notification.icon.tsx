@@ -3,7 +3,7 @@ import { closeNotification } from "@/ui_controllers/notification.bar";
 const IconClose = () => {
 	return (
 		<div
-			className=" tw-cursor-pointer"
+			className=" tw-cursor-pointer tw-mr-3"
 			onClick={(e) => closeNotification()}>
 			<svg
 				xmlns="http://www.w3.org/2000/svg"
