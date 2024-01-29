@@ -1,16 +1,15 @@
 export function appendPageNumBtn(offset: string | null, projectsCount: number) {
 	document.getElementById("page_num_cont")!.innerHTML = "";
-	for (let i = 1; i <= Math.floor(projectsCount / 10); i++) {
-		console.log("loop cycle ", i);
 
-		console.log(offset);
+	// if projects count is not a multiple of 10 add 1
+	const numOfPages =
+		projectsCount % 10 < 1
+			? projectsCount / 10
+			: Math.floor(projectsCount / 10) + 1;
 
+	for (let i = 1; i <= numOfPages; i++) {
 		if (offset) {
 			if (i != parseInt(offset)) {
-				// return if offset is at last page and there is no more data left.
-				if (i == Math.floor(projectsCount / 10) && projectsCount % 10 < 1) {
-					return;
-				}
 				const btn = document.createElement("button");
 
 				btn.setAttribute(
@@ -29,9 +28,7 @@ export function appendPageNumBtn(offset: string | null, projectsCount: number) {
 		} else {
 			if (i > 1) {
 				// return if offset is at last page and there is no more data left.
-				if (i == Math.floor(projectsCount / 10) && projectsCount % 10 < 1) {
-					return;
-				}
+
 				const btn = document.createElement("button");
 
 				btn.setAttribute(

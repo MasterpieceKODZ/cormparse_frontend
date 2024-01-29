@@ -24,7 +24,7 @@ export async function fetchUserProjectsCount(
 
 		const offset = parseInt(location.pathname.split("/")[4]);
 
-		if (offset) setShowNextPageBtn(offset < Math.floor(countJSON.count / 10));
+		if (offset) setShowNextPageBtn(offset < countJSON.count / 10);
 	} else {
 		console.log("failed to fetch projects count");
 	}

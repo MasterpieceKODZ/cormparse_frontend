@@ -1,11 +1,17 @@
+"use client";
 import {
 	twFormTxtInput,
 	twInputLabel,
 } from "@/tailwind_classname_utils/login.page";
+import { createNewProjectHandler } from "@/ui_controllers/workspace/projects/create.new.projects";
+import { useRouter } from "next/navigation";
 
 const FormCreateProject = () => {
+	const router = useRouter();
 	return (
-		<form className=" tw-mt-[90px]">
+		<form
+			className=" tw-mt-[90px]"
+			onSubmit={createNewProjectHandler}>
 			<div className=" tw-mx-auto tw-w-max">
 				<label
 					htmlFor="inp_username"
@@ -42,7 +48,10 @@ const FormCreateProject = () => {
 			<div className=" tw-w-full tw-h-max tw-flex tw-justify-end tw-items-center tw-mt-[45px]">
 				<button
 					type="button"
-					className=" tw-bg-gray-500 tw-font-russo-one tw-text-white tw-text-[14px] tw-rounded tw-px-3 tw-py-1 tw-me-6">
+					className=" tw-bg-gray-500 tw-font-russo-one tw-text-white tw-text-[14px] tw-rounded tw-px-3 tw-py-1 tw-me-6"
+					onClick={() => {
+						router.back();
+					}}>
 					CANCEL
 				</button>
 				<button
