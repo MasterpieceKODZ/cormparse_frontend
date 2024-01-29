@@ -4,7 +4,6 @@
 
 import ButtonCreateNewProject from "@/ui_components/workspace/projects/btn.create.project";
 import BtnProjectsPaginationNext from "@/ui_components/workspace/projects/btn.page.next";
-import BtnProjectPaginationNum from "@/ui_components/workspace/projects/btn.page.num";
 import BtnProjectsPaginationPrev from "@/ui_components/workspace/projects/btn.page.prev";
 import FormProjectSearch from "@/ui_components/workspace/projects/form.project.search";
 import BtnProjectTableHead from "@/ui_components/workspace/projects/btn.project.table.head";
@@ -17,6 +16,7 @@ import { useRouter } from "next/navigation";
 import { refreshProjects } from "@/ui_controllers/workspace/projects/table/refresh.projects.data";
 import { fetchUserProjectsCount } from "@/utils/fetch.user.projects.count";
 import { appendPageNumBtn } from "@/ui_controllers/workspace/projects/table/load.page.num.btns";
+import IconRefresh from "@/ui_components/icons/refresh";
 
 const Projects = ({ params }: { params: { page: string[] } }) => {
 	const [projects, setProjects] = useState<Project[] | "loading" | "failed">(
@@ -136,19 +136,39 @@ const Projects = ({ params }: { params: { page: string[] } }) => {
 					<thead className=" tw-h-max  tw-bg-white dark:tw-bg-gray-900 tw-sticky tw-top-0 tw-z-30">
 						<tr className=" tw-border-b-2 tw-border-gray-500 tw-py-3">
 							<th className={`${projectsTableRowHead}`}>
-								<BtnProjectTableHead label="Name" />
+								<BtnProjectTableHead
+									label="Name"
+									projects={projects}
+									setProjects={setProjects}
+								/>
 							</th>
 							<th className={`${projectsTableRowHead}`}>
-								<BtnProjectTableHead label="Key" />
+								<BtnProjectTableHead
+									label="Key"
+									projects={projects}
+									setProjects={setProjects}
+								/>
 							</th>
 							<th className={`${projectsTableRowHead}`}>
-								<BtnProjectTableHead label="Lead" />
+								<BtnProjectTableHead
+									label="Lead"
+									projects={projects}
+									setProjects={setProjects}
+								/>
 							</th>
 							<th className={`${projectsTableRowHead}`}>
-								<BtnProjectTableHead label="Date Created" />
+								<BtnProjectTableHead
+									label="Date Created"
+									projects={projects}
+									setProjects={setProjects}
+								/>
 							</th>
 							<th className={`${projectsTableRowHead}`}>
-								<BtnProjectTableHead label="Date Updated" />
+								<BtnProjectTableHead
+									label="Date Updated"
+									projects={projects}
+									setProjects={setProjects}
+								/>
 							</th>
 							<th className={`${projectsTableRowHead}`}> </th>
 						</tr>
@@ -208,7 +228,6 @@ const Projects = ({ params }: { params: { page: string[] } }) => {
 									setProjects,
 									setProjectsCount,
 									setShowNextPageBtn,
-									projectsCount,
 								)
 							}>
 							Refresh Table
@@ -275,11 +294,24 @@ const Projects = ({ params }: { params: { page: string[] } }) => {
 			</div>
 			<div
 				id="pagination_cont"
-				className=" tw-w-full tw-h-max tw-min-h-[62px] tw-flex tw-items-center tw-justify-end tw-pe-6 tw-mt-4">
+				className=" tw-w-full tw-h-max tw-min-h-[62px] tw-flex tw-items-center tw-justify-end tw-pe-6 tw-mt-4 tw-relative">
 				{projects !== "failed" &&
 				projects !== "loading" &&
 				projectsCount > 10 ? (
 					<>
+						<button
+							className=" tw-w-max tw-h-max tw-rounded-lg tw-bg-gray-100 dark:tw-bg-gray-700 tw-text-gray-400 dark:tw-text-gray-300 tw-flex tw-justify-center tw-items-center tw-px-3 tw-py-1 tw-absolute tw-left-4 tw-top-5"
+							title="refresh table"
+							onClick={() =>
+								refreshProjects(
+									email,
+									setProjects,
+									setProjectsCount,
+									setShowNextPageBtn,
+								)
+							}>
+							<IconRefresh />
+						</button>
 						<div
 							id="pagination_wrapper"
 							className=" tw-w-max tw-h-max tw-flex tw-justify-center tw-items-center">

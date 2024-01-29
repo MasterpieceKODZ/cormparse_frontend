@@ -110,7 +110,7 @@ export async function POST(req: Request) {
 							return -1;
 						}
 
-						if (NA < NB) {
+						if (NA > NB) {
 							return 1;
 						}
 
