@@ -1,4 +1,3 @@
-import InprogressIssuesNavList from "./inprogress.issues";
 import PendingIssuesNavList from "./pending.issues";
 
 const NavbarMyWorkPopupRootlayout = () => {
@@ -9,7 +8,6 @@ const NavbarMyWorkPopupRootlayout = () => {
 			<p className=" tw-w-full tw-h-max tw-my-4 tw-text-center tw-text-[18px] tw-text-gray-700 dark:tw-text-gray-400 tw-font-exo">
 				Most Recent
 			</p>
-			<InprogressIssuesNavList />
 			<PendingIssuesNavList />
 		</div>
 	);

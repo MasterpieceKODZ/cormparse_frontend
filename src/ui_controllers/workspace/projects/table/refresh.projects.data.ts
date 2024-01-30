@@ -10,6 +10,9 @@ export async function refreshProjects(
 ) {
 	setProjects("loading");
 
+	// *********************** clear search input ***************************//
+	(document.getElementById("project_srch_inp") as HTMLInputElement).value = "";
+
 	// ************ reset project table head filter buttons *****************//
 	document.querySelectorAll(".project_tb_hd").forEach((el) => {
 		el.classList.remove("tw-bg-gray-300", "dark:tw-bg-gray-800", "active");

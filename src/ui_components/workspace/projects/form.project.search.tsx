@@ -1,8 +1,17 @@
+import { Dispatch, SetStateAction } from "react";
 import IconSearch from "../../icons/search";
+import { Project } from "@/db.schema.types";
+import { findProjectByName } from "@/ui_controllers/workspace/projects/find.project.by.name";
 
-const FormProjectSearch = () => {
+const FormProjectSearch = ({
+	setProjects,
+}: {
+	setProjects: Dispatch<SetStateAction<Project[] | "loading" | "failed">>;
+}) => {
 	return (
-		<form className=" tw-w-max tw-h-max tw-me-3 tw-inline-flex tw-justify-center tw-items-center">
+		<form
+			className=" tw-w-max tw-h-max tw-me-3 tw-inline-flex tw-justify-center tw-items-center"
+			onSubmit={(e) => findProjectByName(e, setProjects)}>
 			<input
 				type="text"
 				name="project_search_name"
@@ -12,7 +21,8 @@ const FormProjectSearch = () => {
 			/>
 			<button
 				aria-label="start project search by name"
-				className=" tw-inline-block">
+				className=" tw-inline-block"
+				type="submit">
 				<IconSearch />
 			</button>
 		</form>

@@ -9,9 +9,12 @@ export async function createNewProjectHandler(e: FormEvent) {
 
 	const session = await getSession();
 
-	const name = (document.getElementById("inp_proj_name") as HTMLInputElement)
-		.value;
-	const key = (document.getElementById("inp_key") as HTMLInputElement).value;
+	const name = (
+		document.getElementById("inp_proj_name") as HTMLInputElement
+	).value.toLowerCase();
+	const key = (
+		document.getElementById("inp_key") as HTMLInputElement
+	).value.toLowerCase();
 
 	try {
 		const createProject = await fetch("/api/create-project", {

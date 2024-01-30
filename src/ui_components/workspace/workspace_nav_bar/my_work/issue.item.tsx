@@ -13,7 +13,7 @@ const PopUpIssueItem = ({
 	summary: string;
 	issuekey: string;
 	project: string;
-	type: "task" | "sub_task" | "improvement" | "bug" | "feature";
+	type: string;
 }) => {
 	return (
 		<div className=" tw-w-full tw-flex tw-items-center tw-justify-start tw-mt-1">

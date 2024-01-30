@@ -125,7 +125,7 @@ const Projects = ({ params }: { params: { page: string[] } }) => {
 				Projects
 			</h3>
 			<div className=" tw-w-full tw-h-max tw-mt-3 tw-flex tw-justify-start tw-items-center">
-				<FormProjectSearch />
+				<FormProjectSearch setProjects={setProjects} />
 				<div className="tw-basis-full tw-shrink tw-inline-flex tw-justify-end">
 					<ButtonCreateNewProject />
 				</div>

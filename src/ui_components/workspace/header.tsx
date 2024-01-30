@@ -11,11 +11,17 @@ const WorkSpaceHeader = () => {
 	return (
 		<header className="tw-sticky tw-bg-white dark:tw-bg-gray-900 tw-top-0 tw-z-40 tw-border-b-[1px] tw-border-b-gray-300 dark:tw-border-b-gray-700">
 			<div className="tw-relative tw-flex tw-justify-center tw-items-center">
-				<img
-					src="/name_logo.png"
-					alt="cormparse logo"
-					className=" tw-h-8 smst:tw-h-[37px] xxsm:tw-h-[45px] md:tw-h-[50px] xl:tw-h-[60px] tw-my-2 tw-ms-3 xsm:tw-ms-[25px] md:tw-ms-[45px] xsm:tw-mt-[15px] tw-w-auto tw-inline-block"
-				/>
+				<Link
+					href={"/"}
+					passHref
+					className=" tw-my-2 tw-ms-3 xsm:tw-ms-[25px] md:tw-ms-[45px] xsm:tw-mt-[15px] tw-inline-block">
+					<img
+						src="/name_logo.png"
+						alt="cormparse logo"
+						className=" tw-h-8 smst:tw-h-[37px] xxsm:tw-h-[45px] md:tw-h-[50px] xl:tw-h-[60px] tw-w-auto "
+					/>
+				</Link>
+
 				<div className=" tw-basis-full tw-shrink tw-grow tw-flex tw-items-center tw-justify-end">
 					<div className="tw-items-center tw-justify-end tw-hidden smmd:tw-flex ">
 						<div className=" tw-w-max tw-h-full md:tw-mr-5 tw-inline-flex tw-items-center">
