@@ -42,7 +42,7 @@ module.exports = {
 				darkshimmer: {
 					"0%,100%": { "background-color": "rgb(75, 85, 99)" },
 					"50%": {
-						"background-color": "rgb(31, 41, 55)",
+						"background-color": "rgb(55, 65, 81)",
 					},
 				},
 			},
