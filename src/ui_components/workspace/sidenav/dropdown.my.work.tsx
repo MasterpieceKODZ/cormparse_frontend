@@ -1,7 +1,6 @@
 "use client";
 import IconDownArrow from "@/ui_components/icons/down.arrow";
 import PendingIssuesNavList from "../workspace_nav_bar/my_work/pending.issues";
-import InprogressIssuesNavList from "../workspace_nav_bar/my_work/inprogress.issues";
 import { openCloseDropDown } from "@/ui_controllers/workspace/sidenav/show.hide.drop.down";
 
 const DropdownSideNavMyWork = () => {
@@ -21,7 +20,6 @@ const DropdownSideNavMyWork = () => {
 					id="nav_drp_dwn_layout"
 					className=" tw-pl-4 tw-overflow-y-hidden nav_drp_dwn_btn_my_work">
 					<PendingIssuesNavList />
-					<InprogressIssuesNavList />
 				</div>
 			</div>
 		</div>

@@ -1,8 +1,11 @@
+"use client";
 import SideNavHeader from "./header";
 import DropdownSideNavProjects from "./dropdown.my.projects";
 import DropdownSideNavMyWork from "./dropdown.my.work";
 import SideNavSelectTheme from "./select.theme";
 import LoadTheme from "@/ui_components/load.theme";
+import Link from "next/link";
+import { toggleSidenav } from "@/ui_controllers/workspace/sidenav/toogle.sidenav";
 
 const WorkspaceSideNav = () => {
 	return (
@@ -18,15 +21,24 @@ const WorkspaceSideNav = () => {
 					<DropdownSideNavMyWork />
 					<DropdownSideNavProjects />
 
-					<p className=" tw-font-russo-one tw-text-gray-800 dark:tw-text-gray-400 tw-mt-5">
+					<Link
+						className=" tw-font-russo-one tw-text-gray-800 dark:tw-text-gray-400 tw-block tw-no-underline tw-mt-5"
+						href={`/workspace/projects-list`}
+						onClick={toggleSidenav}>
 						View All My Projects
-					</p>
-					<p className=" tw-font-russo-one tw-text-gray-800 dark:tw-text-gray-400 tw-mt-5">
+					</Link>
+					<Link
+						className=" tw-font-russo-one tw-text-gray-800 dark:tw-text-gray-400 tw-block tw-no-underline tw-mt-5"
+						href={`/workspace/create-new-project`}
+						onClick={toggleSidenav}>
 						Create New Project
-					</p>
-					<p className=" tw-font-russo-one tw-text-gray-800 dark:tw-text-gray-400 tw-mt-5">
+					</Link>
+					<Link
+						className=" tw-font-russo-one tw-text-gray-800 dark:tw-text-gray-400 tw-block tw-no-underline tw-mt-5"
+						href={`/my-profile-view`}
+						onClick={toggleSidenav}>
 						My Profile
-					</p>
+					</Link>
 					<SideNavSelectTheme />
 				</div>
 			</div>

@@ -14,6 +14,7 @@ export async function POST(req: Request) {
 		return new NextResponse("Unauthorized", {
 			status: 401,
 			headers: {
+				"Content-Type": "text/plain",
 				"Access-Control-Allow-Origin": origin, //only respond to requests from this app's frontend
 			},
 		});
@@ -26,10 +27,10 @@ export async function POST(req: Request) {
 
 		const body = await req.json();
 
-		let userProjectsList: Response;
+		let projectsQueryRes: Response;
 		if (body.email) {
 			if (body.offset) {
-				userProjectsList = await fetch(`${crudOpsServiceURL}`, {
+				projectsQueryRes = await fetch(`${crudOpsServiceURL}`, {
 					method: "POST",
 					body: JSON.stringify({
 						query:
@@ -63,7 +64,7 @@ export async function POST(req: Request) {
 					cache: "no-store",
 				});
 			} else {
-				userProjectsList = await fetch(`${crudOpsServiceURL}`, {
+				projectsQueryRes = await fetch(`${crudOpsServiceURL}`, {
 					method: "POST",
 					body: JSON.stringify({
 						query:
@@ -95,39 +96,52 @@ export async function POST(req: Request) {
 				});
 			}
 
-			if (userProjectsList.ok) {
-				const projectsGraphData = await userProjectsList.json();
+			if (projectsQueryRes.ok) {
+				const projectsGraphData = await projectsQueryRes.json();
 
-				console.log(projectsGraphData);
+				if (projectsGraphData.data.projects) {
+					console.log(projectsGraphData);
 
-				// sort projects by name
-				const projects = (projectsGraphData.data.projects as Project[]).sort(
-					(a, b): number => {
-						const NA = a.name.toUpperCase();
-						const NB = b.name.toUpperCase();
+					// sort projects by name
+					const projects = (projectsGraphData.data.projects as Project[]).sort(
+						(a, b): number => {
+							const NA = a.name.toUpperCase();
+							const NB = b.name.toUpperCase();
 
-						if (NA < NB) {
-							return -1;
-						}
+							if (NA < NB) {
+								return -1;
+							}
 
-						if (NA > NB) {
-							return 1;
-						}
+							if (NA > NB) {
+								return 1;
+							}
 
-						return 0;
-					},
-				);
+							return 0;
+						},
+					);
 
-				return new NextResponse(JSON.stringify(projects), {
-					status: 200,
-					headers: {
-						"Access-Control-Allow-Origin": origin,
-						"Content-Type": "application/json",
-					},
-				});
+					return new NextResponse(JSON.stringify(projects), {
+						status: 200,
+						headers: {
+							"Access-Control-Allow-Origin": origin,
+							"Content-Type": "application/json",
+						},
+					});
+				} else {
+					console.log("graphql error received in fetch-projects-list");
+					console.log(projectsGraphData.errors[0]);
+
+					return new NextResponse("FAILED", {
+						status: 400,
+						headers: {
+							"Access-Control-Allow-Origin": origin,
+							"Content-Type": "text/plain",
+						},
+					});
+				}
 			} else {
 				console.log("fetch user projects failed...");
-				console.error(userProjectsList.statusText);
+				console.error(projectsQueryRes.statusText);
 
 				return new NextResponse("failed to fetch user projects...", {
 					status: 404,

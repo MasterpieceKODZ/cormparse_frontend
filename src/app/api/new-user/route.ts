@@ -16,6 +16,7 @@ export async function POST(req: Request) {
 		return new NextResponse("Unauthorized", {
 			status: 401,
 			headers: {
+				"Content-Type": "text/plain",
 				"Access-Control-Allow-Origin": origin,
 			},
 		});

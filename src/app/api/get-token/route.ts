@@ -15,6 +15,7 @@ export async function GET(req: any) {
 		return new NextResponse("Unauthorized", {
 			status: 401,
 			headers: {
+				"Content-Type": "text/plain",
 				"Access-Control-Allow-Origin": origin,
 			},
 		});
