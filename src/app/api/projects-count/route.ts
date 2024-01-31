@@ -44,19 +44,32 @@ export async function POST(req: Request) {
 			});
 
 			if (countGraphRes.ok) {
-				const countGraph = await countGraphRes.json();
+				const countGraphJSON = await countGraphRes.json();
 
-				console.log("user's projects count is ", countGraph);
+				if (countGraphJSON.data.projectsCount) {
+					console.log("user's projects count is ", countGraphJSON);
 
-				return new NextResponse(
-					JSON.stringify({ count: countGraph.data.projectsCount }),
-					{
+					return new NextResponse(
+						JSON.stringify({ count: countGraphJSON.data.projectsCount }),
+						{
+							headers: {
+								"Content-Type": "application/json",
+								"Access-Control-Allow-Origin": origin,
+							},
+						},
+					);
+				} else {
+					console.log("graphql error in projects count");
+					console.log(countGraphJSON.errors[0]);
+
+					return new NextResponse("FAILED", {
+						status: 500,
 						headers: {
-							"Content-Type": "application/json",
+							"Content-Type": "text/plain",
 							"Access-Control-Allow-Origin": origin,
 						},
-					},
-				);
+					});
+				}
 			} else {
 				console.log("projects count graphql req failed...");
 

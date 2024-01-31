@@ -3,6 +3,8 @@ import PopUpIssueItem from "./issue.item";
 import { Issue } from "@/db.schema.types";
 import { getSession } from "next-auth/react";
 import { refreshRecentPendingIssue } from "@/ui_controllers/workspace/navbar/refresh.recent.pending.issues";
+import Link from "next/link";
+import { closeSideNav } from "@/ui_controllers/workspace/sidenav/toogle.sidenav";
 
 const PendingIssuesNavList = () => {
 	const [recentPendingIssue, setRecentPendingIssue] = useState<
@@ -66,13 +68,24 @@ const PendingIssuesNavList = () => {
 				<ul className=" tw-list-none">
 					{recentPendingIssue.map((issue) => {
 						return (
-							<li key={issue.id}>
-								<PopUpIssueItem
-									summary={issue.summary}
-									type={issue.type}
-									issuekey={issue.key}
-									project={issue.project.name}
-								/>
+							<li
+								className=" tw-cursor-pointer tw-mt-3"
+								key={issue.id}
+								onClick={() => {
+									document.querySelectorAll(".popup").forEach((e) => {
+										e.classList.add("tw-hidden");
+									});
+								}}>
+								<Link
+									href={`/workspace/project-details/${issue.project.key}/issue-details/${issue.key}`}
+									onClick={closeSideNav}>
+									<PopUpIssueItem
+										summary={issue.summary}
+										type={issue.type}
+										issuekey={issue.key}
+										project={issue.project.name}
+									/>
+								</Link>
 							</li>
 						);
 					})}

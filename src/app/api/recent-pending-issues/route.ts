@@ -13,6 +13,7 @@ export async function POST(req: Request) {
 		return new NextResponse("Unauthorized", {
 			status: 401,
 			headers: {
+				"Content-Type": "text/plain",
 				"Access-Control-Allow-Origin": origin, //only respond to requests from this app's frontend
 			},
 		});
@@ -41,6 +42,7 @@ export async function POST(req: Request) {
 					"        updatedAt " +
 					"        project{" +
 					"           name" +
+					"           key" +
 					"        }" +
 					"   }" +
 					"}",
@@ -71,7 +73,8 @@ export async function POST(req: Request) {
 					},
 				);
 			} else {
-				console.log("recent issue response failed");
+				console.log("graphql error on recent-pending-issue");
+				console.log(resultJSON.errors[0]);
 
 				return new NextResponse("RECENT_ISSUE_FAILED", {
 					status: 500,
