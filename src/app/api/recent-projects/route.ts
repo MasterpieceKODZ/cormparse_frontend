@@ -37,6 +37,10 @@ export async function POST(req: Request) {
 						"        id " +
 						"        name " +
 						"        key " +
+						"        updatedAt " +
+						"        creator{" +
+						"           username" +
+						"        }" +
 						"    } " +
 						"} ",
 					operationName: "RecentProjects",

@@ -13,29 +13,29 @@ export async function POST(req: Request) {
 		return new NextResponse("Unauthorized", {
 			status: 401,
 			headers: {
-				"Cntent-Type": "text/plain",
+				"Content-Type": "text/plain",
 				"Access-Control-Allow-Origin": origin, //only respond to requests from this app's frontend
 			},
 		});
 	}
 
 	try {
-		//fetch backend service url fron ENV of config-map file
+		// fetch backend service url fron ENV of config-map file
 		const crudOpsServiceURL =
 			process.env.CRUD_OPS_URL ?? readFileSync("/crud_ops_url", "utf8");
 
 		const body = await req.json();
 
-		const userDataRes = await fetch(crudOpsServiceURL, {
+		const deleteUserRes = await fetch(`${crudOpsServiceURL}`, {
 			method: "POST",
 			body: JSON.stringify({
 				query:
-					"query UserData($email: String!){" +
-					"   userData(email: $email){ " +
+					"mutation DeleteUser($email: String!){" +
+					"   deleteUser(email: $email){ " +
 					"    id  email   firstname   lastname   username  photoUrl role" +
 					"}" +
 					"}",
-				operationName: "UserData",
+				operationName: "DeleteUser",
 				variables: { email: body.email },
 			}),
 			headers: {
@@ -44,51 +44,54 @@ export async function POST(req: Request) {
 			cache: "no-store",
 		});
 
-		if (userDataRes.ok) {
-			const userDataJSON = await userDataRes.json();
+		if (deleteUserRes.ok) {
+			const deleteUserGraphRes = await deleteUserRes.json();
 
-			if (userDataJSON.data.userData) {
-				return new NextResponse(JSON.stringify(userDataJSON.data.userData), {
-					status: 200,
-					headers: {
-						"Content-Type": "application/json",
-						"Access-Control-Allow-Origin": origin,
+			if (deleteUserGraphRes.data.deleteUser) {
+				return new NextResponse(
+					JSON.stringify(deleteUserGraphRes.data.deleteUser),
+					{
+						status: 200,
+						headers: {
+							"Content-Type": "application/json",
+							"Access-Control-Allow-Origin": origin,
+						},
 					},
-				});
+				);
 			} else {
-				console.log("get-user-graphql error");
-				console.log(userDataJSON.errors[0]);
-
-				return new NextResponse("FAILED", {
-					status: 500,
-					headers: {
-						"Content-Type": "text/plain",
-						"Access-Control-Allow-Origin": origin,
-					},
-				});
+				if (deleteUserGraphRes.errors[0].message == "NOT_ALLOWED") {
+					return new NextResponse("NOT_ALLOWED", {
+						status: 400,
+						headers: {
+							"Access-Control-Allow-Origin": origin,
+							"Content-Type": "text/plain",
+						},
+					});
+				} else {
+					return new NextResponse("FAILED", {
+						status: 500,
+						headers: {
+							"Access-Control-Allow-Origin": origin,
+							"Content-Type": "text/plain",
+						},
+					});
+				}
 			}
 		} else {
-			console.log("get-user-graphql query failed");
-			const errorText = await userDataRes.json();
-			console.log(errorText);
-
-			return new NextResponse("ERROR", {
+			return new NextResponse("FAILED", {
 				status: 500,
 				headers: {
-					"Content-Type": "text/plain",
 					"Access-Control-Allow-Origin": origin,
+					"Content-Type": "text/plain",
 				},
 			});
 		}
-	} catch (err) {
-		console.log("error on get-user-graphql");
-		console.error(err);
-
+	} catch (error) {
 		return new NextResponse("ERROR", {
 			status: 500,
 			headers: {
-				"Content-Type": "text/plain",
 				"Access-Control-Allow-Origin": origin,
+				"Content-Type": "text/plain",
 			},
 		});
 	}

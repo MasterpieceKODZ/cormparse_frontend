@@ -9,7 +9,7 @@ import {
 
 const ProfileViewMoreOptions = () => {
 	return (
-		<div className=" tw-w-max tw-h-max tw-absolute tw-top-[50px] tw-right-[50px]">
+		<div className=" tw-w-max tw-h-max tw-absolute tw-top-[50px] lwmd:tw-top-[15px] lg:tw-top-[50px] tw-right-[50px] lwmd:tw-right-[20px] lg:tw-right-[50px]">
 			<button
 				className=" tw-w-max tw-h-max"
 				title="sign-out"
@@ -37,9 +37,9 @@ const ProfileViewMoreOptions = () => {
 				id="cont_del_acct_popup"
 				className=" tw-w-max tw-h-max tw-max-w-[350px] tw-absolute tw-top-0 tw-z-50 tw-right-[105%] tw-border tw-border-gray-500 tw-rounded tw-py-4 tw-bg-slate-200 dark:tw-bg-slate-700 tw-hidden popup">
 				<p className=" tw-font-exo tw-text-gray-700 dark:tw-text-gray-300 tw-mb-4 tw-px-3 tw-text-[17px] tw-text-center">
-					Are you sure you want to delete your cormparse account? all your data
-					will be deleted permanently too.
+					Are you sure you want to delete your account
 				</p>
+
 				<div className=" tw-w-full tw-h-max tw-flex tw-justify-around tw-items-center tw-mt-5">
 					<button
 						className=" tw-w-max tw-h-max tw-py-1 tw-px-5 tw-rounded tw-bg-green-600 tw-text-white tw-font-russo-one"

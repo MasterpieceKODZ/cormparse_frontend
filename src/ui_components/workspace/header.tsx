@@ -71,10 +71,8 @@ const WorkSpaceHeader = () => {
 								href="/my-profile-view"
 								passHref>
 								{user?.photoUrl ? (
-									<Image
+									<img
 										src={user.photoUrl}
-										width={40}
-										height={40}
 										alt="user display picture"
 										className=" tw-inline-block tw-w-[40px] tw-h-[40px] tw-object-cover tw-object-center tw-rounded-[50%] tw-mr-6"
 									/>

@@ -53,9 +53,7 @@ const PendingIssuesNavList = () => {
 				</div>
 			) : recentPendingIssue == "failed" ? (
 				<div className=" tw-w-full tw-h-max">
-					<p
-						className=" tw-text-center tw-text-gray-700 dark:tw-text-gray-300 tw-font-exo tw-text-[16px] tw-mt-4
-					6">
+					<p className=" tw-text-center tw-text-gray-700 dark:tw-text-gray-300 tw-font-exo tw-text-[16px] tw-mt-4">
 						failed to fetch recent issues
 					</p>
 					<button

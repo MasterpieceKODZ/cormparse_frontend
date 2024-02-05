@@ -12,7 +12,7 @@ const ListItemProfileViewIssue = ({
 	topBorder,
 }: {
 	issueSum: string;
-	type: "task" | "sub_task" | "improvement" | "bug" | "feature";
+	type: string;
 	projectName: string;
 	dateUpdated: String;
 	topBorder: boolean;
@@ -37,7 +37,7 @@ const ListItemProfileViewIssue = ({
 					<IconFeature />
 				)}
 			</div>
-			<div className=" tw-inline tw-h-max tw-basis-full tw-shrink tw-flex-grow-0">
+			<div className=" tw-inline tw-h-max tw-basis-full tw-w-[35vw] tw-max-w-[530px] tw-shrink tw-flex-grow-0">
 				<p className=" tw-text-[16px] tw-font-exo tw-text-gray-800 dark:tw-text-gray-400 tw-truncate">
 					{issueSum}
 				</p>

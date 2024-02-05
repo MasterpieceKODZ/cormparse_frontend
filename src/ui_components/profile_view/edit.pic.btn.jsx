@@ -8,11 +8,11 @@ import IconCloseCropper from "../icons/close.cropper.icon";
 import IconEdit from "../icons/edit";
 import { closeCropperLayout } from "@/ui_controllers/profile_view/close.cropper";
 
-const EditProfilePicBtn = () => {
+const EditProfilePicBtn = ({ setUserData }) => {
 	let cropper;
 	let imageType;
 	return (
-		<div className=" tw-w-max tw-h-max tw-relative">
+		<div className=" tw-w-max tw-h-max tw-relative tw-z-50">
 			<input
 				type="file"
 				name="pic"
@@ -21,6 +21,8 @@ const EditProfilePicBtn = () => {
 				onChange={async (e) => {
 					cropper = await selectImageForCropper(e);
 					imageType = e.target.files[0].type;
+
+					e.target.value = null;
 				}}
 				className=" tw-w-0 tw-h-0 tw-invisible"
 			/>
@@ -33,7 +35,7 @@ const EditProfilePicBtn = () => {
 			</button>
 			<div
 				id="cropper_layout"
-				className=" tw-w-[300px] tw-h-[400px] tw-border-2 tw-rounded-lg  tw-border-gray-500 tw-bg-gray-200 dark:tw-bg-gray-700 tw-py-5 tw-px-2 tw-absolute tw-top-[110%] tw-left-[-100px] tw-hidden">
+				className=" tw-w-[300px] tw-h-[400px] tw-border-2 tw-rounded-lg  tw-border-gray-500 tw-bg-gray-200 dark:tw-bg-gray-800 tw-py-5 tw-px-2 tw-absolute tw-top-[110%] tw-left-[-100px] tw-z-50 tw-hidden">
 				<div className=" tw-w-[230px] tw-h-[230px] tw-bg-white tw-mx-auto tw-mt-[55px]">
 					<img
 						id="cropper_img"
@@ -44,7 +46,7 @@ const EditProfilePicBtn = () => {
 				</div>
 				<button
 					className=" tw-font-russo-one tw-text-[18px] tw-mt-[30px] tw-px-5 tw-py-2 tw-rounded tw-block tw-mx-auto tw-text-white tw-bg-blue-800"
-					onClick={(e) => cropImage(cropper, imageType)}>
+					onClick={(e) => cropImage(cropper, imageType, setUserData)}>
 					Crop
 				</button>
 				<button

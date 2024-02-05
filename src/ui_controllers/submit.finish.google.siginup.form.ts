@@ -23,11 +23,23 @@ export async function submitGoogleSignUpForm(
 		return;
 	}
 
+	//  ************************* validate username ***********************************
 	if (/\s/gi.test(username)) {
 		showNotificationBar("username cannot contain spaces", "error");
 		toggleSpinner();
 		return;
 	}
+
+	if (/[^a-zA-Z0-9_@$+]/gi.test(username)) {
+		showNotificationBar(
+			"username can only contain _,@,$ and + as special characters",
+			"error",
+		);
+		toggleSpinner();
+		return;
+	}
+
+	// *******************************
 
 	// extract firstname and lastname from session user name property
 	const names = (user.name as string).split(" ");
