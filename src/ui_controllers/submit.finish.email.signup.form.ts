@@ -41,6 +41,7 @@ export async function submitEmailSignupForm(
 		return;
 	}
 
+	//  validate password
 	if (passwordInp.value != confPasswordInp.value) {
 		// passwords match
 		showNotificationBar("passwords do not match.", "error");
@@ -49,6 +50,7 @@ export async function submitEmailSignupForm(
 		return;
 	}
 
+	//  ******************* validate username syntax *******************************
 	if (/\s/gi.test(usernameInp.value)) {
 		showNotificationBar("username cannot contain spaces", "error");
 		toggleSpinner();
@@ -63,6 +65,8 @@ export async function submitEmailSignupForm(
 		toggleSpinner();
 		return;
 	}
+
+	// ***********************************
 
 	try {
 		// create new user

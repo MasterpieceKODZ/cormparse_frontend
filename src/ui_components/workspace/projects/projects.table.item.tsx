@@ -52,7 +52,7 @@ const ProjectsTableItem = ({
 				<div className=" tw-w-max tw-h-max tw-relative">
 					<Link
 						className=" tw-w-max tw-h-max tw-no-underline"
-						href={`/workspace/project-details/${projectKey}/setting`}>
+						href={`/workspace/project-details/${projectKey}/about-project`}>
 						<IconEdit fill="tw-fill-gray-800 dark:tw-fill-gray-400" />
 					</Link>
 				</div>

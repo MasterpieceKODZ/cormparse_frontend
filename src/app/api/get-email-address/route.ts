@@ -24,15 +24,9 @@ export async function POST(req: Request) {
 	console.log("body @ get-email-address next api endpoint is");
 	console.log(body);
 
-	let authSupportUrl;
-
-	if (process.env.NODE_ENV == "production" && !process.env.AUTH_SUPPORT_URI) {
-		// auth support microservice url was provided as a secret not as env
-		authSupportUrl = fs.readFileSync("/auth_support_uri", "utf8");
-	} else {
-		// auth support url was provided as an env
-		authSupportUrl = process.env.AUTH_SUPPORT_URI;
-	}
+	const authSupportUrl =
+		process.env.AUTH_SUPPORT_URI ??
+		fs.readFileSync("/auth_support_uri", "utf8");
 
 	try {
 		// fetch email from auth-support service

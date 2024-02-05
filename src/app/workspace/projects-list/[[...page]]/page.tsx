@@ -9,7 +9,7 @@ import FormProjectSearch from "@/ui_components/workspace/projects/form.project.s
 import BtnProjectTableHead from "@/ui_components/workspace/projects/btn.project.table.head";
 import ProjectsTableItem from "@/ui_components/workspace/projects/projects.table.item";
 import { projectsTableRowHead } from "@/tailwind_classname_utils/workspace";
-import { Fragment, ReactNode, createElement, useEffect, useState } from "react";
+import { Fragment, ReactNode, useEffect, useState } from "react";
 import { Project } from "@/db.schema.types";
 import { getSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
