@@ -60,7 +60,7 @@ export async function POST(req: Request) {
 		if (result.ok) {
 			const resultJSON = await result.json();
 
-			if (resultJSON.data.searchProjectByName) {
+			if (resultJSON.data.searchProjectByName[0]) {
 				console.log("found projects who's names contain ", body.search);
 				console.log(resultJSON.data.searchProjectByName);
 

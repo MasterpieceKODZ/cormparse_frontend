@@ -22,7 +22,7 @@ export async function toggleIssueAssigneeFilter() {
 		?.classList.toggle("tw-hidden");
 }
 
-export async function filterIssueByAssignee(name: string) {
+export async function filterIssueByAssignee() {
 	document
 		.getElementById("iss_assignee_filter_btn_arw")
 		?.classList.remove("tw-rotate-180");

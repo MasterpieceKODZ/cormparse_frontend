@@ -17,7 +17,7 @@ const IssueDetailPersonComponent = ({
 			<img
 				src={imgUrl}
 				alt="user pic"
-				className=" tw-w-[45px] tw-h-[45px] tw-object-cover tw-rounded-[50%] tw-border-2 tw-border-white tw-inline"
+				className=" tw-w-[45px] tw-h-[45px] tw-object-cover tw-rounded-[50%] tw-border-2 tw-border-gray-500 dark:tw-border-gray-200 tw-inline"
 			/>
 			<div className=" tw-w-full tw-h-max tw-ms-4">
 				<p className=" tw-w-full tw-text-start tw-text-gray-700 dark:tw-text-gray-300 tw-font-exo tw-text-[18px] tw-font-semibold">

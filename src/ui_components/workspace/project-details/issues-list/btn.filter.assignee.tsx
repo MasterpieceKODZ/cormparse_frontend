@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 "use client";
 import IconDownArrow from "@/ui_components/icons/down.arrow";
 
@@ -6,8 +7,33 @@ import {
 	filterIssueByAssignee,
 	toggleIssueAssigneeFilter,
 } from "@/ui_controllers/workspace/issues/show.hide.issue.assignee.filter";
+import { useSearchParams } from "next/navigation";
+import { useEffect, useState } from "react";
+import { compileIssuesProps } from "@/ui_controllers/workspace/issues/compile.query.params.string";
+import { User } from "@/db.schema.types";
+import { updateIssueAssigneeSuggestion } from "@/ui_controllers/workspace/issues/update.issue.assignee.sug";
+import Link from "next/link";
 
-const BtnFilterIssueByAssignee = () => {
+const BtnFilterIssueByAssignee = ({
+	offset,
+	category,
+}: {
+	offset: string;
+	category: string;
+}) => {
+	const urlQuery = useSearchParams();
+	const [peopleSug, setPeopleSug] = useState<null | User[]>(null);
+	const [issueProps, setIssuesProps] = useState<any>({});
+	const projectKey = location.pathname.split("/")[3];
+
+	const categoryToUse = category == "all" ? "all_" : "all"; // when filtering by issue properties only use the 'all' category and alternate between 'all' & '_all' categories to ensure a new page is loaded
+
+	useEffect(() => {
+		(async () => {
+			const currentIssuesPropsQuery = await compileIssuesProps(urlQuery);
+			setIssuesProps(currentIssuesPropsQuery);
+		})();
+	}, []);
 	return (
 		<div className=" tw-w-max tw-h-max tw-mx-5 tw-relative">
 			<button
@@ -31,189 +57,57 @@ const BtnFilterIssueByAssignee = () => {
 					type="text"
 					placeholder="username"
 					className=" tw-w-full tw-h-[40px] tw-block tw-font-exo tw-text-mygrey-default dark:tw-text-gray-400 tw-border-[1px] tw-rounded tw-border-mygrey-v-lyt dark:tw-border-gray-500 tw-px-2 tw-text-[18px] dark:tw-bg-gray-800 focus:tw-outline focus:tw-outline-blue-300 focus:tw-outline-1"
+					onChange={(e) => {
+						const val = e.currentTarget.value;
+
+						if (val.split("").length > 2)
+							updateIssueAssigneeSuggestion(val, setPeopleSug);
+					}}
 				/>
+
 				<div className=" tw-w-full tw-h-max tw-max-h-[500px] tw-overflow-y-auto tw-mt-4">
-					<div
-						className=" tw-w-full tw-h-max tw-cursor-pointer"
-						onClick={() => filterIssueByAssignee("name")}>
-						<ProjectMemberItem
-							username="MANofVALOR"
-							fullname="Gideon Omorodion"
-							role="Fullstack Developer"
-							img="/logo.png"
-							dir="up"
-							showPopup={false}
-						/>
-					</div>
-					<div
-						className=" tw-w-full tw-h-max tw-cursor-pointer"
-						onClick={() => filterIssueByAssignee("name")}>
-						<ProjectMemberItem
-							username="MANofVALOR"
-							fullname="Gideon Omorodion"
-							role="Fullstack Developer"
-							img="/logo.png"
-							dir="up"
-							showPopup={false}
-						/>
-					</div>
-					<div
-						className=" tw-w-full tw-h-max tw-cursor-pointer"
-						onClick={() => filterIssueByAssignee("name")}>
-						<ProjectMemberItem
-							username="MANofVALOR"
-							fullname="Gideon Omorodion"
-							role="Fullstack Developer"
-							img="/logo.png"
-							dir="up"
-							showPopup={false}
-						/>
-					</div>
-					<div
-						className=" tw-w-full tw-h-max tw-cursor-pointer"
-						onClick={() => filterIssueByAssignee("name")}>
-						<ProjectMemberItem
-							username="MANofVALOR"
-							fullname="Gideon Omorodion"
-							role="Fullstack Developer"
-							img="/logo.png"
-							dir="up"
-							showPopup={false}
-						/>
-					</div>
-					<div
-						className=" tw-w-full tw-h-max tw-cursor-pointer"
-						onClick={() => filterIssueByAssignee("name")}>
-						<ProjectMemberItem
-							username="MANofVALOR"
-							fullname="Gideon Omorodion"
-							role="Fullstack Developer"
-							img="/logo.png"
-							dir="up"
-							showPopup={false}
-						/>
-					</div>
-					<div
-						className=" tw-w-full tw-h-max tw-cursor-pointer"
-						onClick={() => filterIssueByAssignee("name")}>
-						<ProjectMemberItem
-							username="MANofVALOR"
-							fullname="Gideon Omorodion"
-							role="Fullstack Developer"
-							img="/logo.png"
-							dir="up"
-							showPopup={false}
-						/>
-					</div>
-					<div
-						className=" tw-w-full tw-h-max tw-cursor-pointer"
-						onClick={() => filterIssueByAssignee("name")}>
-						<ProjectMemberItem
-							username="MANofVALOR"
-							fullname="Gideon Omorodion"
-							role="Fullstack Developer"
-							img="/logo.png"
-							dir="up"
-							showPopup={false}
-						/>
-					</div>
-					<div
-						className=" tw-w-full tw-h-max tw-cursor-pointer"
-						onClick={() => filterIssueByAssignee("name")}>
-						<ProjectMemberItem
-							username="MANofVALOR"
-							fullname="Gideon Omorodion"
-							role="Fullstack Developer"
-							img="/logo.png"
-							dir="up"
-							showPopup={false}
-						/>
-					</div>
-					<div
-						className=" tw-w-full tw-h-max tw-cursor-pointer"
-						onClick={() => filterIssueByAssignee("name")}>
-						<ProjectMemberItem
-							username="MANofVALOR"
-							fullname="Gideon Omorodion"
-							role="Fullstack Developer"
-							img="/logo.png"
-							dir="up"
-							showPopup={false}
-						/>
-					</div>
-					<div
-						className=" tw-w-full tw-h-max tw-cursor-pointer"
-						onClick={() => filterIssueByAssignee("name")}>
-						<ProjectMemberItem
-							username="MANofVALOR"
-							fullname="Gideon Omorodion"
-							role="Fullstack Developer"
-							img="/logo.png"
-							dir="up"
-							showPopup={false}
-						/>
-					</div>
-					<div
-						className=" tw-w-full tw-h-max tw-cursor-pointer"
-						onClick={() => filterIssueByAssignee("name")}>
-						<ProjectMemberItem
-							username="MANofVALOR"
-							fullname="Gideon Omorodion"
-							role="Fullstack Developer"
-							img="/logo.png"
-							dir="up"
-							showPopup={false}
-						/>
-					</div>
-					<div
-						className=" tw-w-full tw-h-max tw-cursor-pointer"
-						onClick={() => filterIssueByAssignee("name")}>
-						<ProjectMemberItem
-							username="MANofVALOR"
-							fullname="Gideon Omorodion"
-							role="Fullstack Developer"
-							img="/logo.png"
-							dir="up"
-							showPopup={false}
-						/>
-					</div>
-					<div
-						className=" tw-w-full tw-h-max tw-cursor-pointer"
-						onClick={() => filterIssueByAssignee("name")}>
-						<ProjectMemberItem
-							username="MANofVALOR"
-							fullname="Gideon Omorodion"
-							role="Fullstack Developer"
-							img="/logo.png"
-							dir="up"
-							showPopup={false}
-						/>
-					</div>
-					<div
-						className=" tw-w-full tw-h-max tw-cursor-pointer"
-						onClick={() => filterIssueByAssignee("name")}>
-						<ProjectMemberItem
-							username="MANofVALOR"
-							fullname="Gideon Omorodion"
-							role="Fullstack Developer"
-							img="/logo.png"
-							dir="up"
-							showPopup={false}
-						/>
-					</div>
-					<div
-						className=" tw-w-full tw-h-max tw-cursor-pointer"
-						onClick={() => filterIssueByAssignee("name")}>
-						<ProjectMemberItem
-							username="MANofVALOR"
-							fullname="Gideon Omorodion"
-							role="Fullstack Developer"
-							img="/logo.png"
-							dir="up"
-							showPopup={false}
-						/>
-					</div>
+					{peopleSug ? (
+						peopleSug?.map((user) => {
+							return (
+								<Link
+									key={user.id}
+									href={`/workspace/project-details/${projectKey}/issues-list/${categoryToUse}/${offset}?assignee=${
+										user.username
+									}${issueProps.type ? "&type=" + issueProps.type : ""}${
+										issueProps.status ? "&status=" + issueProps.status : ""
+									}${
+										issueProps.dueDate ? "&dueDate=" + issueProps.dueDate : ""
+									}`}
+									className=" tw-my-4"
+									passHref>
+									<div
+										className=" tw-w-full tw-h-max tw-cursor-pointer"
+										onClick={() => filterIssueByAssignee()}>
+										<ProjectMemberItem
+											username={user.username}
+											fullname={`${user.firstname} ${user.lastname}`}
+											role={user.role}
+											img={user.photoUrl ?? "no_pic"}
+											dir="up"
+											showPopup={false}
+										/>
+									</div>
+								</Link>
+							);
+						})
+					) : (
+						<></>
+					)}
 				</div>
+				<Link
+					href={`/workspace/project-details/${projectKey}/issues-list/${categoryToUse}/${offset}${
+						issueProps.type ? "?type=" + issueProps.type : ""
+					}${issueProps.status ? "&status=" + issueProps.status : ""}${
+						issueProps.dueDate ? "&dueDate=" + issueProps.dueDate : ""
+					}`}
+					className=" tw-w-max tw-h-max tw-py-1 tw-px-3 tw-block tw-bg-blue-700 tw-text-white tw-font-russo-one tw-text-[15px] tw-rounded-lg tw-mt-5 tw-no-underline">
+					Reset
+				</Link>
 			</div>
 		</div>
 	);

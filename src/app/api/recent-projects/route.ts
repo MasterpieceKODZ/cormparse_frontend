@@ -55,7 +55,7 @@ export async function POST(req: Request) {
 			if (recentProjsQueryResponse.ok) {
 				const projectsGraphData = await recentProjsQueryResponse.json();
 
-				if (projectsGraphData.data.userRecentProjects) {
+				if (projectsGraphData.data.userRecentProjects[0]) {
 					console.log(projectsGraphData);
 
 					return new NextResponse(

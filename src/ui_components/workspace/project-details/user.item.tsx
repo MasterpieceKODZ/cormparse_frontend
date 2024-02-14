@@ -22,15 +22,15 @@ const ProjectMemberItem = ({
 }) => {
 	return (
 		<div
-			className=" tw-relative tw-cursor-pointer tw-my-4  tw-w-full"
+			className=" tw-relative tw-cursor-pointer tw-my-4  tw-w-full tw-max-w-[100%]"
 			onMouseEnter={showPopup ? showUserPopup : () => {}}
 			onMouseLeave={showPopup ? hideUserPopup : () => {}}>
-			<div className=" tw-grid tw-grid-cols-[auto_1fr] tw-items-center tw-h-max tw-w-full">
+			<div className="tw-h-max tw-w-full tw-grid tw-grid-cols-[auto_1fr] tw-items-center ">
 				{img !== "no_pic" ? (
 					<img
 						src={img}
 						alt="lead img"
-						className=" tw-w-[40px] tw-h-[40px] tw-bg-white tw-rounded-[50%] tw-border tw-border-white"
+						className=" tw-w-[40px] tw-h-[40px] tw-bg-white tw-rounded-[50%] tw-border tw-border-gray-500 dark:tw-border-gray-200"
 					/>
 				) : (
 					<div className=" tw-inline-flex tw-items-center tw-justify-center tw-w-[45px] tw-h-[45px] tw-bg-blue-200 dark:tw-bg-blue-800 tw-rounded-[50%] tw-border-2 tw-border-blue-500 dark:tw-border-blue-300 ">
@@ -42,7 +42,7 @@ const ProjectMemberItem = ({
 					</div>
 				)}
 
-				<p className=" tw-w-full tw-text-start tw-text-gray-800 dark:tw-text-gray-400 tw-ms-5 tw-font-exo tw-text-[16px] tw-truncate">
+				<p className=" tw-max-w-full tw-text-start tw-text-gray-800 dark:tw-text-gray-400 tw-ms-3 tw-font-exo tw-text-[16px] tw-truncate">
 					{username}
 				</p>
 			</div>
@@ -56,7 +56,7 @@ const ProjectMemberItem = ({
 							<img
 								src={img}
 								alt="user img"
-								className=" tw-w-[80px] tw-h-[80px] tw-rounded-[50%] tw-mr-4 tw-bg-white tw-border-2 tw-border-white"
+								className=" tw-w-[80px] tw-h-[80px] tw-rounded-[50%] tw-mr-4 tw-bg-white tw-border-2 tw-border-gray-500 dark:tw-border-gray-200"
 							/>
 						) : (
 							<div className=" tw-inline-flex tw-items-center tw-justify-center tw-w-[95px] tw-h-[80px] tw-bg-blue-200 dark:tw-bg-blue-800 tw-rounded-[50%] tw-border-2 tw-border-blue-500 dark:tw-border-blue-300 ">

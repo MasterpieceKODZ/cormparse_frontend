@@ -2,6 +2,7 @@
 import IssueDetailActionButtons from "./action.btns";
 import IssueDetailActivityRoot from "./activity.segment";
 import IssueDetailsAttachmentList from "./atachment.list";
+import IssueDetailChildIssues from "./child.issues";
 import IssueDetailDescription from "./description.layout";
 import IssueDetailsSubTaskList from "./sub.task.list";
 import IssueDetailSummary from "./summary";
@@ -15,6 +16,7 @@ const IssueDetailsMainSectionRoot = () => {
 			<IssueDetailDescription />
 			<IssueDetailsAttachmentList />
 			<IssueDetailsSubTaskList />
+			<IssueDetailChildIssues />
 			<IssueDetailActivityRoot />
 		</div>
 	);

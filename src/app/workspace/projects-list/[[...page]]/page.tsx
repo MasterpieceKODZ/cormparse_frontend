@@ -25,24 +25,25 @@ const Projects = ({ params }: { params: { page: string[] } }) => {
 	const [email, setEmail] = useState<string>("");
 	const router = useRouter();
 
-	const offset = params.page ? params.page[1] : null;
+	const offsetParam = params.page ? params.page[1] : "1";
 
 	const [projectsCount, setProjectsCount] = useState(0);
 
 	const [showNextPageBtn, setShowNextPageBtn] = useState(true);
 
 	useEffect(() => {
-		getSession().then((ses) => {
+		(async () => {
+			const ses = await getSession();
 			if (ses?.user) {
-				setEmail(ses.user.email as string);
+				try {
+					setEmail(ses.user.email as string);
 
-				if (offset) {
 					// use pagination to fetch the next batch of projects
-					fetch(`/api/fetch-project-list`, {
+					const res = await fetch(`/api/fetch-project-list`, {
 						method: "POST",
 						body: JSON.stringify({
 							email: ses.user.email,
-							offset,
+							offset: offsetParam,
 						}),
 						headers: {
 							"Content-Type": "application/json",
@@ -50,73 +51,33 @@ const Projects = ({ params }: { params: { page: string[] } }) => {
 								"kjsopdshfk46873ndsjk0388kdmdsn8y32y85xnjsd873jd7yt4f",
 						},
 						cache: "no-store",
-					})
-						.then(async (res) => {
-							// ************* fetch user's projects count ****************
-							await fetchUserProjectsCount(
-								ses.user?.email as string,
-								setProjectsCount,
-								setShowNextPageBtn,
-							);
+					});
 
-							// ************* -------------------------- *****************
+					// ************* fetch user's projects count ****************
+					await fetchUserProjectsCount(
+						ses.user?.email as string,
+						setProjectsCount,
+						setShowNextPageBtn,
+					);
 
-							const projs = await res.json();
+					// ************* -------------------------- *****************
 
-							console.log(projs);
+					const projs = await res.json();
 
-							if (projs) {
-								setProjects(projs);
-							} else {
-								setProjects("failed");
-							}
-						})
-						.catch(() => {
-							setProjects("failed");
-						});
-				} else {
-					// fetch first 10 projects
-					fetch(`/api/fetch-project-list`, {
-						method: "POST",
-						body: JSON.stringify({
-							email: ses.user.email,
-						}),
-						headers: {
-							"Content-Type": "application/json",
-							"X-Api-Key":
-								"kjsopdshfk46873ndsjk0388kdmdsn8y32y85xnjsd873jd7yt4f",
-						},
-						cache: "no-store",
-					})
-						.then(async (res) => {
-							// ************* fetch user's projects count ****************
-							fetchUserProjectsCount(
-								ses.user?.email as string,
-								setProjectsCount,
-								setShowNextPageBtn,
-							);
+					console.log(projs);
 
-							// ************* -------------------------- *****************
-							const projs = await res.json();
-
-							console.log(projs);
-
-							if (projs) {
-								setProjects(projs);
-							} else {
-								setProjects("failed");
-							}
-						})
-						.catch(() => {
-							setProjects("failed");
-						});
-
-					setShowNextPageBtn(true);
+					if (projs) {
+						setProjects(projs);
+					} else {
+						setProjects("failed");
+					}
+				} catch (err) {
+					setProjects("failed");
 				}
 			} else {
 				router.replace(`${location.origin}/auth/login`);
 			}
-		});
+		})();
 	}, []);
 
 	return (
@@ -216,22 +177,32 @@ const Projects = ({ params }: { params: { page: string[] } }) => {
 
 				{projects === "failed" ? (
 					<div className=" tw-w-full tw-h-max tw-flex tw-flex-col tw-justify-center tw-items-center">
-						<p className=" tw-font-exo tw-text-gray-700 dark:tw-text-gray-400 tw-text-[20px] tw-px-4 tw-py-12">
-							Unable to fetch projects. click the button below to refresh the
-							table.
-						</p>
-						<button
-							className=" tw-w-max tw-h-max tw-px-5 tw-py-2 tw-rounded-lg tw-bg-blue-700 tw-text-white tw-font-russo-one tw-text-[18px] tw-text-center"
-							onClick={() =>
-								refreshProjects(
-									email,
-									setProjects,
-									setProjectsCount,
-									setShowNextPageBtn,
-								)
-							}>
-							Refresh Table
-						</button>
+						{projectsCount && parseInt(offsetParam) > projectsCount / 10 ? (
+							<>
+								<p className=" tw-font-exo tw-text-gray-700 dark:tw-text-gray-400 tw-text-[20px] tw-px-4 tw-py-12">
+									Invalid page number...
+								</p>
+							</>
+						) : (
+							<>
+								<p className=" tw-font-exo tw-text-gray-700 dark:tw-text-gray-400 tw-text-[20px] tw-px-4 tw-py-12">
+									Unable to fetch projects. click the button below to refresh
+									the table.
+								</p>
+								<button
+									className=" tw-w-max tw-h-max tw-px-5 tw-py-2 tw-rounded-lg tw-bg-blue-700 tw-text-white tw-font-russo-one tw-text-[18px] tw-text-center"
+									onClick={() =>
+										refreshProjects(
+											email,
+											setProjects,
+											setProjectsCount,
+											setShowNextPageBtn,
+										)
+									}>
+									Refresh Table
+								</button>
+							</>
+						)}
 					</div>
 				) : (
 					<></>
@@ -316,7 +287,7 @@ const Projects = ({ params }: { params: { page: string[] } }) => {
 							id="pagination_wrapper"
 							className=" tw-w-max tw-h-max tw-flex tw-justify-center tw-items-center">
 							{/* prev page button */}
-							{offset ? <BtnProjectsPaginationPrev /> : <></>}
+							{offsetParam ? <BtnProjectsPaginationPrev /> : <></>}
 							{/* page number buttons */}
 							<div
 								id="page_num_cont"
@@ -328,7 +299,7 @@ const Projects = ({ params }: { params: { page: string[] } }) => {
 						<div className=" tw-w-0 tw-h-0">
 							{((): ReactNode => {
 								setTimeout(() => {
-									appendPageNumBtn(offset, projectsCount);
+									appendPageNumBtn(offsetParam, projectsCount);
 								}, 50);
 
 								return <></>;
