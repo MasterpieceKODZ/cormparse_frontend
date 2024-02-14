@@ -30,9 +30,9 @@ const IssueTableItem = ({
 	dateCreated,
 	dueDate,
 }: {
-	type: "bug" | "task" | "sub-task" | "feature" | "improvement";
+	type: string;
 	summary: string;
-	status: "to-do" | "in-progress" | "in-review" | "done" | "closed";
+	status: string;
 	issueKey: string;
 	projectKey: string;
 	priority: string;
@@ -61,7 +61,7 @@ const IssueTableItem = ({
 								return <IconBug />;
 							case "task":
 								return <IconTask />;
-							case "sub-task":
+							case "sub_task":
 								return <IconSubTask />;
 							case "feature":
 								return <IconFeature />;
@@ -80,8 +80,10 @@ const IssueTableItem = ({
 					{summary}
 				</Link>
 			</td>
-			{/* status */}
+
+			{/* key */}
 			<td className={`${projectsTableRowData}`}>{issueKey}</td>
+			{/* status */}
 			<td
 				className={`${
 					status == "to-do"

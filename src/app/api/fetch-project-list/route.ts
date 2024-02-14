@@ -29,77 +29,44 @@ export async function POST(req: Request) {
 
 		let projectsQueryRes: Response;
 		if (body.email) {
-			if (body.offset) {
-				projectsQueryRes = await fetch(`${crudOpsServiceURL}`, {
-					method: "POST",
-					body: JSON.stringify({
-						query:
-							"query Projects ($email: String!,$offset: Int) {" +
-							"    projects(email: $email, offset: $offset) {" +
-							"        id " +
-							"        name " +
-							"        key " +
-							"        lead {" +
-							"            id " +
-							"            email " +
-							"            lastname " +
-							"            firstname " +
-							"            username " +
-							"            photoUrl " +
-							"            role " +
-							"        } " +
-							"        createdAt " +
-							"        updatedAt " +
-							"    } " +
-							"} ",
-						operationName: "Projects",
-						variables: {
-							email: body.email,
-							offset: parseInt(body.offset) - 1,
-						},
-					}),
-					headers: {
-						"Content-Type": "application/json",
+			projectsQueryRes = await fetch(`${crudOpsServiceURL}`, {
+				method: "POST",
+				body: JSON.stringify({
+					query:
+						"query Projects ($email: String!,$offset: Int) {" +
+						"    projects(email: $email, offset: $offset) {" +
+						"        id " +
+						"        name " +
+						"        key " +
+						"        lead {" +
+						"            id " +
+						"            email " +
+						"            lastname " +
+						"            firstname " +
+						"            username " +
+						"            photoUrl " +
+						"            role " +
+						"        } " +
+						"        createdAt " +
+						"        updatedAt " +
+						"    } " +
+						"} ",
+					operationName: "Projects",
+					variables: {
+						email: body.email,
+						offset: parseInt(body.offset),
 					},
-					cache: "no-store",
-				});
-			} else {
-				projectsQueryRes = await fetch(`${crudOpsServiceURL}`, {
-					method: "POST",
-					body: JSON.stringify({
-						query:
-							"query Projects ($email: String!) {" +
-							"    projects(email: $email) {" +
-							"        id " +
-							"        name " +
-							"        key " +
-							"        lead {" +
-							"            id " +
-							"            email " +
-							"            lastname " +
-							"            firstname " +
-							"            username " +
-							"            photoUrl " +
-							"            role " +
-							"        } " +
-							"        createdAt " +
-							"        updatedAt " +
-							"    } " +
-							"} ",
-						operationName: "Projects",
-						variables: { email: body.email },
-					}),
-					headers: {
-						"Content-Type": "application/json",
-					},
-					cache: "no-store",
-				});
-			}
+				}),
+				headers: {
+					"Content-Type": "application/json",
+				},
+				cache: "no-store",
+			});
 
 			if (projectsQueryRes.ok) {
 				const projectsGraphData = await projectsQueryRes.json();
 
-				if (projectsGraphData.data.projects) {
+				if (projectsGraphData.data.projects[0]) {
 					console.log(projectsGraphData);
 
 					// sort projects by name

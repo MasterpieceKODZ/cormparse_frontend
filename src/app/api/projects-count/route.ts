@@ -47,8 +47,6 @@ export async function POST(req: Request) {
 				const countGraphJSON = await countGraphRes.json();
 
 				if (countGraphJSON.data.projectsCount) {
-					console.log("user's projects count is ", countGraphJSON);
-
 					return new NextResponse(
 						JSON.stringify({ count: countGraphJSON.data.projectsCount }),
 						{

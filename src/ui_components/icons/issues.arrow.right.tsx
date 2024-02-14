@@ -1,4 +1,4 @@
-const IconShowIssueFilterOption = () => {
+const IconShowIssueCategoryOption = () => {
 	return (
 		<svg
 			width="22px"
@@ -15,4 +15,4 @@ const IconShowIssueFilterOption = () => {
 	);
 };
 
-export default IconShowIssueFilterOption;
+export default IconShowIssueCategoryOption;

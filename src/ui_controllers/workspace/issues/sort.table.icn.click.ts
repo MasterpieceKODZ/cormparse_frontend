@@ -1,6 +1,6 @@
 import { MouseEvent } from "react";
 
-export async function issuesListTableSortArrowClicked(e: MouseEvent) {
+export async function issuesTableSortArrowClicked(e: MouseEvent) {
 	// hide all sort icons
 	document.querySelectorAll(".iss_srt_icn").forEach((el) => {
 		el.classList.add("tw-invisible");

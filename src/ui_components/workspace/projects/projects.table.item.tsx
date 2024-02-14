@@ -28,7 +28,7 @@ const ProjectsTableItem = ({
 			<td
 				className={`${projectsTableRowData} tw-max-w-[300px] 2xl:tw-max-w-[500px] tw-cursor-pointer`}>
 				<Link
-					href={`/workspace/project-details/${projectKey}`}
+					href={`/workspace/project-details/${projectKey}/issues-list/all`}
 					className=" tw-text-blue-700 dark:tw-text-blue-300 tw-no-underline tw-text-[15px]">
 					{name}
 				</Link>

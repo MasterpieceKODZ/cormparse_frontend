@@ -1,6 +1,6 @@
 "use client";
-import IconShowIssueFilterOption from "@/ui_components/icons/issues.arrow.right";
-import BtnProjectDetailsLeftPaneIssuesFilter from "./btn.left.pane.issue.filter";
+import IconShowIssueCategoryOption from "@/ui_components/icons/issues.arrow.right";
+import BtnProjectDetailsLeftPaneIssuesCategory from "./btn.left.pane.issue.category";
 import BtnProjectDetailLeftPaneNav from "./btn.left.pane.nav";
 import { showHideLeftPaneIssueOptions } from "@/ui_controllers/workspace/projects/details/translate.side.pane.opt.cont";
 import { useParams } from "next/navigation";
@@ -37,15 +37,26 @@ const ProjectDetailsLeftNavPane = ({ name }: { name: string }) => {
 						className=" tw-w-full tw-text-gray-800 dark:tw-text-gray-400 tw-font-bold tw-text-start tw-ml-3 tw-my-6 tw-flex tw-justify-start tw-items-center"
 						onClick={showHideLeftPaneIssueOptions}>
 						<span className=" tw-mr-3 tw-rotate-180">
-							<IconShowIssueFilterOption />
+							<IconShowIssueCategoryOption />
 						</span>{" "}
 						<span>Back To Projects</span>
 					</button>
-					<BtnProjectDetailsLeftPaneIssuesFilter label="All Issues" />
-					<BtnProjectDetailsLeftPaneIssuesFilter label="My Open Issues" />
-					<BtnProjectDetailsLeftPaneIssuesFilter label="Reported By Me" />
-					<BtnProjectDetailsLeftPaneIssuesFilter label="Pending Issues" />
-					<BtnProjectDetailsLeftPaneIssuesFilter label="Done Issues" />
+					<BtnProjectDetailsLeftPaneIssuesCategory
+						label="All Issues"
+						param="ALL"
+					/>
+					<BtnProjectDetailsLeftPaneIssuesCategory
+						label="Reported By Me"
+						param="REPORTEDBYME"
+					/>
+					<BtnProjectDetailsLeftPaneIssuesCategory
+						label="Pending Issues"
+						param="PENDING"
+					/>
+					<BtnProjectDetailsLeftPaneIssuesCategory
+						label="Done Issues"
+						param="DONE"
+					/>
 				</div>
 			</div>
 		</section>

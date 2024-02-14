@@ -54,7 +54,7 @@ const SideNavHeader = () => {
 					<img
 						src={user.photoUrl}
 						alt="user profile pic"
-						className=" tw-w-[100px] tw-h-[100px] xsm:tw-w-[130px] xsm:tw-h-[130px] tw-absolute tw-left-[15px] tw-bottom-[-40%] tw-rounded-[15px] tw-object-cover tw-bg-white tw-border-white tw-border-2"
+						className=" tw-w-[100px] tw-h-[100px] xsm:tw-w-[130px] xsm:tw-h-[130px] tw-absolute tw-left-[15px] tw-bottom-[-40%] tw-rounded-[15px] tw-object-cover tw-bg-white tw-border-gray-500 dark:tw-border-gray-200 tw-border-2"
 					/>
 				) : (
 					<div className=" tw-inline-flex tw-items-center tw-justify-center tw-w-[100px] tw-h-[100px] tw-bg-blue-200 dark:tw-bg-blue-800 tw-border-2 tw-border-blue-500 dark:tw-border-blue-300  xsm:tw-w-[130px] xsm:tw-h-[130px] tw-absolute tw-left-[15px] tw-bottom-[-40%] tw-rounded-[15px] ">

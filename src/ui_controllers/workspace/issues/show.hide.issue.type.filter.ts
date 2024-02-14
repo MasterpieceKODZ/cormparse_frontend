@@ -20,9 +20,7 @@ export async function toggleIssueTypeFilter() {
 	document.getElementById("iss_typ_filter_cont")?.classList.toggle("tw-hidden");
 }
 
-export async function filterIssueByType(
-	type: "task" | "improvement" | "bug" | "feature" | "sub-task",
-) {
+export async function filterIssueByType() {
 	document
 		.getElementById("iss_typ_filter_btn_arw")
 		?.classList.remove("tw-rotate-180");

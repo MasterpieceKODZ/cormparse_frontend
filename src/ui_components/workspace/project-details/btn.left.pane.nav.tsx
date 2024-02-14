@@ -1,5 +1,5 @@
 "use client";
-import IconShowIssueFilterOption from "@/ui_components/icons/issues.arrow.right";
+import IconShowIssueCategoryOption from "@/ui_components/icons/issues.arrow.right";
 import { projectsDetailsLeftpaneButtonClick } from "@/ui_controllers/workspace/projects/details/side.pane.btn.click";
 import { showHideLeftPaneIssueOptions } from "@/ui_controllers/workspace/projects/details/translate.side.pane.opt.cont";
 import Link from "next/link";
@@ -13,6 +13,20 @@ const BtnProjectDetailLeftPaneNav = ({
 	projectKey: string;
 }) => {
 	const router = useRouter();
+
+	let detailsUrl;
+
+	if (label == "Issues") {
+		detailsUrl = `/workspace/project-details/${projectKey}/issues-list/all`;
+	}
+
+	if (label == "People") {
+		detailsUrl = `/workspace/project-details/${projectKey}/people`;
+	}
+
+	if (label == "About Project") {
+		detailsUrl = `/workspace/project-details/${projectKey}/about-project`;
+	}
 
 	return (
 		<div
@@ -30,14 +44,12 @@ const BtnProjectDetailLeftPaneNav = ({
 				}}>
 				<Link
 					className=" tw-no-underline tw-w-full tw-text-start"
-					href={`/workspace/project-details/${projectKey}/${
-						label != "Issues" ? label.split(" ").join("-").toLowerCase() : ""
-					}`}>
+					href={detailsUrl as string}>
 					{label}
 				</Link>
 				{label == "Issues" ? (
 					<span className=" tw-mr-4">
-						<IconShowIssueFilterOption />
+						<IconShowIssueCategoryOption />
 					</span>
 				) : (
 					<></>

@@ -22,9 +22,7 @@ export async function toggleIssueStatusFilter() {
 		?.classList.toggle("tw-hidden");
 }
 
-export async function filterIssueByStatus(
-	type: "to-do" | "in-progress" | "in-review" | "done",
-) {
+export async function filterIssueByStatus() {
 	document
 		.getElementById("iss_status_filter_btn_arw")
 		?.classList.remove("tw-rotate-180");

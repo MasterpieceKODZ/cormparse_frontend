@@ -2,7 +2,7 @@
 import { toggleArrowIcon } from "@/ui_controllers/workspace/projects/table/toggle.arrow.icon";
 import IconArrowLong from "../../../icons/arrow.long";
 import { sortIssuesTable } from "@/ui_controllers/workspace/issues/sort.table";
-import { issuesListTableSortArrowClicked } from "@/ui_controllers/workspace/issues/sort.table.icn.click";
+import { issuesTableSortArrowClicked } from "@/ui_controllers/workspace/issues/sort.table.icn.click";
 
 const BtnIssueTableHead = ({ label }: { label: string }) => {
 	return (
@@ -20,7 +20,7 @@ const BtnIssueTableHead = ({ label }: { label: string }) => {
 						/\s/g,
 						"_",
 					)}_arrow tw-inline-block tw-rotate-180 tw-h-min tw-invisible tw-cursor-pointer iss_srt_icn`}
-				onClick={issuesListTableSortArrowClicked}>
+				onClick={issuesTableSortArrowClicked}>
 				<IconArrowLong />
 			</span>
 		</button>

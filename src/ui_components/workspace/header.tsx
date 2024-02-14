@@ -74,7 +74,7 @@ const WorkSpaceHeader = () => {
 									<img
 										src={user.photoUrl}
 										alt="user display picture"
-										className=" tw-inline-block tw-w-[40px] tw-h-[40px] tw-object-cover tw-object-center tw-rounded-[50%] tw-mr-6"
+										className=" tw-inline-block tw-w-[40px] tw-h-[40px] tw-object-cover tw-object-center tw-rounded-[50%] tw-mr-6 tw-border-gray-500 dark:tw-border-gray-200 tw-border"
 									/>
 								) : (
 									<div className=" tw-inline-flex tw-items-center tw-justify-center tw-bg-blue-200 dark:tw-bg-blue-800 tw-border-2 tw-border-blue-500 dark:tw-border-blue-300 tw-w-[50px] tw-h-[50px] tw-rounded-[50%] tw-mr-6">
