@@ -50,7 +50,7 @@ const NavbarPopupRecentProject = () => {
 					<div className=" tw-w-full tw-h-[50px] tw-my-5  tw-animate-[shimmer_1s_ease-in-out_infinite] dark:tw-animate-[darkshimmer_2s_ease-in-out_infinite]"></div>
 					<div className=" tw-w-full tw-h-[50px] tw-my-5 bggry tw-animate-[shimmer_1s_ease-in-out_infinite] dark:tw-animate-[darkshimmer_2s_ease-in-out_infinite]"></div>
 				</div>
-			) : recentProjects == "failed" ? (
+			) : recentProjects == "failed" || recentProjects == null ? (
 				<div className=" tw-w-full tw-h-max">
 					<p className=" tw-text-center tw-text-gray-700 dark:tw-text-gray-300 tw-font-exo tw-text-[16px] tw-mt-4">
 						failed to fetch recent projects

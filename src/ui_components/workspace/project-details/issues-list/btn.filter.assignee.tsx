@@ -14,13 +14,7 @@ import { User } from "@/db.schema.types";
 import { updateIssueAssigneeSuggestion } from "@/ui_controllers/workspace/issues/update.issue.assignee.sug";
 import Link from "next/link";
 
-const BtnFilterIssueByAssignee = ({
-	offset,
-	category,
-}: {
-	offset: string;
-	category: string;
-}) => {
+const BtnFilterIssueByAssignee = ({ category }: { category: string }) => {
 	const urlQuery = useSearchParams();
 	const [peopleSug, setPeopleSug] = useState<null | User[]>(null);
 	const [issueProps, setIssuesProps] = useState<any>({});
@@ -71,7 +65,7 @@ const BtnFilterIssueByAssignee = ({
 							return (
 								<Link
 									key={user.id}
-									href={`/workspace/project-details/${projectKey}/issues-list/${categoryToUse}/${offset}?assignee=${
+									href={`/workspace/project-details/${projectKey}/issues-list/${categoryToUse}?assignee=${
 										user.username
 									}${issueProps.type ? "&type=" + issueProps.type : ""}${
 										issueProps.status ? "&status=" + issueProps.status : ""
@@ -100,7 +94,7 @@ const BtnFilterIssueByAssignee = ({
 					)}
 				</div>
 				<Link
-					href={`/workspace/project-details/${projectKey}/issues-list/${categoryToUse}/${offset}${
+					href={`/workspace/project-details/${projectKey}/issues-list/${categoryToUse}${
 						issueProps.type ? "?type=" + issueProps.type : ""
 					}${issueProps.status ? "&status=" + issueProps.status : ""}${
 						issueProps.dueDate ? "&dueDate=" + issueProps.dueDate : ""

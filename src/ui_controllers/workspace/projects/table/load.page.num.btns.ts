@@ -1,4 +1,4 @@
-export function appendPageNumBtn(offset: string | null, projectsCount: number) {
+export function appendPageNumBtn(offset: number, projectsCount: number) {
 	document.getElementById("page_num_cont")!.innerHTML = "";
 
 	// if projects count is not a multiple of 10 add 1
@@ -11,7 +11,7 @@ export function appendPageNumBtn(offset: string | null, projectsCount: number) {
 
 	let addLastBtn = true; // append last page button
 
-	if (offset) {
+	if (offset > 1) {
 		// append page 1 button
 		const btn = document.createElement("button");
 
@@ -27,16 +27,16 @@ export function appendPageNumBtn(offset: string | null, projectsCount: number) {
 		document.getElementById("page_num_cont")?.appendChild(btn);
 		// append prev 3 pages buttons
 		for (let j = 3; j > 0; j--) {
-			if (parseInt(offset as string) - j > 0) {
+			if (offset - j > 0) {
 				// skip page 1 button
-				if (parseInt(offset as string) - j != 1) {
+				if (offset - j != 1) {
 					const btn = document.createElement("button");
 
 					btn.setAttribute(
 						"class",
 						"tw-py-1 tw-px-[5px] tw-bg-blue-600 tw-text-white tw-font-semibold tw-font-russo-one tw-rounded-sm tw-mx-2 tw-text-[12px] page_num_btn",
 					);
-					btn.textContent = `${parseInt(offset as string) - j}`;
+					btn.textContent = `${offset - j}`;
 					btn.onclick = (e) => {
 						if (btn.textContent == "1")
 							location.assign(`/workspace/projects-list`);
@@ -52,8 +52,8 @@ export function appendPageNumBtn(offset: string | null, projectsCount: number) {
 
 		// append next 3 pages buttons
 		for (let j = 1; j <= 3; j++) {
-			if (parseInt(offset as string) + j <= numOfPages) {
-				if (parseInt(offset as string) + j == numOfPages) {
+			if (offset + j <= numOfPages) {
+				if (offset + j == numOfPages) {
 					addLastBtn = false; //do not append last page button again
 				}
 				const btn = document.createElement("button");
@@ -62,7 +62,7 @@ export function appendPageNumBtn(offset: string | null, projectsCount: number) {
 					"class",
 					"tw-py-1 tw-px-[5px] tw-bg-blue-600 tw-text-white tw-font-semibold tw-font-russo-one tw-rounded-sm tw-mx-2 tw-text-[12px] page_num_btn",
 				);
-				btn.textContent = `${parseInt(offset as string) + j}`;
+				btn.textContent = `${offset + j}`;
 				btn.onclick = (e) => {
 					if (btn.textContent == "1")
 						location.assign(`/workspace/projects-list`);
@@ -98,7 +98,7 @@ export function appendPageNumBtn(offset: string | null, projectsCount: number) {
 	}
 
 	// append last page button
-	if (addLastBtn && numOfPages > 6 && parseInt(offset as string) < numOfPages) {
+	if (addLastBtn && numOfPages > 6 && offset < numOfPages) {
 		const btn = document.createElement("button");
 
 		btn.setAttribute(

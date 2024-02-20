@@ -30,47 +30,45 @@ export async function POST(req: Request) {
 			method: "POST",
 			body: JSON.stringify({
 				query:
-					"query ProjectIssues ($email: String!,$projectKey: String!, $category: String!, $props: String, $offset: String) {" +
-					"    projectIssues(email: $email, projectKey: $projectKey, category: $category, props: $props, offset: $offset) {" +
+					"query ProjectIssues ($email: String!, $projectKey: String!, $category: String!, $props: String!, $offset: Int) {" +
+					"       projectIssues(email: $email, projectKey: $projectKey, category: $category, props: $props, offset: $offset) {" +
 					"        id " +
 					"        summary " +
 					"        key " +
-					"        status " +
 					"        type " +
+					"        status " +
 					"        priority " +
-					"        reporter {" +
-					"            id " +
-					"            email " +
-					"            lastname " +
-					"            firstname " +
-					"            username " +
-					"            photoUrl " +
-					"            role " +
-					"        } " +
-					"        assignee {" +
-					"            id " +
-					"            email " +
-					"            lastname " +
-					"            firstname " +
-					"            username " +
-					"            photoUrl " +
-					"            role " +
-					"        } " +
 					"        project {" +
 					"            key " +
 					"        } " +
 					"        reportedAt " +
 					"        updatedAt " +
 					"        dueDate " +
+					"        assignee {" +
+					"            email " +
+					"            lastname " +
+					"            firstname " +
+					"            username " +
+					"            photoUrl " +
+					"            role " +
+					"        } " +
+					"        reporter {" +
+					"            email " +
+					"            lastname " +
+					"            firstname " +
+					"            username " +
+					"            photoUrl " +
+					"            role " +
+					"        } " +
 					"    } " +
 					"} ",
 				operationName: "ProjectIssues",
 				variables: {
 					email: body.email,
-					projectKey: body.projectKey.toUpperCase(),
+					projectKey: body.projectKey,
 					category: body.category,
-					props: body.props ?? null,
-					offset: body.offset,
+					props: body.props,
+					offset: parseInt(body.offset),
 				},
 			}),
 			headers: {

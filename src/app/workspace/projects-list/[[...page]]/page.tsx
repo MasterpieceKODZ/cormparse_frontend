@@ -27,6 +27,8 @@ const Projects = ({ params }: { params: { page: string[] } }) => {
 
 	const offsetParam = params.page ? params.page[1] : "1";
 
+	const [numOfPages, setNumOfPages] = useState(0);
+
 	const [projectsCount, setProjectsCount] = useState(0);
 
 	const [showNextPageBtn, setShowNextPageBtn] = useState(true);
@@ -58,6 +60,7 @@ const Projects = ({ params }: { params: { page: string[] } }) => {
 						ses.user?.email as string,
 						setProjectsCount,
 						setShowNextPageBtn,
+						setNumOfPages,
 					);
 
 					// ************* -------------------------- *****************
@@ -177,7 +180,7 @@ const Projects = ({ params }: { params: { page: string[] } }) => {
 
 				{projects === "failed" ? (
 					<div className=" tw-w-full tw-h-max tw-flex tw-flex-col tw-justify-center tw-items-center">
-						{projectsCount && parseInt(offsetParam) > projectsCount / 10 ? (
+						{numOfPages && parseInt(offsetParam) > numOfPages ? (
 							<>
 								<p className=" tw-font-exo tw-text-gray-700 dark:tw-text-gray-400 tw-text-[20px] tw-px-4 tw-py-12">
 									Invalid page number...
@@ -197,6 +200,7 @@ const Projects = ({ params }: { params: { page: string[] } }) => {
 											setProjects,
 											setProjectsCount,
 											setShowNextPageBtn,
+											setNumOfPages,
 										)
 									}>
 									Refresh Table
@@ -279,6 +283,7 @@ const Projects = ({ params }: { params: { page: string[] } }) => {
 									setProjects,
 									setProjectsCount,
 									setShowNextPageBtn,
+									setNumOfPages,
 								)
 							}>
 							<IconRefresh />
@@ -299,7 +304,7 @@ const Projects = ({ params }: { params: { page: string[] } }) => {
 						<div className=" tw-w-0 tw-h-0">
 							{((): ReactNode => {
 								setTimeout(() => {
-									appendPageNumBtn(offsetParam, projectsCount);
+									appendPageNumBtn(parseInt(offsetParam), projectsCount);
 								}, 50);
 
 								return <></>;

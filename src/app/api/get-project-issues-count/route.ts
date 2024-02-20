@@ -34,11 +34,16 @@ export async function POST(req: Request) {
 				},
 				body: JSON.stringify({
 					query:
-						"query ProjectsCount($email: String!){" +
-						" projectsCount(email: $email)" +
+						"query IssuesCount($email: String!, $projectKey: String!, $category: String!, $props: String){" +
+						" projectIssuesCount(email: $email, projectKey: $projectKey, category: $category, props: $props)" +
 						"}",
-					variables: { email: body.email },
-					operationName: "ProjectsCount",
+					variables: {
+						email: body.email,
+						projectKey: body.projectKey,
+						category: body.category,
+						props: body.props,
+					},
+					operationName: "IssuesCount",
 				}),
 				cache: "no-store",
 			});
@@ -46,9 +51,9 @@ export async function POST(req: Request) {
 			if (countGraphRes.ok) {
 				const countGraphJSON = await countGraphRes.json();
 
-				if (countGraphJSON.data.projectsCount) {
+				if (countGraphJSON.data.projectIssuesCount) {
 					return new NextResponse(
-						JSON.stringify({ count: countGraphJSON.data.projectsCount }),
+						JSON.stringify({ count: countGraphJSON.data.projectIssuesCount }),
 						{
 							headers: {
 								"Content-Type": "application/json",
@@ -69,7 +74,7 @@ export async function POST(req: Request) {
 					});
 				}
 			} else {
-				console.log("projects count graphql req failed...");
+				console.log("issues count graphql req failed...");
 
 				return new NextResponse("Internal Server Error", {
 					status: 500,
@@ -92,7 +97,7 @@ export async function POST(req: Request) {
 			);
 		}
 	} catch (err) {
-		console.log("error in projects count frontend API");
+		console.log("error in issues count frontend API");
 		console.error(err);
 
 		return new NextResponse("Internal Server Error", {
