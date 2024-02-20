@@ -1,6 +1,7 @@
 import { Dispatch, MouseEvent, SetStateAction } from "react";
 import { sortProjects } from "./sort.project.table";
 import { Project } from "@/db.schema.types";
+import { showNotificationBar } from "@/ui_controllers/notification.bar";
 
 export async function projectsListTableSortArrowClicked(
 	e: MouseEvent,
@@ -12,30 +13,39 @@ export async function projectsListTableSortArrowClicked(
 		? "asc"
 		: "desc";
 
-	console.log(order);
+	const shouldRotateIcon = e.currentTarget.classList.contains("tw-rotate-180");
 
-	// hide all sort icons
-	document.querySelectorAll(".proj_srt_icn").forEach((el) => {
-		el.classList.add("tw-invisible");
-	});
+	console.log("projects to be sorted --------------------------");
+	console.log(projects.length);
 
-	// reset all table head buttons to in-active
-	document.querySelectorAll(".project_tb_hd").forEach((el) => {
-		el.classList.remove("tw-bg-gray-300", "dark:tw-bg-gray-800", "active");
-	});
-	e.currentTarget.parentElement?.classList.add(
-		"tw-bg-gray-300",
-		"dark:tw-bg-gray-800",
-		"active",
-	);
+	if (typeof projects == "object") {
+		// hide all sort icons
+		document.querySelectorAll(".proj_srt_icn").forEach((el) => {
+			el.classList.add("tw-invisible");
+		});
+		document.querySelectorAll(".proj_srt_icn").forEach((el) => {
+			el.classList.remove("tw-rotate-180");
+		});
 
-	e.currentTarget.classList.remove("tw-invisible");
-	e.currentTarget.classList.toggle("tw-rotate-180");
+		// reset all table head buttons to in-active
+		document.querySelectorAll(".project_tb_hd").forEach((el) => {
+			el.classList.remove("tw-bg-gray-300", "dark:tw-bg-gray-800", "active");
+		});
+		e.currentTarget.parentElement?.classList.add(
+			"tw-bg-gray-300",
+			"dark:tw-bg-gray-800",
+			"active",
+		);
 
-	const sortedProject = await sortProjects(label, order, projects);
+		e.currentTarget.classList.remove("tw-invisible");
 
-	setProjects("loading");
-	setTimeout(() => {
-		setProjects(sortedProject);
-	}, 2);
+		if (!shouldRotateIcon) e.currentTarget.classList.add("tw-rotate-180");
+
+		const sortedProject = await sortProjects(label, order, projects);
+
+		setProjects("loading");
+		setTimeout(() => {
+			setProjects(sortedProject);
+		}, 2);
+	}
 }

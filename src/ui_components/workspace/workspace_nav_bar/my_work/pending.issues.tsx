@@ -51,7 +51,7 @@ const PendingIssuesNavList = () => {
 					<div className=" tw-w-full tw-h-[50px] tw-my-5  tw-animate-[shimmer_1s_ease-in-out_infinite] dark:tw-animate-[darkshimmer_2s_ease-in-out_infinite]"></div>
 					<div className=" tw-w-full tw-h-[50px] tw-my-5 bggry tw-animate-[shimmer_1s_ease-in-out_infinite] dark:tw-animate-[darkshimmer_2s_ease-in-out_infinite]"></div>
 				</div>
-			) : recentPendingIssue == "failed" ? (
+			) : recentPendingIssue == "failed" || recentPendingIssue == null ? (
 				<div className=" tw-w-full tw-h-max">
 					<p className=" tw-text-center tw-text-gray-700 dark:tw-text-gray-300 tw-font-exo tw-text-[16px] tw-mt-4">
 						failed to fetch recent issues
@@ -63,8 +63,12 @@ const PendingIssuesNavList = () => {
 					</button>
 				</div>
 			) : (
+				<></>
+			)}
+			{typeof recentPendingIssue == "object" &&
+			recentPendingIssue.length > 0 ? (
 				<ul className=" tw-list-none">
-					{recentPendingIssue.map((issue) => {
+					{(recentPendingIssue as Issue[]).map((issue) => {
 						return (
 							<li
 								className=" tw-cursor-pointer tw-mt-3"
@@ -88,6 +92,8 @@ const PendingIssuesNavList = () => {
 						);
 					})}
 				</ul>
+			) : (
+				<></>
 			)}
 		</div>
 	);

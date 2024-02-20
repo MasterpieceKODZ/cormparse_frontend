@@ -15,13 +15,7 @@ import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
 
-const BtnFilterIssueByType = ({
-	offset,
-	category,
-}: {
-	offset: string;
-	category: string;
-}) => {
+const BtnFilterIssueByType = ({ category }: { category: string }) => {
 	const urlQuery = useSearchParams();
 	const [issueProps, setIssuesProps] = useState<any>({});
 	const projectKey = location.pathname.split("/")[3];
@@ -50,7 +44,7 @@ const BtnFilterIssueByType = ({
 				id="iss_typ_filter_cont"
 				className="tw-w-[320px] tw-h-max tw-rounded tw-shadow dark:tw-shadow-gray-700 tw-bg-gray-100 dark:tw-bg-blue-950 tw-py-[10px] tw-px-5 tw-absolute tw-top-[110%] tw-left-0 tw-z-40 tw-hidden iss_filter_popup">
 				<Link
-					href={`/workspace/project-details/${projectKey}/issues-list/${categoryToUse}/${offset}?type=feature${
+					href={`/workspace/project-details/${projectKey}/issues-list/${categoryToUse}?type=feature${
 						issueProps.status ? "&status=" + issueProps.status : ""
 					}${issueProps.assignee ? "&assignee=" + issueProps.assignee : ""}${
 						issueProps.dueDate ? "&dueDate=" + issueProps.dueDate : ""
@@ -70,7 +64,7 @@ const BtnFilterIssueByType = ({
 					</span>
 				</Link>
 				<Link
-					href={`/workspace/project-details/${projectKey}/issues-list/${categoryToUse}/${offset}?type=improvement${
+					href={`/workspace/project-details/${projectKey}/issues-list/${categoryToUse}type=improvement${
 						issueProps.status ? "&status=" + issueProps.status : ""
 					}${issueProps.assignee ? "&assignee=" + issueProps.assignee : ""}${
 						issueProps.dueDate ? "&dueDate=" + issueProps.dueDate : ""
@@ -90,7 +84,7 @@ const BtnFilterIssueByType = ({
 					</span>
 				</Link>
 				<Link
-					href={`/workspace/project-details/${projectKey}/issues-list/${categoryToUse}/${offset}?type=bug${
+					href={`/workspace/project-details/${projectKey}/issues-list/${categoryToUse}type=bug${
 						issueProps.status ? "&status=" + issueProps.status : ""
 					}${issueProps.assignee ? "&assignee=" + issueProps.assignee : ""}${
 						issueProps.dueDate ? "&dueDate=" + issueProps.dueDate : ""
@@ -110,7 +104,7 @@ const BtnFilterIssueByType = ({
 					</span>
 				</Link>
 				<Link
-					href={`/workspace/project-details/${projectKey}/issues-list/${categoryToUse}/${offset}?type=sub_task${
+					href={`/workspace/project-details/${projectKey}/issues-list/${categoryToUse}?type=sub_task${
 						issueProps.status ? "&status=" + issueProps.status : ""
 					}${issueProps.assignee ? "&assignee=" + issueProps.assignee : ""}${
 						issueProps.dueDate ? "&dueDate=" + issueProps.dueDate : ""
@@ -130,7 +124,7 @@ const BtnFilterIssueByType = ({
 					</span>
 				</Link>
 				<Link
-					href={`/workspace/project-details/${projectKey}/issues-list/${categoryToUse}/${offset}?type=task${
+					href={`/workspace/project-details/${projectKey}/issues-list/${categoryToUse}?type=task${
 						issueProps.status ? "&status=" + issueProps.status : ""
 					}${issueProps.assignee ? "&assignee=" + issueProps.assignee : ""}${
 						issueProps.dueDate ? "&dueDate=" + issueProps.dueDate : ""
@@ -151,7 +145,7 @@ const BtnFilterIssueByType = ({
 				</Link>
 
 				<Link
-					href={`/workspace/project-details/${projectKey}/issues-list/${categoryToUse}/${offset}${
+					href={`/workspace/project-details/${projectKey}/issues-list/${categoryToUse}${
 						issueProps.status ? "?status=" + issueProps.status : ""
 					}${issueProps.assignee ? "&assignee=" + issueProps.assignee : ""}${
 						issueProps.dueDate ? "&dueDate=" + issueProps.dueDate : ""

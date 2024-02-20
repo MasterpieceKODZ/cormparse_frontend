@@ -7,6 +7,7 @@ export async function refreshProjects(
 	setProjects: Dispatch<SetStateAction<Project[] | "failed" | "loading">>,
 	setProjectsCount: Dispatch<SetStateAction<number>>,
 	setShowNextPageBtn: Dispatch<SetStateAction<boolean>>,
+	setNumOfPages: Dispatch<SetStateAction<number>>,
 ) {
 	setProjects("loading");
 
@@ -48,7 +49,12 @@ export async function refreshProjects(
 		})
 			.then(async (res) => {
 				// ************* fetch user's projects count ****************
-				fetchUserProjectsCount(email, setProjectsCount, setShowNextPageBtn);
+				fetchUserProjectsCount(
+					email,
+					setProjectsCount,
+					setShowNextPageBtn,
+					setNumOfPages,
+				);
 
 				// ************* -------------------------- *****************
 				const projs = await res.json();
@@ -75,7 +81,12 @@ export async function refreshProjects(
 		})
 			.then(async (res) => {
 				// ************* fetch user's projects count ****************
-				fetchUserProjectsCount(email, setProjectsCount, setShowNextPageBtn);
+				fetchUserProjectsCount(
+					email,
+					setProjectsCount,
+					setShowNextPageBtn,
+					setNumOfPages,
+				);
 
 				// ************* -------------------------- *****************
 				const projs = await res.json();

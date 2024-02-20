@@ -1,8 +1,14 @@
 import IconArrowLeft from "@/ui_components/icons/arrow.left";
+import { useRouter } from "next/navigation";
 
 const BtnIssuesPaginationPrev = () => {
+	const router = useRouter();
 	return (
-		<button className=" tw-py-1 tw-px-2 tw-bg-transparent">
+		<button
+			className=" tw-p-4 tw-bg-transparent"
+			onClick={() => {
+				router.back();
+			}}>
 			<IconArrowLeft />
 		</button>
 	);

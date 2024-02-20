@@ -58,7 +58,7 @@ export async function POST(req: Request) {
 		if (result.ok) {
 			const resultJSON = await result.json();
 
-			if (resultJSON.data.userRecentIssues[0]) {
+			if (resultJSON.data.userRecentIssues != null) {
 				console.log("user ", body.email, " recent issues.");
 				console.log(resultJSON.data.userRecentIssues);
 

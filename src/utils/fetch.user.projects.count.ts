@@ -4,6 +4,7 @@ export async function fetchUserProjectsCount(
 	email: string,
 	setProjectsCount: Dispatch<SetStateAction<number>>,
 	setShowNextPageBtn: Dispatch<SetStateAction<boolean>>,
+	setNumOfPages: Dispatch<SetStateAction<number>>,
 ) {
 	const countRes = await fetch("/api/projects-count", {
 		method: "POST",
@@ -18,9 +19,10 @@ export async function fetchUserProjectsCount(
 	if (countRes.ok) {
 		const countJSON = await countRes.json();
 
-		console.log("projects count is ", countJSON.count);
-
 		setProjectsCount(countJSON.count);
+
+		if (countJSON % 10 > 0) setNumOfPages(Math.floor(countJSON / 10) + 1);
+		else setNumOfPages(countJSON / 10);
 
 		const offset = parseInt(location.pathname.split("/")[4]);
 

@@ -10,13 +10,7 @@ import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
 
-const BtnFilterIssueByDueDate = ({
-	offset,
-	category,
-}: {
-	offset: string;
-	category: string;
-}) => {
+const BtnFilterIssueByDueDate = ({ category }: { category: string }) => {
 	const urlQuery = useSearchParams();
 	const [issueProps, setIssuesProps] = useState<any>({});
 	const projectKey = location.pathname.split("/")[3];
@@ -45,7 +39,7 @@ const BtnFilterIssueByDueDate = ({
 				id="iss_due_date_filter_cont"
 				className="tw-w-[320px] tw-h-max tw-rounded tw-shadow dark:tw-shadow-gray-700 tw-bg-gray-100 dark:tw-bg-blue-950 tw-py-[10px] tw-px-5 tw-absolute tw-top-[110%] tw-left-0 tw-z-40 tw-hidden iss_filter_popup">
 				<Link
-					href={`/workspace/project-details/${projectKey}/issues-list/${categoryToUse}/${offset}?dueDate=${new Date().getFullYear()}-${
+					href={`/workspace/project-details/${projectKey}/issues-list/${categoryToUse}?dueDate=${new Date().getFullYear()}-${
 						new Date().getMonth() + 1
 					}-${new Date().getDate()}${
 						issueProps.type ? "&type=" + issueProps.type : ""
@@ -58,7 +52,7 @@ const BtnFilterIssueByDueDate = ({
 					Due Now
 				</Link>
 				<Link
-					href={`/workspace/project-details/${projectKey}/issues-list/${categoryToUse}/${offset}?dueDate=${new Date(
+					href={`/workspace/project-details/${projectKey}/issues-list/${categoryToUse}?dueDate=${new Date(
 						Date.now() + 3 * 24 * 60 * 60 * 1000,
 					).getFullYear()}-${
 						new Date(Date.now() + 3 * 24 * 60 * 60 * 1000).getMonth() + 1
@@ -74,7 +68,7 @@ const BtnFilterIssueByDueDate = ({
 				</Link>
 
 				<Link
-					href={`/workspace/project-details/${projectKey}/issues-list/${categoryToUse}/${offset}${
+					href={`/workspace/project-details/${projectKey}/issues-list/${categoryToUse}${
 						issueProps.type ? "?type=" + issueProps.type : ""
 					}${issueProps.status ? "&status=" + issueProps.status : ""}${
 						issueProps.assignee ? "&assignee=" + issueProps.assignee : ""
